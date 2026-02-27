@@ -6,7 +6,7 @@ defaultContentLanguage = "fr"
 [params]
   description = "Suivi quotidien du cours de l'Ethereum Classic avec analyse IA"
   author = "ETC Tracker"
-  beehiiv_embed_url = ""      # ex: https://embeds.beehiiv.com/pub_xxxxxxxx
+  beehiiv_embed_url = "https://subscribe-forms.beehiiv.com/cef8f235-9fb0-41cc-bd8d-2d5be27cb4df"
   coinzilla_zone_id = ""      # ex: 123456  (fourni par Coinzilla après approbation)
 
 [markup]

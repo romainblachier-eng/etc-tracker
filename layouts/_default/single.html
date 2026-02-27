@@ -43,10 +43,10 @@
     <p>Abonne-toi gratuitement — l'analyse quotidienne directement dans ta boîte mail.</p>
     {{ if $beehiiv }}
       <iframe src="{{ $beehiiv }}"
+        class="beehiiv-embed"
         data-test-id="beehiiv-embed"
-        width="480" height="320"
         frameborder="0" scrolling="no"
-        style="border-radius:8px;border:1px solid #e5e7eb;background:transparent;">
+        style="width:100%;max-width:480px;height:320px;border-radius:8px;border:1px solid #e5e7eb;background:transparent;">
       </iframe>
     {{ else }}
       <div class="newsletter-placeholder">
