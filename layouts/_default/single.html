@@ -1,22 +1,28 @@
 {{ define "main" }}
 
-<article class="single-article">
-
-  <header class="article-header">
-    <h1>{{ .Title }}</h1>
-    <time datetime="{{ .Date.Format "2006-01-02" }}">
-      {{ .Date.Format "2 January 2006 à 15:04" }}
-    </time>
-  </header>
-
-  <div class="article-content">
-    {{ .Content }}
-  </div>
-
-  <footer class="article-footer">
+<div class="article-header">
+  <div class="article-header-inner">
     <a href="{{ "/" | relURL }}" class="back-link">← Retour à l'accueil</a>
-  </footer>
+    <span class="article-label">Analyse ETC</span>
+    <h1>{{ .Title }}</h1>
+    <div class="article-meta">
+      <span>📅 {{ .Date.Format "2 January 2006 à 15h04" }}</span>
+      {{ if .Params.price_usd }}
+      <span>💰 ${{ printf "%.4f" .Params.price_usd }}</span>
+      {{ end }}
+      {{ if .Params.change_24h }}
+        {{ if ge .Params.change_24h 0.0 }}
+        <span style="color:var(--green);">▲ +{{ printf "%.2f" .Params.change_24h }}%</span>
+        {{ else }}
+        <span style="color:var(--red);">▼ {{ printf "%.2f" .Params.change_24h }}%</span>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
 
-</article>
+<div class="article-body">
+  {{ .Content }}
+</div>
 
 {{ end }}

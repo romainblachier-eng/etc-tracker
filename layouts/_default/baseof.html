@@ -3,32 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }} — Tout sur l'actualité de l'Ethereum Classic{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+  <!-- SEO -->
+  <meta property="og:title"       content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url"         content="{{ .Permalink }}">
+  <meta name="twitter:card"       content="summary">
+  <meta name="robots"             content="index, follow">
+  <link rel="canonical"           href="{{ .Permalink }}">
+
+  <!-- Google Fonts : Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233772ff'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='system-ui' font-weight='800' fill='white'>ETC</text></svg>">
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container">
-      <a href="{{ "/" | relURL }}" class="site-title">⛏️ ETC Tracker</a>
-      <p class="site-description">{{ .Site.Params.description }}</p>
-    </div>
+    <nav class="site-nav">
+      <a href="{{ "/" | relURL }}" class="site-logo">
+        <div class="logo-icon">ETC</div>
+        <div>
+          <div>ETC Tracker</div>
+          <div class="nav-tagline">Tout sur l'actualité de l'Ethereum Classic</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="{{ "/" | relURL }}">Accueil</a></li>
+        <li><a href="https://www.coingecko.com/fr/coins/ethereum-classic" target="_blank" rel="noopener">CoinGecko</a></li>
+        <li><a href="https://ethereumclassic.org" target="_blank" rel="noopener">ETC.org</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="main-content">
-    <div class="container">
-      {{ block "main" . }}{{ end }}
-    </div>
-  </main>
+  {{ block "main" . }}{{ end }}
 
   <footer class="site-footer">
-    <div class="container">
-      <p>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
-        &nbsp;·&nbsp; Analyse : <a href="https://www.anthropic.com" target="_blank" rel="noopener">Claude AI (Anthropic)</a></p>
-      <p>Ce site est fourni à titre informatif uniquement. Il ne constitue pas un conseil en investissement.</p>
+    <div class="footer-inner">
+      <p class="footer-copy">
+        &copy; {{ now.Format "2006" }} ETC Tracker &nbsp;·&nbsp;
+        Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a> &nbsp;·&nbsp;
+        Analyse : <a href="https://www.anthropic.com" target="_blank" rel="noopener">Claude AI</a>
+      </p>
+      <p class="footer-disclaimer">
+        Informations fournies à titre indicatif uniquement. Pas de conseil en investissement.
+      </p>
     </div>
   </footer>
 

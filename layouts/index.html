@@ -3,45 +3,146 @@
 {{ $pages := where .Site.RegularPages "Section" "posts" }}
 {{ $pages = $pages.ByDate.Reverse }}
 
-<div class="home-content">
+<!-- ── Hero avec prix live (widget CoinGecko) ─────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="hero-coin">
+        <div class="coin-avatar">ETC</div>
+        <div>
+          <div class="coin-name">Ethereum Classic</div>
+          <div class="coin-sub">ETC · Proof of Work · Mise à jour quotidienne</div>
+        </div>
+      </div>
 
-  {{ if $pages }}
-
-    {{ $latest := index $pages 0 }}
-    <div class="latest-card">
-      <span class="label">Dernière mise à jour</span>
-      <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
-      <time datetime="{{ $latest.Date.Format "2006-01-02" }}">
-        {{ $latest.Date.Format "2 January 2006 à 15:04" }}
-      </time>
-      <div class="summary">{{ $latest.Summary }}</div>
-      <a href="{{ $latest.Permalink }}" class="read-more">Lire l'analyse complète →</a>
+      {{ if $pages }}
+        {{ $latest := index $pages 0 }}
+        {{ $price := $latest.Params.price_usd }}
+        {{ $change := $latest.Params.change_24h }}
+        {{ if $price }}
+        <div class="hero-price-block">
+          <div class="hero-price">${{ printf "%.4f" $price }}</div>
+          {{ if $change }}
+            {{ if ge $change 0.0 }}
+            <div class="price-change up">▲ +{{ printf "%.2f" $change }}% sur 24h</div>
+            {{ else }}
+            <div class="price-change down">▼ {{ printf "%.2f" $change }}% sur 24h</div>
+            {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      {{ end }}
     </div>
 
-    {{ if gt (len $pages) 1 }}
-    <div class="archive-section">
-      <h3 class="archive-title">Historique</h3>
-      <div class="article-list">
-        {{ range after 1 $pages }}
-        <article class="article-item">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          <time>{{ .Date.Format "02/01/2006" }}</time>
-        </article>
-        {{ end }}
+    <!-- Stat cards -->
+    {{ if $pages }}
+    {{ $latest := index $pages 0 }}
+    {{ if $latest.Params.price_usd }}
+    <div class="stat-grid">
+      {{ if $latest.Params.price_eur }}
+      <div class="stat-card">
+        <div class="stat-label">Prix EUR</div>
+        <div class="stat-value">€{{ printf "%.4f" $latest.Params.price_eur }}</div>
       </div>
+      {{ end }}
+      {{ if $latest.Params.change_7d }}
+      <div class="stat-card">
+        <div class="stat-label">7 jours</div>
+        <div class="stat-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
+          {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
+        </div>
+      </div>
+      {{ end }}
+      {{ if $latest.Params.change_30d }}
+      <div class="stat-card">
+        <div class="stat-label">30 jours</div>
+        <div class="stat-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
+          {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
+        </div>
+      </div>
+      {{ end }}
+      {{ if $latest.Params.market_cap }}
+      <div class="stat-card">
+        <div class="stat-label">Capitalisation</div>
+        <div class="stat-value">{{ $latest.Params.market_cap }}</div>
+      </div>
+      {{ end }}
+      {{ if $latest.Params.volume_24h }}
+      <div class="stat-card">
+        <div class="stat-label">Volume 24h</div>
+        <div class="stat-value">{{ $latest.Params.volume_24h }}</div>
+      </div>
+      {{ end }}
     </div>
     {{ end }}
+    {{ end }}
+  </div>
+</section>
 
-  {{ else }}
-
-    <div class="empty-state">
-      <h2>Le site se met en place…</h2>
-      <p>Le premier article sera généré lors de la prochaine exécution du workflow GitHub Actions.<br>
-         Vous pouvez aussi déclencher le workflow manuellement depuis l'onglet <strong>Actions</strong> de votre dépôt.</p>
-    </div>
-
-  {{ end }}
-
+<!-- ── Graphique CoinGecko ────────────────────────────────────── -->
+<div style="max-width:940px;margin:0 auto;padding:0 20px;">
+  <div class="chart-wrapper">
+    <h3>Évolution du prix — 7 derniers jours (live)</h3>
+    <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
+    <gecko-coin-price-chart-widget
+      locale="fr"
+      outlined="false"
+      coin-id="ethereum-classic"
+      initial-currency="usd"
+      width="100%"
+      height="200">
+    </gecko-coin-price-chart-widget>
+  </div>
 </div>
+
+<!-- ── Contenu principal ──────────────────────────────────────── -->
+<main class="page-main">
+  <div class="page-inner">
+
+    {{ if $pages }}
+
+      <!-- Article du jour -->
+      {{ $latest := index $pages 0 }}
+      <p class="section-title">Analyse du jour</p>
+      <div class="latest-card">
+        <span class="latest-badge">Dernière mise à jour</span>
+        <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
+        <p class="card-meta">{{ $latest.Date.Format "2 January 2006" }}</p>
+        <p class="card-excerpt">{{ $latest.Summary }}</p>
+        <a href="{{ $latest.Permalink }}" class="btn">Lire l'analyse complète →</a>
+      </div>
+
+      <!-- Archive -->
+      {{ if gt (len $pages) 1 }}
+      <p class="section-title">Historique</p>
+      <ul class="archive-list">
+        {{ range after 1 $pages }}
+        <li class="archive-item">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{ if .Params.change_24h }}
+            {{ if ge .Params.change_24h 0.0 }}
+            <span class="archive-badge up">+{{ printf "%.2f" .Params.change_24h }}%</span>
+            {{ else }}
+            <span class="archive-badge down">{{ printf "%.2f" .Params.change_24h }}%</span>
+            {{ end }}
+          {{ end }}
+          <span class="archive-date">{{ .Date.Format "02/01/2006" }}</span>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+    {{ else }}
+
+      <div style="text-align:center;padding:60px 20px;">
+        <div style="font-size:2.5rem;margin-bottom:16px;">⏳</div>
+        <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:10px;">Le site se met en place…</h2>
+        <p style="color:var(--text-muted);">Le premier article sera généré lors de la prochaine exécution du workflow GitHub Actions.</p>
+      </div>
+
+    {{ end }}
+
+  </div>
+</main>
 
 {{ end }}

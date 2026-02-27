@@ -180,6 +180,13 @@ def create_hugo_article(etc_data: dict, analysis: str) -> str:
         f'draft: false\n'
         f'description: "Cours Ethereum Classic du {date_str} : '
         f'{etc_data["price_usd"]:.4f} USD, variation 24h {sign}{etc_data["change_24h"]:.2f}%"\n'
+        f'price_usd: {etc_data["price_usd"]:.4f}\n'
+        f'price_eur: {etc_data["price_eur"]:.4f}\n'
+        f'change_24h: {etc_data["change_24h"]:.2f}\n'
+        f'change_7d: {etc_data["change_7d"]:.2f}\n'
+        f'change_30d: {etc_data["change_30d"]:.2f}\n'
+        f'market_cap: "{fmt_big(etc_data["market_cap_usd"])}"\n'
+        f'volume_24h: "{fmt_big(etc_data["volume_24h_usd"])}"\n'
         f'---\n\n'
     )
 
