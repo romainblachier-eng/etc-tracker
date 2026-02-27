@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ "/" | relURL }}" class="site-title">⛏️ ETC Tracker</a>
+      <p class="site-description">{{ .Site.Params.description }}</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
+        &nbsp;·&nbsp; Analyse : <a href="https://www.anthropic.com" target="_blank" rel="noopener">Claude AI (Anthropic)</a></p>
+      <p>Ce site est fourni à titre informatif uniquement. Il ne constitue pas un conseil en investissement.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
