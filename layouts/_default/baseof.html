@@ -3,26 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .IsHome }}{{ .Site.Title }} — Tout sur l'actualité de l'Ethereum Classic{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+  <!-- ── Titre & description ─────────────────────────────────── -->
+  {{ $title := cond .IsHome (printf "%s — Cours & Analyse IA quotidienne" .Site.Title) (printf "%s | %s" .Title .Site.Title) }}
+  <title>{{ $title }}</title>
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="author"      content="{{ .Site.Params.author }}">
+  <meta name="keywords"    content="Ethereum Classic, ETC, cours ETC, prix ETC, analyse crypto, ETC tracker, Ethereum Classic prix">
+  <meta name="language"    content="fr">
+  <meta name="robots"      content="index, follow, max-snippet:-1, max-image-preview:large">
 
-  <!-- SEO -->
-  <meta property="og:title"       content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <!-- ── Canonical ───────────────────────────────────────────── -->
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- ── Open Graph ──────────────────────────────────────────── -->
+  <meta property="og:site_name"   content="{{ .Site.Title }}">
+  <meta property="og:title"       content="{{ $title }}">
   <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
   <meta property="og:url"         content="{{ .Permalink }}">
-  <meta name="twitter:card"       content="summary">
-  <meta name="robots"             content="index, follow">
-  <link rel="canonical"           href="{{ .Permalink }}">
+  <meta property="og:locale"      content="fr_FR">
+  {{ if .IsHome }}
+  <meta property="og:type"        content="website">
+  {{ else }}
+  <meta property="og:type"        content="article">
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  <meta property="article:author"         content="{{ .Site.Params.author }}">
+  <meta property="article:section"        content="Cryptomonnaies">
+  <meta property="article:tag"            content="Ethereum Classic">
+  <meta property="article:tag"            content="ETC">
+  <meta property="article:tag"            content="Crypto">
+  {{ end }}
 
-  <!-- Google Fonts : Inter -->
+  <!-- ── Twitter Card ────────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="{{ $title }}">
+  <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+  <!-- ── JSON-LD : WebSite (toutes les pages) ────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}",
+    "description": "{{ .Site.Params.description }}",
+    "inLanguage": "fr-FR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ .Site.BaseURL }}?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  {{ if not .IsHome }}
+  <!-- ── JSON-LD : Article (pages individuelles) ─────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ .Title | jsonify }},
+    "description": {{ if .Description }}{{ .Description | jsonify }}{{ else }}{{ .Site.Params.description | jsonify }}{{ end }},
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified":  "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ .Site.Params.author }}",
+      "url": "{{ .Site.BaseURL }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Ethereum Classic",
+      "sameAs": "https://www.wikidata.org/wiki/Q21469232"
+    }
+  }
+  </script>
+  {{ end }}
+
+  <!-- ── JSON-LD : Organization ──────────────────────────────── -->
+  {{ if .IsHome }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ETC Tracker",
+    "url": "{{ .Site.BaseURL }}",
+    "description": "{{ .Site.Params.description }}",
+    "sameAs": [
+      "https://ethereumclassic.org"
+    ]
+  }
+  </script>
+  {{ end }}
+
+  <!-- ── Fonts ───────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- ── Style ───────────────────────────────────────────────── -->
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 
-  <!-- Favicon -->
+  <!-- ── RSS ─────────────────────────────────────────────────── -->
+  {{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+  {{ end }}
+
+  <!-- ── Favicon ─────────────────────────────────────────────── -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233772ff'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='system-ui' font-weight='800' fill='white'>ETC</text></svg>">
 </head>
@@ -34,7 +130,7 @@
         <div class="logo-icon">ETC</div>
         <div>
           <div>ETC Tracker</div>
-          <div class="nav-tagline">Tout sur l'actualité de l'Ethereum Classic</div>
+          <div class="nav-tagline">Cours &amp; analyse quotidienne de l'Ethereum Classic</div>
         </div>
       </a>
       <ul class="nav-links">

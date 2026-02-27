@@ -15,6 +15,11 @@ defaultContentLanguage = "fr"
     style = "monokai"
 
 [outputs]
-  home    = ["HTML"]
+  home    = ["HTML", "RSS", "JSON"]
   page    = ["HTML"]
-  section = ["HTML"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "daily"
+  filename   = "sitemap.xml"
+  priority   = 0.5
