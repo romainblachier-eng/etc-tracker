@@ -2,8 +2,10 @@
 
 {{ $pages := where .Site.RegularPages "Section" "posts" }}
 {{ $pages = $pages.ByDate.Reverse }}
+{{ $beehiiv := .Site.Params.beehiiv_embed_url }}
+{{ $coinzilla := .Site.Params.coinzilla_zone_id }}
 
-<!-- ── Hero avec prix live (widget CoinGecko) ─────────────────── -->
+<!-- ── Hero ───────────────────────────────────────────────────── -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-top">
@@ -17,16 +19,14 @@
 
       {{ if $pages }}
         {{ $latest := index $pages 0 }}
-        {{ $price := $latest.Params.price_usd }}
-        {{ $change := $latest.Params.change_24h }}
-        {{ if $price }}
+        {{ if $latest.Params.price_usd }}
         <div class="hero-price-block">
-          <div class="hero-price">${{ printf "%.4f" $price }}</div>
-          {{ if $change }}
-            {{ if ge $change 0.0 }}
-            <div class="price-change up">▲ +{{ printf "%.2f" $change }}% sur 24h</div>
+          <div class="hero-price">${{ printf "%.4f" $latest.Params.price_usd }}</div>
+          {{ if $latest.Params.change_24h }}
+            {{ if ge $latest.Params.change_24h 0.0 }}
+            <div class="price-change up">▲ +{{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
             {{ else }}
-            <div class="price-change down">▼ {{ printf "%.2f" $change }}% sur 24h</div>
+            <div class="price-change down">▼ {{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
             {{ end }}
           {{ end }}
         </div>
@@ -34,7 +34,6 @@
       {{ end }}
     </div>
 
-    <!-- Stat cards -->
     {{ if $pages }}
     {{ $latest := index $pages 0 }}
     {{ if $latest.Params.price_usd }}
@@ -79,20 +78,22 @@
   </div>
 </section>
 
-<!-- ── Graphique CoinGecko ────────────────────────────────────── -->
+<!-- ── Graphique CoinGecko ─────────────────────────────────────  -->
 <div style="max-width:940px;margin:0 auto;padding:0 20px;">
   <div class="chart-wrapper">
     <h3>Évolution du prix — 7 derniers jours (live)</h3>
     <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
-    <gecko-coin-price-chart-widget
-      locale="fr"
-      outlined="false"
-      coin-id="ethereum-classic"
-      initial-currency="usd"
-      width="100%"
-      height="200">
-    </gecko-coin-price-chart-widget>
+    <gecko-coin-price-chart-widget locale="fr" outlined="false" coin-id="ethereum-classic" initial-currency="usd" width="100%" height="200"></gecko-coin-price-chart-widget>
   </div>
+
+  <!-- Pub bannière haute (728x90) -->
+  {{ if $coinzilla }}
+  <div class="ad-label">Publicité</div>
+  <div class="ad-wrapper ad-wrapper-top">
+    <script async src="//cdn.coinzilla.io/scripts/{{ $coinzilla }}.js"></script>
+    <div id="coinzilla_{{ $coinzilla }}"></div>
+  </div>
+  {{ end }}
 </div>
 
 <!-- ── Contenu principal ──────────────────────────────────────── -->
@@ -100,8 +101,6 @@
   <div class="page-inner">
 
     {{ if $pages }}
-
-      <!-- Article du jour -->
       {{ $latest := index $pages 0 }}
       <p class="section-title">Analyse du jour</p>
       <div class="latest-card">
@@ -112,7 +111,34 @@
         <a href="{{ $latest.Permalink }}" class="btn">Lire l'analyse complète →</a>
       </div>
 
-      <!-- Archive -->
+      <!-- ── Newsletter Beehiiv ──────────────────────────────── -->
+      <div class="newsletter-section">
+        <h3>📬 Recevoir l'analyse ETC chaque matin</h3>
+        <p>Abonne-toi gratuitement — l'analyse quotidienne directement dans ta boîte mail.</p>
+        {{ if $beehiiv }}
+          <iframe src="{{ $beehiiv }}"
+            data-test-id="beehiiv-embed"
+            width="480" height="320"
+            frameborder="0" scrolling="no"
+            style="border-radius:8px;border:1px solid #e5e7eb;background:transparent;">
+          </iframe>
+        {{ else }}
+          <div class="newsletter-placeholder">
+            ⚙️ Abonnement bientôt disponible
+          </div>
+        {{ end }}
+      </div>
+
+      <!-- ── Pub milieu de page ─────────────────────────────── -->
+      {{ if $coinzilla }}
+      <div class="ad-label">Publicité</div>
+      <div class="ad-wrapper">
+        <script async src="//cdn.coinzilla.io/scripts/{{ $coinzilla }}_2.js"></script>
+        <div id="coinzilla_{{ $coinzilla }}_2"></div>
+      </div>
+      {{ end }}
+
+      <!-- ── Archive ────────────────────────────────────────── -->
       {{ if gt (len $pages) 1 }}
       <p class="section-title">Historique</p>
       <ul class="archive-list">
@@ -133,13 +159,11 @@
       {{ end }}
 
     {{ else }}
-
       <div style="text-align:center;padding:60px 20px;">
         <div style="font-size:2.5rem;margin-bottom:16px;">⏳</div>
         <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:10px;">Le site se met en place…</h2>
         <p style="color:var(--text-muted);">Le premier article sera généré lors de la prochaine exécution du workflow GitHub Actions.</p>
       </div>
-
     {{ end }}
 
   </div>

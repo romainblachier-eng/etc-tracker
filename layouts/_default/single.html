@@ -1,5 +1,8 @@
 {{ define "main" }}
 
+{{ $beehiiv  := .Site.Params.beehiiv_embed_url }}
+{{ $coinzilla := .Site.Params.coinzilla_zone_id }}
+
 <div class="article-header">
   <div class="article-header-inner">
     <a href="{{ "/" | relURL }}" class="back-link">← Retour à l'accueil</a>
@@ -22,7 +25,36 @@
 </div>
 
 <div class="article-body">
+
+  <!-- Pub haut d'article -->
+  {{ if $coinzilla }}
+  <div class="ad-label">Publicité</div>
+  <div class="ad-wrapper ad-wrapper-top">
+    <script async src="//cdn.coinzilla.io/scripts/{{ $coinzilla }}_art.js"></script>
+    <div id="coinzilla_{{ $coinzilla }}_art"></div>
+  </div>
+  {{ end }}
+
   {{ .Content }}
+
+  <!-- Newsletter -->
+  <div class="newsletter-section">
+    <h3>📬 Recevoir l'analyse ETC chaque matin</h3>
+    <p>Abonne-toi gratuitement — l'analyse quotidienne directement dans ta boîte mail.</p>
+    {{ if $beehiiv }}
+      <iframe src="{{ $beehiiv }}"
+        data-test-id="beehiiv-embed"
+        width="480" height="320"
+        frameborder="0" scrolling="no"
+        style="border-radius:8px;border:1px solid #e5e7eb;background:transparent;">
+      </iframe>
+    {{ else }}
+      <div class="newsletter-placeholder">
+        ⚙️ Abonnement bientôt disponible
+      </div>
+    {{ end }}
+  </div>
+
 </div>
 
 {{ end }}
