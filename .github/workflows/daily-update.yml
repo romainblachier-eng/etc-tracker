@@ -43,7 +43,9 @@ jobs:
       # 4. Génération de l'article du jour
       - name: Generate daily article
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+          BEEHIIV_API_KEY:        ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
         run: python scripts/generate_article.py
 
       # 5. Commit de l'article dans la branche main

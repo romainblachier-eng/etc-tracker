@@ -3,11 +3,12 @@
 ETC Tracker — Script de génération d'article quotidien
 ======================================================
 Récupère le cours de l'Ethereum Classic (ETC) via l'API CoinGecko,
-génère une analyse avec Claude (Anthropic), et produit un article
-au format Markdown prêt à être intégré par Hugo.
+génère une analyse avec Claude (Anthropic), publie sur Hugo ET sur Beehiiv.
 
 Variables d'environnement :
-  ANTHROPIC_API_KEY   Clé API Anthropic (stockée comme Secret GitHub)
+  ANTHROPIC_API_KEY      Clé API Anthropic (Secret GitHub)
+  BEEHIIV_API_KEY        Clé API Beehiiv   (Secret GitHub)
+  BEEHIIV_PUBLICATION_ID ID de la publication Beehiiv (Secret GitHub)
 """
 
 import os
@@ -211,7 +212,89 @@ def create_hugo_article(etc_data: dict, analysis: str) -> str:
 
 
 # ──────────────────────────────────────────────
-# 5. Point d'entrée
+# 5. Publication sur Beehiiv
+# ──────────────────────────────────────────────
+
+def publish_to_beehiiv(etc_data: dict, analysis: str, api_key: str, pub_id: str) -> None:
+    """Publie l'article du jour sur Beehiiv via l'API REST."""
+    now      = datetime.now()
+    date_str = now.strftime("%Y-%m-%d")
+    sign     = "+" if etc_data["change_24h"] >= 0 else ""
+    emoji    = "📈" if etc_data["change_24h"] >= 0 else "📉"
+
+    try:
+        day_fmt = now.strftime("%-d %B %Y")
+    except ValueError:
+        day_fmt = now.strftime("%d %B %Y").lstrip("0")
+
+    title = (
+        f"ETC {date_str} — {etc_data['price_usd']:.4f} $ "
+        f"({sign}{etc_data['change_24h']:.2f}%) {emoji}"
+    )
+    subtitle = (
+        f"Cours Ethereum Classic du {date_str} : "
+        f"{etc_data['price_usd']:.4f} USD, variation 24h {sign}{etc_data['change_24h']:.2f}%"
+    )
+
+    # Analyse : remplace les sauts de ligne en balises <p>
+    analysis_html = "".join(
+        f"<p>{para.strip()}</p>"
+        for para in analysis.split("\n\n")
+        if para.strip()
+    )
+
+    content_html = f"""
+<h2>Cours du {day_fmt} {emoji}</h2>
+<table>
+  <thead><tr><th>Indicateur</th><th>Valeur</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Prix USD</strong></td><td>{etc_data['price_usd']:.4f} $</td></tr>
+    <tr><td><strong>Prix EUR</strong></td><td>{etc_data['price_eur']:.4f} €</td></tr>
+    <tr><td><strong>Variation 24h</strong></td><td>{sign}{etc_data['change_24h']:.2f}%</td></tr>
+    <tr><td><strong>Variation 7 jours</strong></td><td>{etc_data['change_7d']:+.2f}%</td></tr>
+    <tr><td><strong>Variation 30 jours</strong></td><td>{etc_data['change_30d']:+.2f}%</td></tr>
+    <tr><td><strong>Capitalisation</strong></td><td>{fmt_big(etc_data['market_cap_usd'])}</td></tr>
+    <tr><td><strong>Volume 24h</strong></td><td>{fmt_big(etc_data['volume_24h_usd'])}</td></tr>
+    <tr><td><strong>Plus haut historique</strong></td><td>{etc_data['ath_usd']:.2f} $</td></tr>
+  </tbody>
+</table>
+
+<h2>Analyse du jour</h2>
+{analysis_html}
+
+<hr>
+<p><em>Données : <a href="https://www.coingecko.com">CoinGecko</a> (API publique).
+Analyse générée automatiquement par Claude AI (Anthropic).
+Ce contenu est fourni à titre informatif uniquement — pas de conseil en investissement.</em></p>
+"""
+
+    url     = f"https://api.beehiiv.com/v2/publications/{pub_id}/posts"
+    headers = {
+        "Content-Type":  "application/json",
+        "Authorization": f"Bearer {api_key}",
+    }
+    payload = {
+        "title":           title,
+        "subtitle":        subtitle,
+        "content_html":    content_html,
+        "status":          "confirmed",   # publié immédiatement
+        "send_at":         None,          # envoi immédiat
+    }
+
+    resp = requests.post(url, json=payload, headers=headers, timeout=30)
+
+    if resp.status_code in (200, 201):
+        data = resp.json().get("data", {})
+        post_id  = data.get("id", "—")
+        web_url  = data.get("web_url") or data.get("url") or "—"
+        print(f"✅ Beehiiv — Article publié (id={post_id})")
+        print(f"   URL : {web_url}")
+    else:
+        print(f"⚠️  Beehiiv — Erreur {resp.status_code} : {resp.text[:300]}")
+
+
+# ──────────────────────────────────────────────
+# 6. Point d'entrée
 # ──────────────────────────────────────────────
 
 def main() -> None:
@@ -219,7 +302,7 @@ def main() -> None:
     print("  ETC Tracker — Génération quotidienne ")
     print("═══════════════════════════════════════")
 
-    # 5-a. Données de marché
+    # 6-a. Données de marché
     print("\n📡 Récupération des données CoinGecko…")
     etc_data = fetch_etc_data()
     print(
@@ -227,7 +310,7 @@ def main() -> None:
         f"Variation 24h : {etc_data['change_24h']:+.2f}%"
     )
 
-    # 5-b. Analyse
+    # 6-b. Analyse
     api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if api_key:
         print("\n🤖 Génération de l'analyse IA (Claude)…")
@@ -241,9 +324,22 @@ def main() -> None:
         print("\n⚠️  Variable ANTHROPIC_API_KEY absente — analyse basique utilisée.")
         analysis = generate_basic_analysis(etc_data)
 
-    # 5-c. Création de l'article
+    # 6-c. Création de l'article Hugo
     print("\n📝 Création de l'article Hugo…")
     create_hugo_article(etc_data, analysis)
+
+    # 6-d. Publication Beehiiv (optionnelle)
+    beehiiv_key = os.environ.get("BEEHIIV_API_KEY", "").strip()
+    beehiiv_pub = os.environ.get("BEEHIIV_PUBLICATION_ID", "").strip()
+    if beehiiv_key and beehiiv_pub:
+        print("\n🐝 Publication sur Beehiiv…")
+        try:
+            publish_to_beehiiv(etc_data, analysis, beehiiv_key, beehiiv_pub)
+        except Exception as exc:
+            print(f"   ⚠️  Erreur Beehiiv ({exc}) — publication ignorée.")
+    else:
+        print("\n⚠️  Variables Beehiiv absentes — publication Beehiiv ignorée.")
+
     print("\nTerminé ✓")
 
 
