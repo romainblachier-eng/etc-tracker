@@ -1,0 +1,20 @@
+baseURL = "https://romainblachier-eng.github.io/etc-tracker/"
+languageCode = "fr-FR"
+title = "ETC Tracker"
+defaultContentLanguage = "fr"
+
+[params]
+  description = "Suivi quotidien du cours de l'Ethereum Classic avec analyse IA"
+  author = "ETC Tracker"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[outputs]
+  home    = ["HTML"]
+  page    = ["HTML"]
+  section = ["HTML"]

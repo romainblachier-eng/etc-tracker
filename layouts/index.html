@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+{{ $pages := where .Site.RegularPages "Section" "posts" }}
+{{ $pages = $pages.ByDate.Reverse }}
+
+<div class="home-content">
+
+  {{ if $pages }}
+
+    {{ $latest := index $pages 0 }}
+    <div class="latest-card">
+      <span class="label">Dernière mise à jour</span>
+      <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
+      <time datetime="{{ $latest.Date.Format "2006-01-02" }}">
+        {{ $latest.Date.Format "2 January 2006 à 15:04" }}
+      </time>
+      <div class="summary">{{ $latest.Summary }}</div>
+      <a href="{{ $latest.Permalink }}" class="read-more">Lire l'analyse complète →</a>
+    </div>
+
+    {{ if gt (len $pages) 1 }}
+    <div class="archive-section">
+      <h3 class="archive-title">Historique</h3>
+      <div class="article-list">
+        {{ range after 1 $pages }}
+        <article class="article-item">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <time>{{ .Date.Format "02/01/2006" }}</time>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+  {{ else }}
+
+    <div class="empty-state">
+      <h2>Le site se met en place…</h2>
+      <p>Le premier article sera généré lors de la prochaine exécution du workflow GitHub Actions.<br>
+         Vous pouvez aussi déclencher le workflow manuellement depuis l'onglet <strong>Actions</strong> de votre dépôt.</p>
+    </div>
+
+  {{ end }}
+
+</div>
+
+{{ end }}
