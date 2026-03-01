@@ -1,0 +1,69 @@
+{{ define "main" }}
+<main class="news-container">
+    <article>
+        <header>
+            <h1>{{ .Title }}</h1>
+            <p class="meta">Mise à jour : {{ .PublishDate.Format "2 January 2006" }}</p>
+        </header>
+
+        <div class="news-content">
+            {{ .Content }}
+        </div>
+    </article>
+
+    <aside class="news-sidebar">
+        <h3>À propos de ce module</h3>
+        <p>
+            Ce module récupère automatiquement les dernières actualités Ethereum Classic
+            et les reformule avec l'IA pour une meilleure compréhension. Mis à jour quotidiennement.
+        </p>
+    </aside>
+</main>
+
+<style>
+    .news-container {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+        margin: 2rem auto;
+        max-width: 1000px;
+        padding: 0 1rem;
+    }
+
+    .news-content h3 {
+        margin-top: 1.5rem;
+        color: #2c3e50;
+        border-left: 4px solid #3498db;
+        padding-left: 1rem;
+    }
+
+    .news-content a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .news-content a:hover {
+        text-decoration: underline;
+    }
+
+    .news-sidebar {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        height: fit-content;
+        border-left: 4px solid #27ae60;
+    }
+
+    .news-sidebar h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+
+    @media (max-width: 768px) {
+        .news-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{{ end }}
