@@ -1,69 +1,69 @@
 ---
-title: "Actualités ETC du 2026-03-01"
-date: 2026-03-01T17:08:18+01:00
+title: "Actualités ETC du 2026-03-02"
+date: 2026-03-02T10:30:51+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Danske Bank Opens Retail Bitcoin Access After Years of Crypto Resistance
+### 1. Disgraced Mt Gox CEO Suggests Bitcoin Hard Fork to Recover $5 Billion in Customer Funds
 
-**Source :** Activistpost.com (2026-02-28)
+**Source :** Gizmodo.com (2026-03-01)
 
-# Résumé
+# Résumé de l'actualité
 
-Danske Bank, une banque danoise, change sa politique en permettant à ses clients particuliers d'accéder à des produits d'investissement liés au Bitcoin, après des années de refus face à la demande croissante des investisseurs pour les cryptomonnaies.
+L'ancien PDG de Mt Gox, la plateforme d'échange décimée par le piratage de 2014, propose un hard fork du Bitcoin pour récupérer les 5 milliards de dollars de fonds clients perdus. Cette suggestion a provoqué une réaction très négative de la communauté crypto, avec des critiques demandant simplement à ce responsable de "disparaître".
 
-[Lire l'article complet →](https://www.activistpost.com/danske-bank-opens-retail-bitcoin-access-after-years-of-crypto-resistance/)
-
----
-
-### 2. UK Banking Heavyweight Barclays Weighs Major Step Into Blockchain-Based Payments And Deposits
-
-**Source :** ZyCrypto (2026-02-28)
-
-# Actualité Crypto
-
-La banque britannique Barclays explore l'intégration de la technologie blockchain pour ses services de paiements et de dépôts, afin de rester compétitive face à la montée en puissance des stablecoins. Cette démarche reflète l'adaptation progressive des institutions financières traditionnelles à l'émergence des solutions blockchain.
-
-[Lire l'article complet →](https://zycrypto.com/uk-banking-heavyweight-barclays-weighs-major-step-into-blockchain-based-payments-and-deposits/)
+[Lire l'article complet →](https://gizmodo.com/disgraced-mt-gox-ceo-suggests-bitcoin-hard-fork-to-recover-5-billion-in-customer-funds-2000728118)
 
 ---
 
-### 3. $4.8M in crypto stolen after Korean tax agency exposes wallet seed
+### 2. While Bitcoin ETFs bled, Solana and XRP won the week – Here’s the data!
 
-**Source :** BleepingComputer (2026-02-28)
+**Source :** Ambcrypto.com (2026-03-01)
 
 # Résumé de l'actualité crypto
 
-L'agence fiscale sud-coréenne a accidentellement divulgué la phrase de récupération d'un portefeuille cryptographique saisi dans un communiqué officiel, permettant à des pirates de dérober 6,4 milliards de wons (4,8 millions de dollars) en cryptomonnaies. Cette fuite de sécurité majeure souligne les risques liés à la mauvaise gestion des données sensibles dans le secteur public.
+Alors que les ETF Bitcoin ont enregistré des sorties massives cette semaine, Solana et XRP se sont démarqués avec des performances positives, soulevant la question d'un possible redéploiement institutionnel vers d'autres actifs numériques plutôt qu'une simple faiblesse du marché.
 
-[Lire l'article complet →](https://www.bleepingcomputer.com/news/security/48m-in-crypto-stolen-after-korean-tax-agency-exposes-wallet-seed/)
+[Lire l'article complet →](https://ambcrypto.com/while-bitcoin-etfs-bled-solana-and-xrp-won-the-week-heres-the-data/)
 
 ---
 
-### 4. Namik Muduroglu: Token models incentivize selling over holding, governance structures in DAOs are failing, and regulatory fears stifle innovation | Unchained
+### 3. The Android ID Trap: How Google’s Developer Registry Paves the Way for Digital Tyranny
 
-**Source :** Crypto Briefing (2026-02-28)
+**Source :** Naturalnews.com (2026-03-01)
 
 # Résumé de l'article
 
-Les modèles de tokens actuels encouragent la vente à court terme plutôt que la détention long terme, ce qui freine la croissance du marché crypto. Parallèlement, les structures de gouvernance des DAOs (organisations autonomes décentralisées) s'avèrent inefficaces, tandis que les craintes réglementaires ralentissent l'innovation dans le secteur.
+À partir de septembre 2026, Google imposera que toutes les applications installées sur les appareils Android certifiés proviennent de développeurs vérifiés par ses soins, marquant une centralisation majeure du contrôle sur l'écosystème mobile. Cette mesure soulève des préoccupations quant à une possible restriction des libertés numériques et à un renforcement du pouvoir de surveillance de Google sur les développeurs et utilisateurs. Cette politique représente un tournant significatif qui pourrait limiter l'accès aux applications non approuvées et renforcer la dépendance des développeurs vis-à-vis de l'infrastructure Google.
 
-[Lire l'article complet →](https://cryptobriefing.com/namik-muduroglu-token-models-incentivize-selling-over-holding-governance-structures-in-daos-are-failing-and-regulatory-fears-stifle-innovation-unchained/)
+[Lire l'article complet →](https://www.naturalnews.com/2026-03-01-googles-developer-registry-paves-the-way-digital-tyranny.html)
 
 ---
 
-### 5. Bitcoin In The Line Of Fire: Price Dips To $63k As US, Israel Launch Strikes On Iran
+### 4. Ethereum Price Under Pressure: Whales, Derivatives Market Exits Signal Waning Appetite
 
-**Source :** newsBTC (2026-02-28)
+**Source :** newsBTC (2026-03-01)
+
+# Résumé de l'actualité
+
+Le prix d'Ethereum fluctue autour des 2000 dollars, un niveau psychologique clé, mais subit une pression baissière depuis une semaine en raison de sorties massives de positions sur le marché des dérivés. Les grandes balaines (investisseurs majeurs) réduisent leurs positions, ce qui indique un affaiblissement de l'appétit des investisseurs pour la cryptomonnaie.
+
+[Lire l'article complet →](http://www.newsbtc.com/news/ethereum/ethereum-price-under-pressure-whales-and-derivatives/)
+
+---
+
+### 5. Ethereum smart accounts are finally coming 'within a year' — Vitalik Buterin
+
+**Source :** Cointelegraph (2026-03-01)
 
 # Résumé
 
-Suite aux frappes coordonnées des États-Unis et d'Israël contre l'Iran, Bitcoin a chuté de 3,8% à 63 000 dollars et Ethereum a perdu près de 9%, entraînant la liquidation de plus de 152 000 traders. Les tensions géopolitiques ont provoqué un mouvement massif de ventes sur le marché des cryptomonnaies.
+La fonctionnalité d'abstraction de compte d'Ethereum sera intégrée lors du fork Hegota prévu dans un an, permettant l'émergence de comptes intelligents et de nouveaux mécanismes de paiement des frais de transaction plus flexibles. Cette mise à jour majeure devrait également améliorer la confidentialité des utilisateurs sur le réseau.
 
-[Lire l'article complet →](http://www.newsbtc.com/bitcoin-news/bitcoin-in-the-line-of-fire-price-dips-to-63k-as-us-israel-launch-strikes-on-iran/)
+[Lire l'article complet →](https://cointelegraph.com/news/ethereum-smart-accounts-are-finally-coming-within-a-year-says-vitalik)
 
 ---
 
