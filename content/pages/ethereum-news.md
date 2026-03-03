@@ -1,69 +1,63 @@
 ---
-title: "Actualités ETC du 2026-03-02"
-date: 2026-03-02T10:30:51+01:00
+title: "Actualités ETC du 2026-03-03"
+date: 2026-03-03T10:06:03+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Disgraced Mt Gox CEO Suggests Bitcoin Hard Fork to Recover $5 Billion in Customer Funds
+### 1. Shanghai Stocks Hit 10-Year High While Hong Kong Crypto ETFs Sink
 
-**Source :** Gizmodo.com (2026-03-01)
+**Source :** BeInCrypto (2026-03-02)
 
-# Résumé de l'actualité
+Les actions de Shanghai ont atteint leur plus haut niveau en dix ans, dopées par les tensions géopolitiques en Iran, creusant ainsi l'écart avec les ETF crypto de Hong Kong qui s'effondrent. Cette divergence reflète un manque d'intérêt des investisseurs chinois pour les produits cryptographiques, contredisant les attentes d'afflux de capitaux vers ce secteur.
 
-L'ancien PDG de Mt Gox, la plateforme d'échange décimée par le piratage de 2014, propose un hard fork du Bitcoin pour récupérer les 5 milliards de dollars de fonds clients perdus. Cette suggestion a provoqué une réaction très négative de la communauté crypto, avec des critiques demandant simplement à ce responsable de "disparaître".
-
-[Lire l'article complet →](https://gizmodo.com/disgraced-mt-gox-ceo-suggests-bitcoin-hard-fork-to-recover-5-billion-in-customer-funds-2000728118)
+[Lire l'article complet →](https://beincrypto.com/shanghai-stocks-hit-10-year/)
 
 ---
 
-### 2. While Bitcoin ETFs bled, Solana and XRP won the week – Here’s the data!
+### 2. Vitalik Buterin outlines a two-part plan to overhaul Ethereum's execution layer with a binary state tree and eventually move beyond the Ethereum virtual machine (Zack Abrams/The Block)
 
-**Source :** Ambcrypto.com (2026-03-01)
+**Source :** Techmeme.com (2026-03-02)
 
-# Résumé de l'actualité crypto
+Vitalik Buterin propose un plan en deux étapes pour transformer la couche d'exécution d'Ethereum en utilisant un arbre d'état binaire, avant de progressivement s'affranchir de la machine virtuelle Ethereum actuelle. Cette refonte viserait à améliorer les performances et l'efficacité du protocole.
 
-Alors que les ETF Bitcoin ont enregistré des sorties massives cette semaine, Solana et XRP se sont démarqués avec des performances positives, soulevant la question d'un possible redéploiement institutionnel vers d'autres actifs numériques plutôt qu'une simple faiblesse du marché.
-
-[Lire l'article complet →](https://ambcrypto.com/while-bitcoin-etfs-bled-solana-and-xrp-won-the-week-heres-the-data/)
+[Lire l'article complet →](https://www.techmeme.com/260302/p6)
 
 ---
 
-### 3. The Android ID Trap: How Google’s Developer Registry Paves the Way for Digital Tyranny
+### 3. Ethereum Price Prediction: Ethereum Is One Month Away From a Rare Capitulation Record – Bounce or Breakdown?
 
-**Source :** Naturalnews.com (2026-03-01)
+**Source :** Yahoo Entertainment (2026-03-02)
 
-# Résumé de l'article
+None
 
-À partir de septembre 2026, Google imposera que toutes les applications installées sur les appareils Android certifiés proviennent de développeurs vérifiés par ses soins, marquant une centralisation majeure du contrôle sur l'écosystème mobile. Cette mesure soulève des préoccupations quant à une possible restriction des libertés numériques et à un renforcement du pouvoir de surveillance de Google sur les développeurs et utilisateurs. Cette politique représente un tournant significatif qui pourrait limiter l'accès aux applications non approuvées et renforcer la dépendance des développeurs vis-à-vis de l'infrastructure Google.
-
-[Lire l'article complet →](https://www.naturalnews.com/2026-03-01-googles-developer-registry-paves-the-way-digital-tyranny.html)
+[Lire l'article complet →](https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_a943e646-5735-4bcc-bb5a-7fba8dda16ce)
 
 ---
 
-### 4. Ethereum Price Under Pressure: Whales, Derivatives Market Exits Signal Waning Appetite
+### 4. ‘Vibe-coding 2030 roadmap within weeks’ – Buterin’s new Ethereum vision
 
-**Source :** newsBTC (2026-03-01)
-
-# Résumé de l'actualité
-
-Le prix d'Ethereum fluctue autour des 2000 dollars, un niveau psychologique clé, mais subit une pression baissière depuis une semaine en raison de sorties massives de positions sur le marché des dérivés. Les grandes balaines (investisseurs majeurs) réduisent leurs positions, ce qui indique un affaiblissement de l'appétit des investisseurs pour la cryptomonnaie.
-
-[Lire l'article complet →](http://www.newsbtc.com/news/ethereum/ethereum-price-under-pressure-whales-and-derivatives/)
-
----
-
-### 5. Ethereum smart accounts are finally coming 'within a year' — Vitalik Buterin
-
-**Source :** Cointelegraph (2026-03-01)
+**Source :** Ambcrypto.com (2026-03-02)
 
 # Résumé
 
-La fonctionnalité d'abstraction de compte d'Ethereum sera intégrée lors du fork Hegota prévu dans un an, permettant l'émergence de comptes intelligents et de nouveaux mécanismes de paiement des frais de transaction plus flexibles. Cette mise à jour majeure devrait également améliorer la confidentialité des utilisateurs sur le réseau.
+Vitalik Buterin présente une nouvelle vision pour Ethereum avec une feuille de route "Vibe-coding 2030" qui devrait être dévoilée dans les prochaines semaines. Grâce aux expériences de codage autonome, les développements qui prenaient auparavant des années sur Ethereum peuvent désormais être réalisés en quelques semaines.
 
-[Lire l'article complet →](https://cointelegraph.com/news/ethereum-smart-accounts-are-finally-coming-within-a-year-says-vitalik)
+[Lire l'article complet →](https://ambcrypto.com/vibe-coding-2030-roadmap-within-weeks-buterins-new-ethereum-vision/)
+
+---
+
+### 5. An interactive intro to Elliptic Curve Cryptography
+
+**Source :** Growingswe.com (2026-03-02)
+
+# Résumé de l'article
+
+La cryptographie par courbes elliptiques (ECC) est expliquée de manière progressive : à partir de la géométrie des courbes, on apprend à effectuer des additions de points et des multiplications scalaires, avant de comprendre pourquoi le problème du logarithme discret elliptique (ECDLP) est difficile à résoudre. Ces fondamentaux mathématiques permettent ensuite d'implémenter les protocoles de sécurité courants comme l'échange de clés ECDH, la signature numérique ECDSA et le chiffrement ECIES.
+
+[Lire l'article complet →](https://growingswe.com/blog/elliptic-curve-cryptography)
 
 ---
 
