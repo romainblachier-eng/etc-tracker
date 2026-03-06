@@ -1,69 +1,69 @@
 ---
-title: "Actualités ETC du 2026-03-05"
-date: 2026-03-05T10:08:01+01:00
+title: "Actualités ETC du 2026-03-06"
+date: 2026-03-06T09:58:27+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Here’s what happened in crypto today: BTC ETFs, Trump, CLARITY Act, & more
+### 1. Majority of AI Models Choose Bitcoin as Top Monetary Preference: Report
 
-**Source :** Ambcrypto.com (2026-03-04)
+**Source :** ZyCrypto (2026-03-05)
+
+# Résumé :
+
+Selon une nouvelle étude, la majorité des modèles d'intelligence artificielle préfèrent Bitcoin aux autres cryptomonnaies et aux monnaies fiduciaires. Cette préférence des systèmes d'IA pour le Bitcoin pourrait refléter ses caractéristiques uniques telles que sa décentralisation et sa sécurité reconnues.
+
+[Lire l'article complet →](https://zycrypto.com/majority-of-ai-models-choose-bitcoin-as-top-monetary-preference-report/)
+
+---
+
+### 2. Price vs. Plumbing: Why Ethereum’s February Crash Collided With A Record Surge In Cold-Storage Migration
+
+**Source :** Bitcoinist (2026-03-05)
 
 # Résumé
 
-Donald Trump a mis en garde les banques contre toute tentative de saboter son agenda pro-crypto, signalant son engagement envers le secteur des cryptomonnaies. Cette déclaration intervient dans un contexte de débat autour des ETF Bitcoin et de la proposition CLARITY Act, qui visent à clarifier le cadre réglementaire des actifs numériques.
+Ethereum tente de dépasser les 2 000 dollars tandis que le marché crypto montre des signes de stabilisation après une période volatile. Paradoxalement, la chute des prix en février a coïncidé avec une migration record d'ETH vers le stockage à froid (cold storage), suggérant que les investisseurs institutionnels accumulent massivement pendant la baisse.
 
-[Lire l'article complet →](https://ambcrypto.com/heres-what-happened-in-crypto-today-btc-etfs-trump-clarity-act-more/)
-
----
-
-### 2. Bitget Lists BlockStreet (BSB) for Spot Trading
-
-**Source :** GlobeNewswire (2026-03-04)
-
-# BlockStreet (BSB) désormais disponible sur Bitget
-
-Bitget a annoncé l'ajout de BlockStreet (BSB) à sa plateforme de trading au comptant, permettant aux utilisateurs d'accéder plus facilement à cette infrastructure de liquidité unifiée. BlockStreet se positionne comme une solution pour les actifs tokenisés et les marchés de capitaux on-chain.
-
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/04/3249078/0/en/Bitget-Lists-BlockStreet-BSB-for-Spot-Trading.html)
+[Lire l'article complet →](https://bitcoinist.com/ethereum-february-crash-collided-with-cold-storage/)
 
 ---
 
-### 3. MrBeast Is Getting Into Financial Services With His Step App. Parents, Pay Attention. - The New York Times
+### 3. Ethereum price prediction: $2,500 in focus as OI spike amid Vitalik’s calls for scaling
 
-**Source :** Slashdot.org (2026-03-04)
+**Source :** Coinjournal.net (2026-03-05)
 
-# Résumé de l'actualité
+# Ethereum : vers les 2 500 $ ?
 
-MrBeast, l'influenceur populaire auprès des jeunes, lance une application financière appelée Step qui pourrait attirer un large public d'enfants et d'adolescents. Cette initiative soulève des préoccupations chez les parents concernant la sécurité des données financières et l'exposition des mineurs aux services financiers non régulés.
+Le prix d'Ethereum dépasse les 2 100 $ grâce à une augmentation significative de l'intérêt ouvert sur les marchés à terme. Un franchissement de la résistance à 2 175 $ pourrait permettre à la cryptomonnaie de cibler les 2 500 $, tandis que les importants retraits d'ETH des plateformes d'échange suggèrent une raréfaction de l'offre.
 
-[Lire l'article complet →](https://slashdot.org/firehose.pl?op=view&amp;id=180903346)
-
----
-
-### 4. 31.6 Million ETH Leaves Exchanges as Vitalik Calls for Ethereum “Sanctuary” Tech
-
-**Source :** BeInCrypto (2026-03-04)
-
-# Résumé
-
-Au début du mois de mars, une accumulation massive de 31,6 millions d'ETH quitte les plateformes d'échange, signalant une forte demande de conservation hors-ligne. Parallèlement, Vitalik Buterin, le cofondateur d'Ethereum, appelle au développement de technologies de "sanctuaire" pour protéger et sécuriser l'ETH.
-
-[Lire l'article complet →](https://beincrypto.com/investors-accelerate-eth-withdrawals-from-cexs/)
+[Lire l'article complet →](https://coinjournal.net/news/ethereum-price-prediction-2500-in-focus-as-oi-spike-amid-vitaliks-calls-for-scaling/)
 
 ---
 
-### 5. Tom Lee’s Bitmine bets on Ethereum again with fresh 50K ETH buy – Details
+### 4. Ark Invest doubles down on Coinbase, Robinhood amid 50%+ pullback
 
-**Source :** Ambcrypto.com (2026-03-04)
+**Source :** Ambcrypto.com (2026-03-05)
 
-# Résumé
+# Ark Invest augmente ses positions sur Coinbase et Robinhood malgré une baisse de plus de 50%
 
-Tom Lee's Bitmine renforce sa position haussière sur Ethereum en acquérant 50 000 ETH supplémentaires, confirmant sa stratégie d'accumulation à long terme. Cette nouvelle acquisition témoigne de la confiance de Bitmine dans le potentiel futur de la deuxième plus grande cryptomonnaie.
+Ark Invest a renforcé ses investissements dans Coinbase et Robinhood au moment où ces actions ont connu un repli supérieur à 50%. Cette décision d'Ark reflète sa confiance dans ces deux acteurs clés de l'écosystème crypto, d'autant que Robinhood accélère son expansion dans la gestion de patrimoine.
 
-[Lire l'article complet →](https://ambcrypto.com/tom-lees-bitmine-bets-on-ethereum-again-with-fresh-50k-eth-buy-details/)
+[Lire l'article complet →](https://ambcrypto.com/ark-invest-doubles-down-on-coinbase-robinhood-amid-50-pullback/)
+
+---
+
+### 5. Bitcoin jumps 20% from February lows of $60,000, approaches $72,000 as institutional demand revives
+
+**Source :** The Times of India (2026-03-05)
+
+# Bitcoin franchit les 72 000 dollars grâce au retour de la demande institutionnelle
+
+Le Bitcoin a bondi de 20% depuis ses plus bas de février (60 000 dollars) et approche désormais les 72 000 dollars, porté par un regain d'intérêt institutionnel et des entrées massives dans les ETF spot Bitcoin américains. Les principales altcoins comme l'Ethereum, le BNB et Solana suivent cette dynamique haussière, reflétant une reprise globale du marché des cryptomonnaies.
+
+[Lire l'article complet →](https://economictimes.indiatimes.com/markets/cryptocurrency/bitcoin-jumps-20-from-february-lows-of-60000-approaches-72000-as-institutional-demand-revives/articleshow/129071319.cms)
 
 ---
 
