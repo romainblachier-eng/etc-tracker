@@ -1,73 +1,67 @@
 ---
 title: "Actualités ETC du 2026-03-06"
-date: 2026-03-06T12:27:40+01:00
+date: 2026-03-06T15:52:38+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. HOW TO HIRE A RECOMMENDED CRYPTO RECOVERY SERVICE- TECHY FORCE CYBER RETRIEVAL
+### 1. US and European stocks fall as Iran war drives oil rally, bond selloff
 
-**Source :** Wolfram.com (2026-03-05)
+**Source :** CNA (2026-03-05)
 
-# Résumé reformulé :
+# Résumé de l'actualité
 
-TECHY FORCE CYBER RETRIEVAL est un service spécialisé dans la récupération de cryptomonnaies perdues ou volées comme le Bitcoin, l'Ethereum et l'USDT. Face à la croissance explosive des actifs numériques et aux risques de sécurité associés, ce type de service intervient pour aider les utilisateurs à récupérer leurs fonds disparus. Le service combine expertise technique et procédures de sécurité pour tracer et récupérer les actifs crypto compromis.
+Les marchés boursiers américains et européens reculent tandis que les obligations d'État sont liquidées, suite à la montée des prix du pétrole provoquée par les tensions géopolitiques autour du conflit entre les États-Unis, Israël et l'Iran. Cette situation d'incertitude provoque également une appréciation du dollar, refuge traditionnel des investisseurs en période de crise.
 
----
-
-**Note :** Je souligne que ces services doivent être vérifiés avec prudence. Nombreuses arnaque opèrent sous couvert de "récupération de crypto". Privilégiez les services réputés et vérifiez leurs antécédents avant de partager des informations sensibles.
-
-[Lire l'article complet →](https://community.wolfram.com/groups/-/m/t/3649563)
+[Lire l'article complet →](https://www.channelnewsasia.com/business/us-and-european-stocks-fall-iran-war-drives-oil-rally-bond-selloff-5974421)
 
 ---
 
-### 2. safe-eth-py 7.20.0
+### 2. US, European stocks fall as Iran war drives oil rally, bond selloff
 
-**Source :** Pypi.org (2026-03-05)
+**Source :** CNA (2026-03-05)
 
-Je ne dispose pas du contenu détaillé de cet article pour pouvoir le reformuler. Le titre "safe-eth-py 7.20.0" semble faire référence à une mise à jour de bibliothèque logicielle pour la Safe Ecosystem Foundation (anciennement Gnosis Safe), mais le contenu fourni est trop succinct.
+# Résumé
 
-Pourriez-vous partager le contenu complet de l'article afin que je puisse vous proposer une reformulation claire et précise en 2-3 phrases ?
+Les marchés boursiers américains et européens ont chuté de plus de 1% jeudi, tandis que les obligations d'État se sont dépréciées et le dollar s'est renforcé, en réaction à la hausse des prix du pétrole provoquée par les craintes d'approvisionnement liées à l'intensification du conflit iranien. Cette volatilité reflète l'impact des tensions géopolitiques sur les actifs financiers, où les investisseurs se tournent vers le dollar comme valeur refuge face à l'incertitude.
 
-[Lire l'article complet →](https://pypi.org/project/safe-eth-py/7.20.0/)
+[Lire l'article complet →](https://www.channelnewsasia.com/business/us-european-stocks-fall-iran-war-drives-oil-rally-bond-selloff-5974421)
 
 ---
 
-### 3. Trump nominates Kevin Warsh as Fed Chair: A pro-crypto shift?
+### 3. Alpin Yukseloglu: AI will revolutionize crypto security, superhuman auditors are on the horizon, and emerging markets offer high-yield opportunities | Bankless
+
+**Source :** Crypto Briefing (2026-03-05)
+
+# Les IA révolutionneront la sécurité crypto
+
+L'intelligence artificielle devrait transformer radicalement la sécurité des cryptomonnaies en éliminant les failles critiques des contrats intelligents, tandis que des auditeurs surhumains alimentés par l'IA émergent pour renforcer cette protection. Parallèlement, les marchés émergents offrent des opportunités de rendement élevé dans le secteur des actifs numériques.
+
+[Lire l'article complet →](https://cryptobriefing.com/alpin-yukseloglu-ai-will-revolutionize-crypto-security-superhuman-auditors-are-on-the-horizon-and-emerging-markets-offer-high-yield-opportunities-bankless/)
+
+---
+
+### 4. New Crypto Mutuum Finance (MUTM) Highlights Roadmap Progress Amid V1 Protocol Reaching $185M TVL
 
 **Source :** Ambcrypto.com (2026-03-05)
 
-# Résumé
+# Mutuum Finance (MUTM)
 
-Donald Trump a nommé Kevin Warsh à la tête de la Réserve fédérale américaine, ce qui pourrait signaler un changement d'orientation favorable aux cryptomonnaies. Cette nomination intervient dans un contexte de marché complexe et potentiellement volatile pour les actifs numériques.
+Mutuum Finance annonce des avancées majeures de sa feuille de route, avec son protocole V1 ayant atteint une valeur totale bloquée (TVL) de 185 millions de dollars. Cette croissance reflète une adoption croissante de la plateforme et une augmentation significative de l'activité au sein de l'écosystème du projet.
 
-[Lire l'article complet →](https://ambcrypto.com/donald-trump-nominates-kevin-warsh-as-fed-chair-a-pro-crypto-shift/)
-
----
-
-### 4. Dogecoin Morning Doji Star Shows Bullish Reversal That Will Send Price To $0.8
-
-**Source :** newsBTC (2026-03-05)
-
-# Résumé de l'article
-
-Le Dogecoin affiche un signal technique haussier (Morning Doji Star) qui pourrait propulser son prix jusqu'à 0,8 dollar. Malgré son statut de plus grande meme coin, le Dogecoin stagne actuellement sous 0,1 dollar et peine à retrouver les performances explosives de ses précédents sommets historiques, bloqué par un sentiment de marché négatif.
-
-[Lire l'article complet →](http://www.newsbtc.com/news/dogecoin/dogecoin-morning-doji-star-0-8/)
+[Lire l'article complet →](https://ambcrypto.com/new-crypto-mutuum-finance-mutm-highlights-roadmap-progress-amid-v1-protocol-reaching-185m-tvl/)
 
 ---
 
-### 5. Majority of AI Models Choose Bitcoin as Top Monetary Preference: Report
+### 5. US stock market crashes today: Why Dow Jones, S&P 500, Nasdaq are down today as oil prices surge — Gold and silver prices fall too
 
-**Source :** ZyCrypto (2026-03-05)
+**Source :** The Times of India (2026-03-05)
 
-# Résumé
+Les principaux indices boursiers américains ont chuté aujourd'hui : le Dow Jones a perdu 336 points à 48 402, le S&P 500 a baissé à 6 849 et le Nasdaq s'est replié à 22 768, sous la pression de la hausse des prix du pétrole et des tensions géopolitiques. Cette vente d'actions s'est accompagnée d'une baisse des prix de l'or et de l'argent, tandis que le brut WTI a dépassé les 70 dollars le baril.
 
-Selon une récente étude, la majorité des modèles d'intelligence artificielle préfèrent le Bitcoin comme méthode de paiement par rapport aux autres cryptomonnaies et monnaies fiduciaires. Cette préférence des systèmes d'IA pour le BTC suggère une reconnaissance croissante de Bitcoin comme actif monétaire de référence dans l'écosystème des cryptomonnaies.
-
-[Lire l'article complet →](https://zycrypto.com/majority-of-ai-models-choose-bitcoin-as-top-monetary-preference-report/)
+[Lire l'article complet →](https://economictimes.indiatimes.com/news/international/us/us-stock-market-crashes-today-why-dow-jones-sp-500-nasdaq-are-down-today-as-oil-prices-surge-gold-and-silver-prices-fall-too/articleshow/129097653.cms)
 
 ---
 
