@@ -7,7 +7,6 @@
   <!-- ── Titre & description ─────────────────────────────────── -->
   {{ $title := cond .IsHome (printf "%s — Cours & Analyse IA quotidienne" .Site.Title) (printf "%s | %s" .Title .Site.Title) }}
   <title>{{ $title }}</title>
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="author"      content="{{ .Site.Params.author }}">
   <meta name="keywords"    content="Ethereum Classic, ETC, cours ETC, prix ETC, analyse crypto, ETC tracker, Ethereum Classic prix">
   <meta name="language"    content="fr">
@@ -159,6 +158,9 @@
       <p class="footer-disclaimer">
         Informations fournies à titre indicatif uniquement. Pas de conseil en investissement.
       </p>
+            <p style="margin-top:8px;font-size:.8rem;opacity:.5">
+                      Un site <a href="https://lapinbleu.art" target="_blank" rel="noopener" style="color:rgba(255,255,255,.6)">Lapin Bleu</a>a> &middot; <a href="https://romainblachier.fr" target="_blank" rel="noopener" style="color:rgba(255,255,255,.6)">romainblachier.fr</a>a>
+            </p>p>
     </div>
   </footer>
 
