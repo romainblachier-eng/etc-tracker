@@ -5,37 +5,62 @@ const score2Display = document.getElementById('score2');
 const startBtn = document.getElementById('startBtn');
 const resetBtn = document.getElementById('resetBtn');
 
+// Constants
+const KEYS = {
+    UP: ['ArrowUp', 'w', 'W'],
+    DOWN: ['ArrowDown', 's', 'S']
+};
+
+const COLORS = {
+    BG: '#000',
+    PADDLE: '#00ff00',
+    BALL: '#ffff00',
+    LINE: '#00ff00'
+};
+
+const GAME = {
+    BALL_RADIUS: 8,
+    BALL_SPEED: 5,
+    PADDLE_SPEED: 6,
+    PADDLE_WIDTH: 10,
+    PADDLE_HEIGHT: 100,
+    PADDLE1_X: 20,
+    START_Y_OFFSET: 50
+};
+
+const BUTTON_TEXTS = {
+    READY: 'Démarrer le jeu',
+    RUNNING: 'En cours...'
+};
+
 // Game objects
 const ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
-    radius: 8,
-    speedX: 5,
-    speedY: 5
+    radius: GAME.BALL_RADIUS,
+    speedX: GAME.BALL_SPEED,
+    speedY: GAME.BALL_SPEED
 };
 
 const paddle1 = {
-    x: 20,
-    y: canvas.height / 2 - 50,
-    width: 10,
-    height: 100,
-    speed: 6,
-    dy: 0
+    x: GAME.PADDLE1_X,
+    y: canvas.height / 2 - GAME.START_Y_OFFSET,
+    width: GAME.PADDLE_WIDTH,
+    height: GAME.PADDLE_HEIGHT,
+    speed: GAME.PADDLE_SPEED
 };
 
 const paddle2 = {
     x: canvas.width - 30,
-    y: canvas.height / 2 - 50,
-    width: 10,
-    height: 100,
-    speed: 6,
-    dy: 0
+    y: canvas.height / 2 - GAME.START_Y_OFFSET,
+    width: GAME.PADDLE_WIDTH,
+    height: GAME.PADDLE_HEIGHT,
+    speed: GAME.PADDLE_SPEED
 };
 
 let score1 = 0;
 let score2 = 0;
 let gameRunning = false;
-let gameStarted = false;
 
 const keys = {};
 
@@ -50,8 +75,7 @@ window.addEventListener('keyup', (e) => {
 
 startBtn.addEventListener('click', () => {
     gameRunning = true;
-    gameStarted = true;
-    startBtn.textContent = 'En cours...';
+    startBtn.textContent = BUTTON_TEXTS.RUNNING;
     startBtn.disabled = true;
 });
 
@@ -59,8 +83,7 @@ resetBtn.addEventListener('click', () => {
     score1 = 0;
     score2 = 0;
     gameRunning = false;
-    gameStarted = false;
-    startBtn.textContent = 'Démarrer le jeu';
+    startBtn.textContent = BUTTON_TEXTS.READY;
     startBtn.disabled = false;
     resetGame();
 });
@@ -68,10 +91,10 @@ resetBtn.addEventListener('click', () => {
 function resetGame() {
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
-    ball.speedX = 5 * (Math.random() > 0.5 ? 1 : -1);
-    ball.speedY = 5 * (Math.random() * 2 - 1);
-    paddle1.y = canvas.height / 2 - 50;
-    paddle2.y = canvas.height / 2 - 50;
+    ball.speedX = GAME.BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
+    ball.speedY = GAME.BALL_SPEED * (Math.random() * 2 - 1);
+    paddle1.y = canvas.height / 2 - GAME.START_Y_OFFSET;
+    paddle2.y = canvas.height / 2 - GAME.START_Y_OFFSET;
     updateScores();
 }
 
@@ -80,21 +103,56 @@ function updateScores() {
     score2Display.textContent = score2;
 }
 
+function isKeyPressed(keyList) {
+    return keyList.some(key => keys[key]);
+}
+
+function movePaddle(paddle) {
+    if (isKeyPressed(KEYS.UP)) {
+        paddle.y = Math.max(0, paddle.y - paddle.speed);
+    }
+    if (isKeyPressed(KEYS.DOWN)) {
+        paddle.y = Math.min(canvas.height - paddle.height, paddle.y + paddle.speed);
+    }
+}
+
 function handlePaddleInput() {
-    // Player 1 (Left paddle) - Arrows Up/Down or W/S
-    if (keys['ArrowUp'] || keys['w'] || keys['W']) {
-        paddle1.y = Math.max(0, paddle1.y - paddle1.speed);
-    }
-    if (keys['ArrowDown'] || keys['s'] || keys['S']) {
-        paddle1.y = Math.min(canvas.height - paddle1.height, paddle1.y + paddle1.speed);
-    }
+    movePaddle(paddle1);
 
     // Player 2 (Right paddle) - Arrows Up/Down only
-    if (keys['ArrowUp']) {
-        paddle2.y = Math.max(0, paddle2.y - paddle1.speed);
+    const player2Keys = {
+        UP: ['ArrowUp'],
+        DOWN: ['ArrowDown']
+    };
+
+    if (isKeyPressed(player2Keys.UP)) {
+        paddle2.y = Math.max(0, paddle2.y - paddle2.speed);
     }
-    if (keys['ArrowDown']) {
-        paddle2.y = Math.min(canvas.height - paddle2.height, paddle2.y + paddle1.speed);
+    if (isKeyPressed(player2Keys.DOWN)) {
+        paddle2.y = Math.min(canvas.height - paddle2.height, paddle2.y + paddle2.speed);
+    }
+}
+
+function checkPaddleCollision(paddle, isLeftPaddle) {
+    const ballLeft = ball.x - ball.radius;
+    const ballRight = ball.x + ball.radius;
+    const paddleLeft = paddle.x;
+    const paddleRight = paddle.x + paddle.width;
+    const ballTop = ball.y;
+    const ballBottom = ball.y;
+    const paddleTop = paddle.y;
+    const paddleBottom = paddle.y + paddle.height;
+
+    const horizontalCollision = isLeftPaddle
+        ? ballLeft < paddleRight && ballRight > paddleLeft
+        : ballRight > paddleLeft && ballLeft < paddleRight;
+
+    const verticalCollision = ballTop > paddleTop && ballBottom < paddleBottom;
+
+    if (horizontalCollision && verticalCollision) {
+        ball.speedX *= -1;
+        ball.x = isLeftPaddle ? paddleRight + ball.radius : paddleLeft - ball.radius;
+        ball.speedY += (ball.y - (paddle.y + paddle.height / 2)) * 0.1;
     }
 }
 
@@ -109,25 +167,8 @@ function updateBall() {
     }
 
     // Ball collision with paddles
-    if (
-        ball.x - ball.radius < paddle1.x + paddle1.width &&
-        ball.y > paddle1.y &&
-        ball.y < paddle1.y + paddle1.height
-    ) {
-        ball.speedX *= -1;
-        ball.x = paddle1.x + paddle1.width + ball.radius;
-        ball.speedY += (ball.y - (paddle1.y + paddle1.height / 2)) * 0.1;
-    }
-
-    if (
-        ball.x + ball.radius > paddle2.x &&
-        ball.y > paddle2.y &&
-        ball.y < paddle2.y + paddle2.height
-    ) {
-        ball.speedX *= -1;
-        ball.x = paddle2.x - ball.radius;
-        ball.speedY += (ball.y - (paddle2.y + paddle2.height / 2)) * 0.1;
-    }
+    checkPaddleCollision(paddle1, true);
+    checkPaddleCollision(paddle2, false);
 
     // Score points
     if (ball.x < 0) {
@@ -144,11 +185,11 @@ function updateBall() {
 
 function drawGame() {
     // Clear canvas
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = COLORS.BG;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Draw center line
-    ctx.strokeStyle = '#00ff00';
+    ctx.strokeStyle = COLORS.LINE;
     ctx.setLineDash([10, 10]);
     ctx.beginPath();
     ctx.moveTo(canvas.width / 2, 0);
@@ -157,12 +198,12 @@ function drawGame() {
     ctx.setLineDash([]);
 
     // Draw paddles
-    ctx.fillStyle = '#00ff00';
+    ctx.fillStyle = COLORS.PADDLE;
     ctx.fillRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height);
     ctx.fillRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height);
 
     // Draw ball
-    ctx.fillStyle = '#ffff00';
+    ctx.fillStyle = COLORS.BALL;
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
     ctx.fill();
