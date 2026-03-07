@@ -1,67 +1,65 @@
 ---
-title: "Actualités ETC du 2026-03-06"
-date: 2026-03-06T15:52:38+01:00
+title: "Actualités ETC du 2026-03-07"
+date: 2026-03-07T08:59:12+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. US and European stocks fall as Iran war drives oil rally, bond selloff
+### 1. Ethereum ETFs Record Best Single-Day Performance Since January With $169M Inflows
 
-**Source :** CNA (2026-03-05)
+**Source :** newsBTC (2026-03-06)
 
-# Résumé de l'actualité
+Les ETF Ethereum ont enregistré leur meilleure journée depuis janvier avec des entrées nettes de 169 millions de dollars, reflétant la reprise du marché des cryptomonnaies. Cette performance remarquable pourrait signaler le début d'une récupération plus large pour l'altcoin majeur après les récentes turbulences du marché.
 
-Les marchés boursiers américains et européens reculent tandis que les obligations d'État sont liquidées, suite à la montée des prix du pétrole provoquée par les tensions géopolitiques autour du conflit entre les États-Unis, Israël et l'Iran. Cette situation d'incertitude provoque également une appréciation du dollar, refuge traditionnel des investisseurs en période de crise.
-
-[Lire l'article complet →](https://www.channelnewsasia.com/business/us-and-european-stocks-fall-iran-war-drives-oil-rally-bond-selloff-5974421)
+[Lire l'article complet →](http://www.newsbtc.com/news/ethereum-etfs-best-performance-since-january/)
 
 ---
 
-### 2. US, European stocks fall as Iran war drives oil rally, bond selloff
+### 2. langchain-mycelia-signal added to PyPI
 
-**Source :** CNA (2026-03-05)
+**Source :** Pypi.org (2026-03-06)
 
-# Résumé
+# LangChain-Mycelia-Signal intégré à PyPI
 
-Les marchés boursiers américains et européens ont chuté de plus de 1% jeudi, tandis que les obligations d'État se sont dépréciées et le dollar s'est renforcé, en réaction à la hausse des prix du pétrole provoquée par les craintes d'approvisionnement liées à l'intensification du conflit iranien. Cette volatilité reflète l'impact des tensions géopolitiques sur les actifs financiers, où les investisseurs se tournent vers le dollar comme valeur refuge face à l'incertitude.
+Les outils LangChain pour Mycelia Signal, un oracle de prix sécurisé par cryptographie, sont désormais disponibles sur PyPI. Cette intégration permet d'automatiser les paiements en USDC sur la blockchain Base via le protocole x402, facilitant l'accès aux données de prix vérifiées de manière décentralisée.
 
-[Lire l'article complet →](https://www.channelnewsasia.com/business/us-european-stocks-fall-iran-war-drives-oil-rally-bond-selloff-5974421)
-
----
-
-### 3. Alpin Yukseloglu: AI will revolutionize crypto security, superhuman auditors are on the horizon, and emerging markets offer high-yield opportunities | Bankless
-
-**Source :** Crypto Briefing (2026-03-05)
-
-# Les IA révolutionneront la sécurité crypto
-
-L'intelligence artificielle devrait transformer radicalement la sécurité des cryptomonnaies en éliminant les failles critiques des contrats intelligents, tandis que des auditeurs surhumains alimentés par l'IA émergent pour renforcer cette protection. Parallèlement, les marchés émergents offrent des opportunités de rendement élevé dans le secteur des actifs numériques.
-
-[Lire l'article complet →](https://cryptobriefing.com/alpin-yukseloglu-ai-will-revolutionize-crypto-security-superhuman-auditors-are-on-the-horizon-and-emerging-markets-offer-high-yield-opportunities-bankless/)
+[Lire l'article complet →](https://pypi.org/project/langchain-mycelia-signal/)
 
 ---
 
-### 4. New Crypto Mutuum Finance (MUTM) Highlights Roadmap Progress Amid V1 Protocol Reaching $185M TVL
+### 3. Oil jitters and macro headwinds weigh on crypto markets as fear index hits extreme lows
 
-**Source :** Ambcrypto.com (2026-03-05)
+**Source :** Crypto Briefing (2026-03-06)
 
-# Mutuum Finance (MUTM)
+Les tensions géopolitiques sur le pétrole et les pressions macroéconomiques pèsent sur les marchés des cryptomonnaies, alimentant la volatilité. L'indice de peur des investisseurs atteint des niveaux extrêmement bas, signalant une confiance excessive qui pourrait masquer des risques d'instabilité. Cette conjonction de facteurs externes et du sentiment du marché complique la navigation des investisseurs face à une incertitude accrue.
 
-Mutuum Finance annonce des avancées majeures de sa feuille de route, avec son protocole V1 ayant atteint une valeur totale bloquée (TVL) de 185 millions de dollars. Cette croissance reflète une adoption croissante de la plateforme et une augmentation significative de l'activité au sein de l'écosystème du projet.
-
-[Lire l'article complet →](https://ambcrypto.com/new-crypto-mutuum-finance-mutm-highlights-roadmap-progress-amid-v1-protocol-reaching-185m-tvl/)
+[Lire l'article complet →](https://cryptobriefing.com/oil-jitters-macro-headwinds-crypto-markets/)
 
 ---
 
-### 5. US stock market crashes today: Why Dow Jones, S&P 500, Nasdaq are down today as oil prices surge — Gold and silver prices fall too
+### 4. KuCoin Named Bitcoin Spot Growth Leader and Top Performer in CryptoQuant's Annual Exchange Leader Report 2025
 
-**Source :** The Times of India (2026-03-05)
+**Source :** PR Newswire UK (2026-03-06)
 
-Les principaux indices boursiers américains ont chuté aujourd'hui : le Dow Jones a perdu 336 points à 48 402, le S&P 500 a baissé à 6 849 et le Nasdaq s'est replié à 22 768, sous la pression de la hausse des prix du pétrole et des tensions géopolitiques. Cette vente d'actions s'est accompagnée d'une baisse des prix de l'or et de l'argent, tandis que le brut WTI a dépassé les 70 dollars le baril.
+# KuCoin en tête de la croissance Bitcoin
 
-[Lire l'article complet →](https://economictimes.indiatimes.com/news/international/us/us-stock-market-crashes-today-why-dow-jones-sp-500-nasdaq-are-down-today-as-oil-prices-surge-gold-and-silver-prices-fall-too/articleshow/129097653.cms)
+KuCoin s'impose comme le leader incontesté de la croissance sur les marchés spot de Bitcoin, selon le rapport annuel 2025 de CryptoQuant qui analyse les performances des plus grandes plateformes d'échange. La plateforme se distingue notamment par une expansion robuste et des volumes de trading en hausse significative sur les paires Bitcoin.
+
+[Lire l'article complet →](https://www.prnewswire.co.uk/news-releases/kucoin-named-bitcoin-spot-growth-leader-and-top-performer-in-cryptoquants-annual-exchange-leader-report-2025-302706231.html)
+
+---
+
+### 5. Dogecoin (DOGE) Retreats, Market Eyes Potential Extended Pullback
+
+**Source :** newsBTC (2026-03-06)
+
+# Dogecoin en repli
+
+Dogecoin a chuté sous la barre des 0,10 dollar et teste actuellement le support à 0,0920 dollar. La cryptomonnaie pourrait connaître une correction prolongée si elle ne parvient pas à franchir le niveau de résistance à 0,0965 dollar.
+
+[Lire l'article complet →](http://www.newsbtc.com/analysis/doge/dogecoin-doge-retreats-0-095/)
 
 ---
 
