@@ -1,69 +1,69 @@
 ---
 title: "Actualités ETC du 2026-03-09"
-date: 2026-03-09T00:17:12+01:00
+date: 2026-03-09T04:37:26+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Crypto News: Pepeto Adds Binance Executive while Ethereum Price Prediction Hits $10,000 Target
+### 1. Aave’s revenue surges despite DAO turmoil – Is lending DeFi’s backbone now?
 
-**Source :** GlobeNewswire (2026-03-07)
+**Source :** Ambcrypto.com (2026-03-08)
 
 # Résumé
 
-Pepeto renforce son équipe en accueillant un ancien cadre de Binance comme conseiller stratégique, ce qui légitime le projet avant son lancement. Parallèlement, les analystes prévoient un prix Ethereum de 10 000 dollars, reflétant les attentes haussières du marché des cryptomonnaies.
+Malgré les turbulences internes au sein de sa DAO, Aave enregistre une augmentation significative de ses revenus, ce qui soulève la question de savoir si le lending est devenu l'épine dorsale de la DeFi. Cette croissance suggère que les protocoles de prêt restent un secteur clé et résilient du secteur des finances décentralisées, indépendamment des défis de gouvernance.
 
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251422/0/en/Crypto-News-Pepeto-Adds-Binance-Executive-while-Ethereum-Price-Prediction-Hits-10-000-Target.html)
-
----
-
-### 2. Crypto News: New Crypto Pepeto Crosses $7.725M Presale While Cardano Price Prediction Targets $10
-
-**Source :** GlobeNewswire (2026-03-07)
-
-# Reformulation :
-
-La nouvelle cryptomonnaie Pepeto a dépassé les 7,725 millions de dollars levés lors de sa présale, ce qui est remarquable alors que l'indice Peur et Avidité du marché affiche une valeur basse de 18. Parallèlement, Cardano est au cœur d'une prédiction tarifaire ambitionnant les 10 dollars, suggérant une certaine confiance des investisseurs malgré le contexte de marché actuel plutôt pessimiste.
-
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251421/0/en/Crypto-News-New-Crypto-Pepeto-Crosses-7-725M-Presale-While-Cardano-Price-Prediction-Targets-10.html)
+[Lire l'article complet →](https://ambcrypto.com/aaves-revenue-surges-despite-dao-turmoil-is-lending-defis-backbone-now/)
 
 ---
 
-### 3. Ethereum Under Pressure As Researchers Issue Critical Report
+### 2. Solana’s 755% Surge Shows That Users Are Coming Back To The Table
 
-**Source :** Bitcoinist (2026-03-07)
+**Source :** Bitcoinist (2026-03-08)
 
-# Ethereum sous pression suite à un rapport critique
+# Solana enregistre une hausse spectaculaire de 755%
 
-Ethereum fait face à une nouvelle vague de critiques après la publication d'un rapport négatif de Culper Research, qui remet en question la viabilité de la deuxième plus grande cryptomonnaie par capitalisation boursière. Les chercheurs pointent des faiblesses structurelles dans l'écosystème ETH et remettent en doute ses perspectives à long terme.
+Le volume de paiements sur le réseau Solana (SOL) a explosé de 755% selon un rapport de Messari, signalant un retour de confiance des utilisateurs après plusieurs mois de baisse. Cette reprise suggère que le réseau gagne à nouveau en attractivité et regagne du momentum face au marché baissier précédent.
 
-[Lire l'article complet →](https://bitcoinist.com/ethereum-under-pressure/)
+[Lire l'article complet →](https://bitcoinist.com/solana-users-are-coming-back/)
 
 ---
 
-### 4. Crypto News: Pepeto Presale Holders Life-Time Revenue Sharing Sends Wallets Rushing While Bitcoin Price Prediction Targets $300K
+### 3. Crypto News: Pepeto Adds Binance Executive while Ethereum Price Prediction Hits $10,000 Target
 
 **Source :** GlobeNewswire (2026-03-07)
 
 # Résumé de l'actualité crypto
 
-Pepeto connaît une croissance exceptionnelle en phase de présale, avec un afflux quotidien de nouveaux investisseurs attirés par son système de partage de revenus à vie. Parallèlement, les analystes maintiennent des prévisions haussières pour le Bitcoin, certains ciblant les 300 000 dollars.
+Pepeto a nommé un ancien cadre de Binance en tant que conseiller stratégique, ce qui renforce la crédibilité du projet en phase de présale. Dans le même temps, les analystes prédisent que le prix d'Ethereum pourrait atteindre les 10 000 dollars, reflétant un optimisme croissant sur le marché des cryptomonnaies.
 
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251416/0/en/Crypto-News-Pepeto-Presale-Holders-Life-Time-Revenue-Sharing-Sends-Wallets-Rushing-While-Bitcoin-Price-Prediction-Targets-300K.html)
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251422/0/en/Crypto-News-Pepeto-Adds-Binance-Executive-while-Ethereum-Price-Prediction-Hits-10-000-Target.html)
 
 ---
 
-### 5. Ethereum Based Crypto Pepeto Announces Binance Smart Chain Bridge And Ethereum Price Prediction Targets $8K
+### 4. Crypto News: New Crypto Pepeto Crosses $7.725M Presale While Cardano Price Prediction Targets $10
 
 **Source :** GlobeNewswire (2026-03-07)
 
-# Résumé
+# Résumé de l'actualité crypto
 
-Pepeto, un projet cryptographique basé sur Ethereum, a activé un pont vers la Binance Smart Chain, permettant une interopérabilité entre les deux blockchains, tandis que sa levée de fonds atteint 7,725 millions de dollars avec un engouement sans précédent. L'équipe affiche des prédictions haussières sur le prix d'Ethereum, ciblant les 8 000 dollars.
+Pepeto, une nouvelle cryptomonnaie, a dépassé les 7,725 millions de dollars levés en phase de présale, une performance remarquable dans un contexte de marché baissier où l'indice Fear and Greed est à 18. Parallèlement, Cardano fait l'objet de prédictions tarifaires visant un prix cible de 10 dollars.
 
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251415/0/en/Ethereum-Based-Crypto-Pepeto-Announces-Binance-Smart-Chain-Bridge-And-Ethereum-Price-Prediction-Targets-8K.html)
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251421/0/en/Crypto-News-New-Crypto-Pepeto-Crosses-7-725M-Presale-While-Cardano-Price-Prediction-Targets-10.html)
+
+---
+
+### 5. Ethereum Under Pressure As Researchers Issue Critical Report
+
+**Source :** Bitcoinist (2026-03-07)
+
+# Ethereum face à des critiques sévères
+
+Ethereum subit une pression accrue suite à la publication d'un rapport très critique de Culper Research, qui exprime une position baissière sur la deuxième plus grande cryptomonnaie par capitalisation. Le rapport remet en question les fondamentaux clés de l'écosystème ETH et ses perspectives à long terme.
+
+[Lire l'article complet →](https://bitcoinist.com/ethereum-under-pressure/)
 
 ---
 
