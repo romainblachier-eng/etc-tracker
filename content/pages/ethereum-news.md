@@ -1,69 +1,69 @@
 ---
-title: "Actualités ETC du 2026-03-08"
-date: 2026-03-08T08:59:40+01:00
+title: "Actualités ETC du 2026-03-09"
+date: 2026-03-09T00:17:12+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Bitcoin slips below $70,000 as crypto market sell-off triggers $329 million liquidations
+### 1. Crypto News: Pepeto Adds Binance Executive while Ethereum Price Prediction Hits $10,000 Target
 
-**Source :** The Times of India (2026-03-07)
-
-# Bitcoin chute sous les 70 000 dollars
-
-Le Bitcoin a chuté sous la barre des 70 000 dollars suite à une vague de ventes massives sur le marché des cryptomonnaies, provoquant la liquidation de 329 millions de dollars en positions à effet de levier. Ethereum et les principales altcoins ont également enregistré des baisses dans un contexte marqué par les tensions géopolitiques et l'incertitude macroéconomique.
-
-[Lire l'article complet →](https://economictimes.indiatimes.com/markets/cryptocurrency/bitcoin-slips-below-70000-as-crypto-market-sell-off-triggers-329-million-liquidations/articleshow/129201601.cms)
-
----
-
-### 2. Women crypto investors grow 116.8% in India, hold 4 different digital assets: CoinDCX
-
-**Source :** The Times of India (2026-03-07)
+**Source :** GlobeNewswire (2026-03-07)
 
 # Résumé
 
-En Inde, le nombre de femmes investisseurs en cryptomonnaies a explosé de 116.8%, avec une détention moyenne de quatre actifs numériques différents par investisseuse. Cette croissance s'observe aussi bien dans les grandes métropoles que dans les régions moins urbanisées, les femmes représentant désormais plus de 15% de la base totale d'investisseurs en crypto.
+Pepeto renforce son équipe en accueillant un ancien cadre de Binance comme conseiller stratégique, ce qui légitime le projet avant son lancement. Parallèlement, les analystes prévoient un prix Ethereum de 10 000 dollars, reflétant les attentes haussières du marché des cryptomonnaies.
 
-[Lire l'article complet →](https://economictimes.indiatimes.com/markets/cryptocurrency/women-crypto-investors-grow-116-8-in-india-hold-4-different-digital-assets-coindcx/articleshow/129201383.cms)
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251422/0/en/Crypto-News-Pepeto-Adds-Binance-Executive-while-Ethereum-Price-Prediction-Hits-10-000-Target.html)
 
 ---
 
-### 3. Buterin Says Ethereum Must Rethink Its Future: Here’s Why
+### 2. Crypto News: New Crypto Pepeto Crosses $7.725M Presale While Cardano Price Prediction Targets $10
+
+**Source :** GlobeNewswire (2026-03-07)
+
+# Reformulation :
+
+La nouvelle cryptomonnaie Pepeto a dépassé les 7,725 millions de dollars levés lors de sa présale, ce qui est remarquable alors que l'indice Peur et Avidité du marché affiche une valeur basse de 18. Parallèlement, Cardano est au cœur d'une prédiction tarifaire ambitionnant les 10 dollars, suggérant une certaine confiance des investisseurs malgré le contexte de marché actuel plutôt pessimiste.
+
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251421/0/en/Crypto-News-New-Crypto-Pepeto-Crosses-7-725M-Presale-While-Cardano-Price-Prediction-Targets-10.html)
+
+---
+
+### 3. Ethereum Under Pressure As Researchers Issue Critical Report
 
 **Source :** Bitcoinist (2026-03-07)
 
-# Résumé de l'actualité
+# Ethereum sous pression suite à un rapport critique
 
-Vitalik Buterin appelle l'écosystème Ethereum à être plus ambitieux dans le développement d'applications et de solutions sur la blockchain, tout en préservant les garanties fondamentales de la couche de base. Il propose une réflexion de fond sur les applications, portefeuilles et la culture du projet pour redéfinir l'avenir de la plateforme.
+Ethereum fait face à une nouvelle vague de critiques après la publication d'un rapport négatif de Culper Research, qui remet en question la viabilité de la deuxième plus grande cryptomonnaie par capitalisation boursière. Les chercheurs pointent des faiblesses structurelles dans l'écosystème ETH et remettent en doute ses perspectives à long terme.
 
-[Lire l'article complet →](https://bitcoinist.com/buterin-ethereum-must-rethink-its-future/)
-
----
-
-### 4. Solana Rally Over? SOL Risks 2022-Like Correction As Price Erases Mid-Week Recovery
-
-**Source :** newsBTC (2026-03-07)
-
-# Reformulation
-
-Solana (SOL) a perdu ses gains récents suite au repli du marché crypto général, malgré une demande institutionnelle soutenue pour les produits d'investissement basés sur cette cryptomonnaie. Plusieurs analystes avertissent que SOL pourrait subir une correction plus profonde, comparable à celle observée en 2022.
-
-[Lire l'article complet →](http://www.newsbtc.com/news/solana-risks-2022-correction-price-erases-recovery/)
+[Lire l'article complet →](https://bitcoinist.com/ethereum-under-pressure/)
 
 ---
 
-### 5. Top Bullish Predictions for XRP, BNB, Solana, Cardano, Tron Align with Fresh Chart Data
+### 4. Crypto News: Pepeto Presale Holders Life-Time Revenue Sharing Sends Wallets Rushing While Bitcoin Price Prediction Targets $300K
 
-**Source :** ZyCrypto (2026-03-07)
+**Source :** GlobeNewswire (2026-03-07)
 
 # Résumé de l'actualité crypto
 
-Les analystes partagent des prévisions optimistes pour XRP, BNB, Solana, Cardano et Tron au début du mois de mars, s'appuyant sur une amélioration des structures techniques de ces altcoins. Ces signaux haussiers sont alignés avec les dernières données graphiques, suggérant un potentiel de reprise sur ces cryptomonnaies.
+Pepeto connaît une croissance exceptionnelle en phase de présale, avec un afflux quotidien de nouveaux investisseurs attirés par son système de partage de revenus à vie. Parallèlement, les analystes maintiennent des prévisions haussières pour le Bitcoin, certains ciblant les 300 000 dollars.
 
-[Lire l'article complet →](https://zycrypto.com/top-bullish-predictions-for-xrp-bnb-solana-cardano-tron-align-with-fresh-chart-data/)
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251416/0/en/Crypto-News-Pepeto-Presale-Holders-Life-Time-Revenue-Sharing-Sends-Wallets-Rushing-While-Bitcoin-Price-Prediction-Targets-300K.html)
+
+---
+
+### 5. Ethereum Based Crypto Pepeto Announces Binance Smart Chain Bridge And Ethereum Price Prediction Targets $8K
+
+**Source :** GlobeNewswire (2026-03-07)
+
+# Résumé
+
+Pepeto, un projet cryptographique basé sur Ethereum, a activé un pont vers la Binance Smart Chain, permettant une interopérabilité entre les deux blockchains, tandis que sa levée de fonds atteint 7,725 millions de dollars avec un engouement sans précédent. L'équipe affiche des prédictions haussières sur le prix d'Ethereum, ciblant les 8 000 dollars.
+
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251415/0/en/Ethereum-Based-Crypto-Pepeto-Announces-Binance-Smart-Chain-Bridge-And-Ethereum-Price-Prediction-Targets-8K.html)
 
 ---
 
