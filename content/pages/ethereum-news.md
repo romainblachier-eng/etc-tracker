@@ -1,69 +1,69 @@
 ---
 title: "Actualités ETC du 2026-03-09"
-date: 2026-03-09T04:37:26+01:00
+date: 2026-03-09T10:30:47+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Aave’s revenue surges despite DAO turmoil – Is lending DeFi’s backbone now?
+### 1. ETH price alert: $2,100 floor recovered amid whales tracking ethereum-based protocols
 
 **Source :** Ambcrypto.com (2026-03-08)
 
-# Résumé
+# Résumé de l'actualité
 
-Malgré les turbulences internes au sein de sa DAO, Aave enregistre une augmentation significative de ses revenus, ce qui soulève la question de savoir si le lending est devenu l'épine dorsale de la DeFi. Cette croissance suggère que les protocoles de prêt restent un secteur clé et résilient du secteur des finances décentralisées, indépendamment des défis de gouvernance.
+Ethereum a retrouvé un plancher de 2 100 dollars, signalant une stabilisation de l'écosystème après une période de volatilité. Cette reprise coïncide avec une activité accrue des baleines (gros investisseurs) qui suivent de près les protocoles basés sur Ethereum, suggérant un intérêt institutionnel renouvelé pour l'asset.
 
-[Lire l'article complet →](https://ambcrypto.com/aaves-revenue-surges-despite-dao-turmoil-is-lending-defis-backbone-now/)
-
----
-
-### 2. Solana’s 755% Surge Shows That Users Are Coming Back To The Table
-
-**Source :** Bitcoinist (2026-03-08)
-
-# Solana enregistre une hausse spectaculaire de 755%
-
-Le volume de paiements sur le réseau Solana (SOL) a explosé de 755% selon un rapport de Messari, signalant un retour de confiance des utilisateurs après plusieurs mois de baisse. Cette reprise suggère que le réseau gagne à nouveau en attractivité et regagne du momentum face au marché baissier précédent.
-
-[Lire l'article complet →](https://bitcoinist.com/solana-users-are-coming-back/)
+[Lire l'article complet →](https://ambcrypto.com/eth-price-alert-2100-floor-recovered-amid-whales-tracking-ethereum-based-protocols/)
 
 ---
 
-### 3. Crypto News: Pepeto Adds Binance Executive while Ethereum Price Prediction Hits $10,000 Target
+### 2. Solana vs Ethereum – $4.4T traded, RWA holders flipped – But who wins?
 
-**Source :** GlobeNewswire (2026-03-07)
+**Source :** Ambcrypto.com (2026-03-08)
 
-# Résumé de l'actualité crypto
+# Solana et Ethereum : la bataille pour la suprématie
 
-Pepeto a nommé un ancien cadre de Binance en tant que conseiller stratégique, ce qui renforce la crédibilité du projet en phase de présale. Dans le même temps, les analystes prédisent que le prix d'Ethereum pourrait atteindre les 10 000 dollars, reflétant un optimisme croissant sur le marché des cryptomonnaies.
+Solana surpasse Ethereum en termes de croissance du trading de détail avec 4,4 billions de dollars échangés, tandis qu'Ethereum conserve une avance significative en liquidité institutionnelle profonde. Les détenteurs d'actifs tokenisés du monde réel (RWA) ont basculé entre les deux blockchains, reflétant une compétition accrue pour capter les différents segments du marché.
 
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251422/0/en/Crypto-News-Pepeto-Adds-Binance-Executive-while-Ethereum-Price-Prediction-Hits-10-000-Target.html)
-
----
-
-### 4. Crypto News: New Crypto Pepeto Crosses $7.725M Presale While Cardano Price Prediction Targets $10
-
-**Source :** GlobeNewswire (2026-03-07)
-
-# Résumé de l'actualité crypto
-
-Pepeto, une nouvelle cryptomonnaie, a dépassé les 7,725 millions de dollars levés en phase de présale, une performance remarquable dans un contexte de marché baissier où l'indice Fear and Greed est à 18. Parallèlement, Cardano fait l'objet de prédictions tarifaires visant un prix cible de 10 dollars.
-
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/07/3251421/0/en/Crypto-News-New-Crypto-Pepeto-Crosses-7-725M-Presale-While-Cardano-Price-Prediction-Targets-10.html)
+[Lire l'article complet →](https://ambcrypto.com/solana-vs-ethereum-4-4t-traded-rwa-holders-flipped-but-who-wins/)
 
 ---
 
-### 5. Ethereum Under Pressure As Researchers Issue Critical Report
+### 3. $2.6B options expire today, utility protocols in focus as traders position for what’s next
 
-**Source :** Bitcoinist (2026-03-07)
+**Source :** Ambcrypto.com (2026-03-08)
 
-# Ethereum face à des critiques sévères
+# Résumé de l'article
 
-Ethereum subit une pression accrue suite à la publication d'un rapport très critique de Culper Research, qui exprime une position baissière sur la deuxième plus grande cryptomonnaie par capitalisation. Le rapport remet en question les fondamentaux clés de l'écosystème ETH et ses perspectives à long terme.
+**2,6 milliards de dollars d'options expirent aujourd'hui**, créant un point d'inflexion technique majeur sur le marché crypto. Les traders positionnent actuellement leurs portefeuilles en anticipation des mouvements de prix, tandis que les protocoles utilitaires attirent particulièrement l'attention des investisseurs face à cette volatilité attendue.
 
-[Lire l'article complet →](https://bitcoinist.com/ethereum-under-pressure/)
+[Lire l'article complet →](https://ambcrypto.com/2-6b-options-expire-today-utility-protocols-in-focus-as-traders-position-for-whats-next/)
+
+---
+
+### 4. South Korea moves to block USDT and USDC from corporate trading – Details
+
+**Source :** Ambcrypto.com (2026-03-08)
+
+# Résumé de l'actualité
+
+La Corée du Sud envisage d'interdire l'utilisation des stablecoins USDT et USDC (adossés au dollar américain) pour les transactions commerciales, soulevant des inquiétudes sur la domination des devises numériques libellées en dollars. Cette mesure reflète les préoccupations de certains gouvernements concernant l'impact de la prédominance des stablecoins américains sur les alternatives locales et régionales.
+
+[Lire l'article complet →](https://ambcrypto.com/south-korea-moves-to-block-usdt-and-usdc-from-corporate-trading-details/)
+
+---
+
+### 5. The rise of yield infrastructure for long-term crypto holders
+
+**Source :** Ambcrypto.com (2026-03-08)
+
+# Résumé de l'article
+
+Les détenteurs de cryptomonnaies à long terme bénéficient de plus en plus d'une infrastructure de rendement sophistiquée qui leur permet de générer des revenus passifs sur leurs actifs. Cette tendance reflète la maturation du marché crypto, où les investisseurs cherchent à optimiser leurs gains au-delà de la simple appréciation du prix. Les plateformes de staking, de prêt et de farming deviennent ainsi des outils essentiels pour les investisseurs patient ayant une stratégie d'accumulation à long terme.
+
+[Lire l'article complet →](https://ambcrypto.com/the-rise-of-yield-infrastructure-for-long-term-crypto-holders/)
 
 ---
 
