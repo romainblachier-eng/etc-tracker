@@ -1,69 +1,67 @@
 ---
-title: "Actualités ETC du 2026-03-09"
-date: 2026-03-09T10:30:47+01:00
+title: "Actualités ETC du 2026-03-10"
+date: 2026-03-10T09:43:15+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. ETH price alert: $2,100 floor recovered amid whales tracking ethereum-based protocols
+### 1. Solana price forecast as bulls fight to keep $80 support intact
 
-**Source :** Ambcrypto.com (2026-03-08)
+**Source :** Coinjournal.net (2026-03-09)
 
-# Résumé de l'actualité
+# Solana : bataille autour du support à 80 dollars
 
-Ethereum a retrouvé un plancher de 2 100 dollars, signalant une stabilisation de l'écosystème après une période de volatilité. Cette reprise coïncide avec une activité accrue des baleines (gros investisseurs) qui suivent de près les protocoles basés sur Ethereum, suggérant un intérêt institutionnel renouvelé pour l'asset.
+Solana s'échange autour de 83 dollars en mars 2026, avec les acheteurs tentant de défendre le niveau de support à 80 dollars face à la pression baissière. Si le sentiment négatif persiste, le cours pourrait chuter sous les 75 dollars, bien que des rebonds techniques soient possibles après la baisse subie par SOL face aux vents contraires macroéconomiques.
 
-[Lire l'article complet →](https://ambcrypto.com/eth-price-alert-2100-floor-recovered-amid-whales-tracking-ethereum-based-protocols/)
-
----
-
-### 2. Solana vs Ethereum – $4.4T traded, RWA holders flipped – But who wins?
-
-**Source :** Ambcrypto.com (2026-03-08)
-
-# Solana et Ethereum : la bataille pour la suprématie
-
-Solana surpasse Ethereum en termes de croissance du trading de détail avec 4,4 billions de dollars échangés, tandis qu'Ethereum conserve une avance significative en liquidité institutionnelle profonde. Les détenteurs d'actifs tokenisés du monde réel (RWA) ont basculé entre les deux blockchains, reflétant une compétition accrue pour capter les différents segments du marché.
-
-[Lire l'article complet →](https://ambcrypto.com/solana-vs-ethereum-4-4t-traded-rwa-holders-flipped-but-who-wins/)
+[Lire l'article complet →](https://coinjournal.net/news/solana-price-forecast-as-bulls-fight-to-keep-80-support-intact/)
 
 ---
 
-### 3. $2.6B options expire today, utility protocols in focus as traders position for what’s next
+### 2. typed-ethereum 0.1.2
 
-**Source :** Ambcrypto.com (2026-03-08)
+**Source :** Pypi.org (2026-03-09)
 
-# Résumé de l'article
+# Typed-Ethereum 0.1.2
 
-**2,6 milliards de dollars d'options expirent aujourd'hui**, créant un point d'inflexion technique majeur sur le marché crypto. Les traders positionnent actuellement leurs portefeuilles en anticipation des mouvements de prix, tandis que les protocoles utilitaires attirent particulièrement l'attention des investisseurs face à cette volatilité attendue.
+La version 0.1.2 de Typed-Ethereum propose des clients asynchrones entièrement typés et validés pour accéder aux APIs du réseau Ethereum et d'Etherscan. Cet outil permet aux développeurs d'interagir avec la blockchain Ethereum de manière sécurisée et structurée, en garantissant la conformité des données échangées.
 
-[Lire l'article complet →](https://ambcrypto.com/2-6b-options-expire-today-utility-protocols-in-focus-as-traders-position-for-whats-next/)
-
----
-
-### 4. South Korea moves to block USDT and USDC from corporate trading – Details
-
-**Source :** Ambcrypto.com (2026-03-08)
-
-# Résumé de l'actualité
-
-La Corée du Sud envisage d'interdire l'utilisation des stablecoins USDT et USDC (adossés au dollar américain) pour les transactions commerciales, soulevant des inquiétudes sur la domination des devises numériques libellées en dollars. Cette mesure reflète les préoccupations de certains gouvernements concernant l'impact de la prédominance des stablecoins américains sur les alternatives locales et régionales.
-
-[Lire l'article complet →](https://ambcrypto.com/south-korea-moves-to-block-usdt-and-usdc-from-corporate-trading-details/)
+[Lire l'article complet →](https://pypi.org/project/typed-ethereum/0.1.2/)
 
 ---
 
-### 5. The rise of yield infrastructure for long-term crypto holders
+### 3. Bitcoin USD Dominance Drops to 58%: Smart Capital Rotating Into Ethereum?
 
-**Source :** Ambcrypto.com (2026-03-08)
+**Source :** Yahoo Entertainment (2026-03-09)
 
-# Résumé de l'article
+None
 
-Les détenteurs de cryptomonnaies à long terme bénéficient de plus en plus d'une infrastructure de rendement sophistiquée qui leur permet de générer des revenus passifs sur leurs actifs. Cette tendance reflète la maturation du marché crypto, où les investisseurs cherchent à optimiser leurs gains au-delà de la simple appréciation du prix. Les plateformes de staking, de prêt et de farming deviennent ainsi des outils essentiels pour les investisseurs patient ayant une stratégie d'accumulation à long terme.
+[Lire l'article complet →](https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_6407f0af-fce8-4afc-ac74-170f3e1918b8)
 
-[Lire l'article complet →](https://ambcrypto.com/the-rise-of-yield-infrastructure-for-long-term-crypto-holders/)
+---
+
+### 4. Ethereum price prediction as ETH teeters below $2,000
+
+**Source :** Coinjournal.net (2026-03-09)
+
+# Ethereum sous pression
+
+Le prix d'Ethereum peine à se maintenir au-dessus des 2 000 dollars, bloqué sous la résistance clé de 2 150 dollars. Les sorties d'échanges suggèrent cependant une accumulation à long terme des investisseurs, tandis que le support à 1 800 dollars reste le niveau critique à surveiller pour les traders.
+
+[Lire l'article complet →](https://coinjournal.net/news/ethereum-price-prediction-as-eth-teeters-below-2000/)
+
+---
+
+### 5. refinet-pillar added to PyPI
+
+**Source :** Pypi.org (2026-03-09)
+
+# Refinet-Pillar intégré à PyPI
+
+Le package **Refinet-Pillar**, un nœud mesh souverain utilisant l'identité Ed25519 et le chiffrement de réseau, a été ajouté au registre PyPI. Cette intégration facilite le déploiement et l'installation de cette solution de réseau maillé décentralisé pour les développeurs Python.
+
+[Lire l'article complet →](https://pypi.org/project/refinet-pillar/)
 
 ---
 
