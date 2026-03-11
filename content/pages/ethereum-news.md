@@ -1,73 +1,69 @@
 ---
-title: "Actualités ETC du 2026-03-10"
-date: 2026-03-10T10:05:55+01:00
+title: "Actualités ETC du 2026-03-11"
+date: 2026-03-11T10:07:31+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. MEXC Publishes January-February Bimonthly Security Report: $4.09M in Intercepted Fraud, 267% Bitcoin Reserve Coverage
+### 1. Strategy Buys Another 17,994 BTC In $1.28 Billion Bitcoin Purchase
 
-**Source :** GlobeNewswire (2026-03-09)
-
-# Résumé de l'actualité
-
-La plateforme d'échange MEXC a publié son rapport de sécurité bimensuel pour janvier-février, révélant l'interception de 4,09 millions de dollars en tentatives de fraude. L'exchange affiche des réserves solides avec un taux de couverture Bitcoin de 267% (dépassant de 167% les avoirs des utilisateurs) et des couvertures satisfaisantes pour l'Ethereum (112%), l'USDT (117%) et l'USDC (124%).
-
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/09/3251631/0/en/MEXC-Publishes-January-February-Bimonthly-Security-Report-4-09M-in-Intercepted-Fraud-267-Bitcoin-Reserve-Coverage.html)
-
----
-
-### 2. MEXC Publishes January-February Bimonthly Security Report: $4.09M in Intercepted Fraud, 267% Bitcoin Reserve Coverage
-
-**Source :** GlobeNewswire (2026-03-09)
+**Source :** Bitcoinist (2026-03-10)
 
 # Résumé de l'actualité
 
-La plateforme d'échange MEXC a publié son rapport de sécurité bimensuel pour janvier-février, révélant l'interception de 4,09 millions de dollars en tentatives de fraude. L'exchange affiche des réserves solides avec un taux de couverture Bitcoin de 267% (dépassant de 167% les avoirs des utilisateurs) et des couvertures satisfaisantes pour l'Ethereum (112%), l'USDT (117%) et l'USDC (124%).
+La société Strategy a acquis 17 994 bitcoins pour 1,28 milliard de dollars, poursuivant ainsi sa stratégie d'accumulation de réserves en cryptomonnaies. Cette nouvelle acquisition démontre l'engagement continu du PDG Michael Saylor à renforcer le portefeuille Bitcoin de l'entreprise.
 
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/09/3251625/0/en/MEXC-Publishes-January-February-Bimonthly-Security-Report-4-09M-in-Intercepted-Fraud-267-Bitcoin-Reserve-Coverage.html)
-
----
-
-### 3. coinvela – Compare live crypto prices and fees to buy or sell
-
-**Source :** Betalist.com (2026-03-09)
-
-Je remarque que le contenu fourni est très minimaliste (seulement le titre répété). Pourriez-vous me fournir le corps complet de l'article ? 
-
-En attendant, voici ce que je peux proposer basé sur le titre seul :
-
-**Coinvela est une plateforme qui permet de comparer en temps réel les prix des cryptomonnaies et les frais associés aux transactions d'achat et de vente.** Cette solution facilite le choix du meilleur exchange pour effectuer ses opérations de trading.
-
-Si vous disposez du contenu détaillé de l'article, je pourrai vous proposer une reformulation plus précise et complète.
-
-[Lire l'article complet →](https://betalist.com/startups/coinvela)
+[Lire l'article complet →](https://bitcoinist.com/strategy-17994-btc-1-28-billion-bitcoin-purchase/)
 
 ---
 
-### 4. Solana price forecast as bulls fight to keep $80 support intact
+### 2. LiveOne (Nasdaq: LVO) Signs Multi-Year Extension with Merlin
 
-**Source :** Coinjournal.net (2026-03-09)
+**Source :** GlobeNewswire (2026-03-10)
 
-# Solana : les haussiers défendent le support des 80 dollars
+# Résumé
 
-Le prix de Solana oscillait autour de 83 dollars le 9 mars 2026, avec les acheteurs cherchant à maintenir le support clé à 80 dollars face aux pressions baissières. Si le sentiment négatif persiste, la cryptomonnaie pourrait chuter sous les 75 dollars, mais une reprise technique depuis une situation de survendeur reste possible dans un contexte de vents contraires macroéconomiques.
+LiveOne a annoncé une extension pluriannuelle de son partenariat de licensing musical avec Merlin, renforçant sa capacité à distribuer du contenu musical à l'échelle mondiale. Cet accord permet à la plateforme de divertissement et technologie basée à Los Angeles de continuer à proposer un vaste catalogue de musique aux artistes et créateurs. Cette extension témoigne de la solidité de la relation entre LiveOne et Merlin, acteur majeur dans la distribution musicale numérique.
 
-[Lire l'article complet →](https://coinjournal.net/news/solana-price-forecast-as-bulls-fight-to-keep-80-support-intact/)
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/10/3252554/0/en/LiveOne-Nasdaq-LVO-Signs-Multi-Year-Extension-with-Merlin.html)
 
 ---
 
-### 5. typed-ethereum 0.1.2
+### 3. BitMine Acquires 60,000 ETH; Chair Discusses Outlook For Ethereum And Crypto Prices
 
-**Source :** Pypi.org (2026-03-09)
+**Source :** newsBTC (2026-03-10)
 
-# Résumé de l'actualité crypto
+# BitMine renforce sa position sur Ethereum
 
-La version 0.1.2 de typed-ethereum a été publiée, offrant des clients asynchrones complètement typés et validés pour accéder aux APIs RPC des nœuds Ethereum et à l'API Etherscan. Cet outil permet aux développeurs d'interagir avec le réseau Ethereum de manière plus sécurisée et fiable grâce à la validation des données.
+BitMine Immersion Technologies, le plus grand détenteur corporatif d'Ethereum au monde, a annoncé l'acquisition de près de 61 000 ETH, consolidant ainsi sa position avec 3,7% de l'offre totale d'Ethereum. Cette accumulation massive reflète la confiance de la plus grande entreprise détentrice de cryptomonnaies dans les perspectives à long terme d'Ethereum et du marché crypto en général.
 
-[Lire l'article complet →](https://pypi.org/project/typed-ethereum/0.1.2/)
+[Lire l'article complet →](http://www.newsbtc.com/news/ethereum/bitmine-acquires-60000-eth-chair-discusses-outlook-for-ethereum-and-crypto-prices/)
+
+---
+
+### 4. Why stablecoins are becoming the preferred payment method in online casinos
+
+**Source :** Ambcrypto.com (2026-03-10)
+
+# Les stablecoins s'imposent comme le mode de paiement privilégié des casinos en ligne
+
+Les stablecoins gagnent en popularité dans les casinos en ligne grâce à leur stabilité de prix et leur rapidité de transaction, offrant une alternative aux cryptomonnaies volatiles. Cette tendance reflète la croissance explosive du secteur du jeu en ligne basé sur la blockchain, où les joueurs apprécient les dépôts et retraits quasi-instantanés sans frais de conversion importants.
+
+[Lire l'article complet →](https://ambcrypto.com/why-stablecoins-are-becoming-the-preferred-payment-method-in-online-casinos/)
+
+---
+
+### 5. solver-multirpc 3.2.1
+
+**Source :** Pypi.org (2026-03-10)
+
+# Solver-MultiRPC 3.2.1
+
+La version 3.2.1 de Solver-MultiRPC est une bibliothèque Python robuste qui permet d'interagir avec les contrats intelligents Ethereum en utilisant plusieurs points d'accès RPC simultanément. Elle garantit une meilleure fiabilité et disponibilité du service en distribuant la charge entre les différents endpoints, avec un système de tentatives automatiques en cas d'échec.
+
+[Lire l'article complet →](https://pypi.org/project/solver-multirpc/3.2.1/)
 
 ---
 
