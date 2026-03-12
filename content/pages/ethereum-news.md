@@ -1,69 +1,69 @@
 ---
-title: "Actualités ETC du 2026-03-11"
-date: 2026-03-11T10:07:31+01:00
+title: "Actualités ETC du 2026-03-12"
+date: 2026-03-12T10:07:11+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. Strategy Buys Another 17,994 BTC In $1.28 Billion Bitcoin Purchase
+### 1. XRP Price Outlook: Analyst Foresees New All-Time Highs Above $40 In 2026
 
-**Source :** Bitcoinist (2026-03-10)
-
-# Résumé de l'actualité
-
-La société Strategy a acquis 17 994 bitcoins pour 1,28 milliard de dollars, poursuivant ainsi sa stratégie d'accumulation de réserves en cryptomonnaies. Cette nouvelle acquisition démontre l'engagement continu du PDG Michael Saylor à renforcer le portefeuille Bitcoin de l'entreprise.
-
-[Lire l'article complet →](https://bitcoinist.com/strategy-17994-btc-1-28-billion-bitcoin-purchase/)
-
----
-
-### 2. LiveOne (Nasdaq: LVO) Signs Multi-Year Extension with Merlin
-
-**Source :** GlobeNewswire (2026-03-10)
+**Source :** newsBTC (2026-03-11)
 
 # Résumé
 
-LiveOne a annoncé une extension pluriannuelle de son partenariat de licensing musical avec Merlin, renforçant sa capacité à distribuer du contenu musical à l'échelle mondiale. Cet accord permet à la plateforme de divertissement et technologie basée à Los Angeles de continuer à proposer un vaste catalogue de musique aux artistes et créateurs. Cette extension témoigne de la solidité de la relation entre LiveOne et Merlin, acteur majeur dans la distribution musicale numérique.
+Le XRP a rebondi de 5% en 24 heures et s'est stabilisé au-dessus de 1,40 dollar, mais reste loin de ses sommets de 2025. L'analyste technique Egrag Crypto prévoit néanmoins que le XRP pourrait atteindre des records historiques dépassant les 40 dollars en 2026.
 
-[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/10/3252554/0/en/LiveOne-Nasdaq-LVO-Signs-Multi-Year-Extension-with-Merlin.html)
-
----
-
-### 3. BitMine Acquires 60,000 ETH; Chair Discusses Outlook For Ethereum And Crypto Prices
-
-**Source :** newsBTC (2026-03-10)
-
-# BitMine renforce sa position sur Ethereum
-
-BitMine Immersion Technologies, le plus grand détenteur corporatif d'Ethereum au monde, a annoncé l'acquisition de près de 61 000 ETH, consolidant ainsi sa position avec 3,7% de l'offre totale d'Ethereum. Cette accumulation massive reflète la confiance de la plus grande entreprise détentrice de cryptomonnaies dans les perspectives à long terme d'Ethereum et du marché crypto en général.
-
-[Lire l'article complet →](http://www.newsbtc.com/news/ethereum/bitmine-acquires-60000-eth-chair-discusses-outlook-for-ethereum-and-crypto-prices/)
+[Lire l'article complet →](http://www.newsbtc.com/xrp-news/xrp-price-outlook-analyst-foresees-new-all-time-highs-above-40-in-2026/)
 
 ---
 
-### 4. Why stablecoins are becoming the preferred payment method in online casinos
+### 2. Brera board approves Solmate pivot, cuts soccer teams to focus on Solana
 
-**Source :** Ambcrypto.com (2026-03-10)
+**Source :** Cointelegraph (2026-03-11)
 
-# Les stablecoins s'imposent comme le mode de paiement privilégié des casinos en ligne
+# Résumé
 
-Les stablecoins gagnent en popularité dans les casinos en ligne grâce à leur stabilité de prix et leur rapidité de transaction, offrant une alternative aux cryptomonnaies volatiles. Cette tendance reflète la croissance explosive du secteur du jeu en ligne basé sur la blockchain, où les joueurs apprécient les dépôts et retraits quasi-instantanés sans frais de conversion importants.
+Brera a décidé de se rebaptiser Solmate et de cesser ses activités de clubs de football pour se concentrer sur le développement d'infrastructure Solana à Abu Dhabi. L'entreprise propose également un regroupement d'actions (reverse split 10-pour-1) pour accompagner cette réorientation stratégique vers les cryptomonnaies.
 
-[Lire l'article complet →](https://ambcrypto.com/why-stablecoins-are-becoming-the-preferred-payment-method-in-online-casinos/)
+[Lire l'article complet →](https://cointelegraph.com/news/brera-solmate-pivot-solana-infrastructure-soccer-teams-reverse-stock-split)
 
 ---
 
-### 5. solver-multirpc 3.2.1
+### 3. Top Analyst Suggests Solana May Surpass XRP In Market Value: Here’s Why And When
 
-**Source :** Pypi.org (2026-03-10)
+**Source :** newsBTC (2026-03-11)
 
-# Solver-MultiRPC 3.2.1
+# Résumé de l'article
 
-La version 3.2.1 de Solver-MultiRPC est une bibliothèque Python robuste qui permet d'interagir avec les contrats intelligents Ethereum en utilisant plusieurs points d'accès RPC simultanément. Elle garantit une meilleure fiabilité et disponibilité du service en distribuant la charge entre les différents endpoints, avec un système de tentatives automatiques en cas d'échec.
+Un analyste réputé estime que Solana (SOL) pourrait bientôt dépasser XRP en capitalisation boursière, Solana étant actuellement le 7e actif cryptographique tandis que XRP occupe la 6e place. Cette projection repose sur les dynamiques de croissance respectives des deux projets et leur évolution sur le marché des cryptomonnaies.
 
-[Lire l'article complet →](https://pypi.org/project/solver-multirpc/3.2.1/)
+[Lire l'article complet →](http://www.newsbtc.com/news/solana/top-analyst-suggests-solana-may-surpass-xrp-in-market-value-heres-why-and-when/)
+
+---
+
+### 4. Bitcoin May Sink To $50K Before Rallying, Standard Chartered’s Kendrick Warns
+
+**Source :** newsBTC (2026-03-11)
+
+# Bitcoin pourrait chuter à 50 000 $ avant de rebondir
+
+Geoffrey Kendrick de Standard Chartered anticipe une baisse supplémentaire du Bitcoin jusqu'à 50 000 dollars avant un redressement significatif. Selon l'analyste, la correction actuelle s'apparente davantage à une capitulation technologique macroéconomique qu'à une crise spécifique aux cryptomonnaies.
+
+[Lire l'article complet →](http://www.newsbtc.com/bitcoin-news/bitcoin-50k-before-rallying-standard-chartered-kendrick/)
+
+---
+
+### 5. Bitcoin nears $70K as easing geopolitical tensions, weaker dollar lift sentiment
+
+**Source :** The Times of India (2026-03-11)
+
+# Bitcoin approche les 70 000 dollars
+
+Le Bitcoin se rapproche des 70 000 dollars, porté par l'apaisement des tensions géopolitiques mondiales et l'affaiblissement du dollar américain, qui renforcent l'intérêt pour les actifs numériques. Les investissements institutionnels et les rachats de positions courtes soutiennent également cette dynamique haussière. Les autres cryptomonnaies enregistrent des performances mitigées tandis que la capitalisation globale du marché affiche une légère progression.
+
+[Lire l'article complet →](https://economictimes.indiatimes.com/markets/stocks/news/bitcoin-nears-70k-as-easing-geopolitical-tensions-weaker-dollar-lift-sentiment/articleshow/129443490.cms)
 
 ---
 
