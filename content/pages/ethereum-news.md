@@ -1,69 +1,67 @@
 ---
-title: "Actualités ETC du 2026-03-12"
-date: 2026-03-12T10:07:11+01:00
+title: "Actualités ETC du 2026-03-13"
+date: 2026-03-13T09:59:15+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
 
 ## Actualités Ethereum Classic 📰
 
-### 1. XRP Price Outlook: Analyst Foresees New All-Time Highs Above $40 In 2026
+### 1. How to buy ethereum: complete guide to buying eth
 
-**Source :** newsBTC (2026-03-11)
-
-# Résumé
-
-Le XRP a rebondi de 5% en 24 heures et s'est stabilisé au-dessus de 1,40 dollar, mais reste loin de ses sommets de 2025. L'analyste technique Egrag Crypto prévoit néanmoins que le XRP pourrait atteindre des records historiques dépassant les 40 dollars en 2026.
-
-[Lire l'article complet →](http://www.newsbtc.com/xrp-news/xrp-price-outlook-analyst-foresees-new-all-time-highs-above-40-in-2026/)
-
----
-
-### 2. Brera board approves Solmate pivot, cuts soccer teams to focus on Solana
-
-**Source :** Cointelegraph (2026-03-11)
-
-# Résumé
-
-Brera a décidé de se rebaptiser Solmate et de cesser ses activités de clubs de football pour se concentrer sur le développement d'infrastructure Solana à Abu Dhabi. L'entreprise propose également un regroupement d'actions (reverse split 10-pour-1) pour accompagner cette réorientation stratégique vers les cryptomonnaies.
-
-[Lire l'article complet →](https://cointelegraph.com/news/brera-solmate-pivot-solana-infrastructure-soccer-teams-reverse-stock-split)
-
----
-
-### 3. Top Analyst Suggests Solana May Surpass XRP In Market Value: Here’s Why And When
-
-**Source :** newsBTC (2026-03-11)
+**Source :** Bitcoinfoundation.org (2026-03-10)
 
 # Résumé de l'article
 
-Un analyste réputé estime que Solana (SOL) pourrait bientôt dépasser XRP en capitalisation boursière, Solana étant actuellement le 7e actif cryptographique tandis que XRP occupe la 6e place. Cette projection repose sur les dynamiques de croissance respectives des deux projets et leur évolution sur le marché des cryptomonnaies.
+Ce guide complet explique comment acheter de l'Ethereum (Ether), où se procurer cette cryptomonnaie, comment comparer les différents coûts associés à l'achat, et comment transférer ensuite vos tokens vers un portefeuille personnel.
 
-[Lire l'article complet →](http://www.newsbtc.com/news/solana/top-analyst-suggests-solana-may-surpass-xrp-in-market-value-heres-why-and-when/)
-
----
-
-### 4. Bitcoin May Sink To $50K Before Rallying, Standard Chartered’s Kendrick Warns
-
-**Source :** newsBTC (2026-03-11)
-
-# Bitcoin pourrait chuter à 50 000 $ avant de rebondir
-
-Geoffrey Kendrick de Standard Chartered anticipe une baisse supplémentaire du Bitcoin jusqu'à 50 000 dollars avant un redressement significatif. Selon l'analyste, la correction actuelle s'apparente davantage à une capitulation technologique macroéconomique qu'à une crise spécifique aux cryptomonnaies.
-
-[Lire l'article complet →](http://www.newsbtc.com/bitcoin-news/bitcoin-50k-before-rallying-standard-chartered-kendrick/)
+[Lire l'article complet →](https://bitcoinfoundation.org/news/ethereum/how-to-buy-ethereum-complete-guide-to-buying-eth/)
 
 ---
 
-### 5. Bitcoin nears $70K as easing geopolitical tensions, weaker dollar lift sentiment
+### 2. ‘The audacity met reality’: Why Mt. Gox’s Bitcoin hard fork died in 17 hours
 
-**Source :** The Times of India (2026-03-11)
+**Source :** Ambcrypto.com (2026-03-03)
 
-# Bitcoin approche les 70 000 dollars
+# La proposition de fork de Mt. Gox s'est effondrée en 17 heures
 
-Le Bitcoin se rapproche des 70 000 dollars, porté par l'apaisement des tensions géopolitiques mondiales et l'affaiblissement du dollar américain, qui renforcent l'intérêt pour les actifs numériques. Les investissements institutionnels et les rachats de positions courtes soutiennent également cette dynamique haussière. Les autres cryptomonnaies enregistrent des performances mitigées tandis que la capitalisation globale du marché affiche une légère progression.
+La tentative de créer un fork Bitcoin pour récupérer les fonds perdus de Mt. Gox a échoué rapidement face à l'opposition massive de la communauté, illustrant que le consensus social autour de Bitcoin reste robuste contre les modifications de ses règles fondamentales. Cet événement démontre que même des situations exceptionnelles ne peuvent pas contourner les principes décentralisés qui protègent l'intégrité du réseau.
 
-[Lire l'article complet →](https://economictimes.indiatimes.com/markets/stocks/news/bitcoin-nears-70k-as-easing-geopolitical-tensions-weaker-dollar-lift-sentiment/articleshow/129443490.cms)
+[Lire l'article complet →](https://ambcrypto.com/the-audacity-met-reality-why-mt-goxs-bitcoin-hard-fork-died-in-17-hours/)
+
+---
+
+### 3. What is Ethereum? Complete guide for beginners
+
+**Source :** Bitcoinfoundation.org (2026-03-02)
+
+# Ethereum : Un réseau public pour les transactions et les applications décentralisées
+
+Ethereum est un réseau public qui enregistre les transactions et exécute des programmes décentralisés, permettant aux utilisateurs d'interagir avec des applications on-chain. Contrairement à Bitcoin qui se concentre uniquement sur les transactions, Ethereum offre une plateforme complète pour développer et déployer des applications blockchain.
+
+[Lire l'article complet →](https://bitcoinfoundation.org/news/ethereum/what-is-ethereum-complete-guide-for-beginners/)
+
+---
+
+### 4. Virtune adds five new crypto assets to the Virtune Coinbase 50 Index ETP, expanding the index ETP to a total of 26 assets
+
+**Source :** GlobeNewswire (2026-03-02)
+
+Virtune a annoncé l'ajout de cinq nouveaux actifs cryptographiques à son fonds indiciel coté (ETP) Virtune Coinbase 50, portant le nombre total d'actifs de l'indice à 26. Cette modification a été effectuée lors du rééquilibrage trimestriel du portefeuille. Cet élargissement reflète l'évolution du marché des cryptomonnaies et permet aux investisseurs d'accéder à une exposition plus diversifiée au secteur.
+
+[Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/02/3247190/0/en/Virtune-adds-five-new-crypto-assets-to-the-Virtune-Coinbase-50-Index-ETP-expanding-the-index-ETP-to-a-total-of-26-assets.html)
+
+---
+
+### 5. All about Ethereum Classic’s 9% slide and why capital concentration favors bears
+
+**Source :** Ambcrypto.com (2026-02-23)
+
+# Ethereum Classic en baisse
+
+Ethereum Classic (ETC) a chuté de 9%, pénalisée par une domination des positions courtes et une contraction de la liquidité du marché. Bien que certains signaux techniques suggèrent un potentiel rebond, les risques de baisse restent importants et la concentration du capital favorise actuellement les traders baissiers.
+
+[Lire l'article complet →](https://ambcrypto.com/all-about-ethereum-classics-9-slide-and-why-capital-concentration-favors-bears/)
 
 ---
 
