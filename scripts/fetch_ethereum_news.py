@@ -26,7 +26,7 @@ def fetch_ethereum_news(api_key: str, max_articles: int = 5) -> list:
     """Récupère les actualités Ethereum Classic depuis NewsAPI."""
     url = "https://newsapi.org/v2/everything"
     params = {
-        "q": "Ethereum Classic OR ETC",
+        "q": "\"Ethereum Classic\"",
         "sortBy": "publishedAt",
         "language": "en",
         "pageSize": max_articles,
