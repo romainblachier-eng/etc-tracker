@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{ define "content" }}
 
 {{ $pages := where .Site.RegularPages "Section" "posts" }}
 {{ $pages = $pages.ByDate.Reverse }}
