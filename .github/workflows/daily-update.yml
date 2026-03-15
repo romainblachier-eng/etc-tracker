@@ -15,8 +15,8 @@ on:
 # Permissions
 # ──────────────────────────────────────────────────
 permissions:
-  contents: write   # pour committer l'article dans main
-  pages:    write   # pour déployer sur gh-pages
+  contents: write  # pour committer l'article dans main
+  pages: write     # pour déployer sur gh-pages
 
 jobs:
   update-and-deploy:
@@ -31,6 +31,14 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
+      # 1b. Remplacer PaperMod par LoveIt si nécessaire
+      - name: Setup LoveIt theme
+        run: |
+          rm -rf themes/PaperMod
+          if [ ! -d "themes/LoveIt" ]; then
+            git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
+          fi
+
       # 2. Python
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -44,8 +52,8 @@ jobs:
       # 4. Génération de l'article du jour
       - name: Generate daily article
         env:
-          ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
-          BEEHIIV_API_KEY:        ${{ secrets.BEEHIIV_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
         run: python scripts/generate_article.py
 
@@ -53,25 +61,25 @@ jobs:
       - name: Fetch and reformulate Ethereum news
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          NEWSAPI_API_KEY:   ${{ secrets.NEWSAPI_API_KEY }}
+          NEWSAPI_API_KEY: ${{ secrets.NEWSAPI_API_KEY }}
         run: python scripts/fetch_ethereum_news.py
 
       # 5. Commit de l'article et des actualités dans la branche main
       - name: Commit new content
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content/posts/ content/pages/
           # Ne committe que s'il y a un changement
           git diff --staged --quiet || git commit -m "ETC Update — $(date +%Y-%m-%d)"
           git push
 
-      # 6. Installation de Hugo
+      # 6. Installation de Hugo (extended pour LoveIt/SCSS)
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: false
+          extended: true
 
       # 7. Build du site
       - name: Build Hugo site
@@ -82,5 +90,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:  ./public
+          publish_dir: ./public
           commit_message: "Deploy ETC Tracker — ${{ github.run_id }}"
