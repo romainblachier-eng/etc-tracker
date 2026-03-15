@@ -24,20 +24,17 @@ jobs:
 
     steps:
 
-      # 1. Checkout du dépôt (avec tout l'historique)
+      # 1. Checkout du dépôt (sans submodules)
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          submodules: recursive
 
-      # 1b. Remplacer PaperMod par LoveIt si nécessaire
+      # 1b. Installer le thème LoveIt
       - name: Setup LoveIt theme
         run: |
-          rm -rf themes/PaperMod
-          if [ ! -d "themes/LoveIt" ]; then
-            git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
-          fi
+          rm -rf themes/PaperMod themes/LoveIt
+          git clone --depth 1 https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
       # 2. Python
       - name: Set up Python 3.12
@@ -71,7 +68,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content/posts/ content/pages/
           # Ne committe que s'il y a un changement
-          git diff --staged --quiet || git commit -m "ETC Update — $(date +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "ETC Update — \$(date +%Y-%m-%d)"
           git push
 
       # 6. Installation de Hugo (extended pour LoveIt/SCSS)
