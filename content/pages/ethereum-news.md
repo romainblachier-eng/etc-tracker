@@ -1,6 +1,6 @@
 ---
-title: "Actualités ETC du 2026-03-15"
-date: 2026-03-15T14:52:21+01:00
+title: "Actualités ETC du 2026-03-16"
+date: 2026-03-16T11:13:41+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
@@ -13,7 +13,7 @@ description: "Dernières actualités Ethereum Classic reformulées par IA"
 
 # Résumé de l'article
 
-Un guide complet explique comment acheter de l'Ether (ETH), la cryptomonnaie native de la blockchain Ethereum, en passant en revue les différentes plateformes d'achat et la comparaison des frais associés. Il détaille également les étapes pour transférer et sécuriser ses coins une fois l'achat effectué.
+Pour acheter de l'Ethereum (Ether), il faut d'abord choisir une plateforme d'échange fiable, puis comparer les frais et les tarifs proposés avant de finaliser son achat. Une fois la transaction effectuée, il est important de savoir comment transférer ses tokens vers un portefeuille personnel pour sécuriser ses actifs.
 
 [Lire l'article complet →](https://bitcoinfoundation.org/news/ethereum/how-to-buy-ethereum-complete-guide-to-buying-eth/)
 
@@ -23,11 +23,9 @@ Un guide complet explique comment acheter de l'Ether (ETH), la cryptomonnaie nat
 
 **Source :** Ambcrypto.com (2026-03-03)
 
-# Mt. Gox : l'échec d'un hard fork en 17 heures
+# Mt. Gox et le hard fork Bitcoin avorté
 
-La tentative de hard fork de Bitcoin motivée par le remboursement des victimes de Mt. Gox s'est effondrée en moins d'une journée, révélant que le consensus social de la communauté reste suffisamment solide pour bloquer les modifications du protocole, même face à des arguments de justice.
-
-Cet événement soulève une question cruciale : le consensus des utilisateurs peut-il continuer à protéger Bitcoin contre les forks déstabilisants avant que des fractures profondes n'émergent dans la communauté ?
+La tentative de hard fork de Bitcoin initiée par Mt. Gox pour récupérer ses fonds s'est effondrée en seulement 17 heures, démontrant la force du consensus social qui protège BTC contre les modifications non acceptées par la communauté. Cet événement illustre comment les mineurs et nœuds du réseau ont collectivement rejeté cette modification, préservant l'intégrité du protocole Bitcoin face aux intérêts particuliers, même importants.
 
 [Lire l'article complet →](https://ambcrypto.com/the-audacity-met-reality-why-mt-goxs-bitcoin-hard-fork-died-in-17-hours/)
 
@@ -37,9 +35,9 @@ Cet événement soulève une question cruciale : le consensus des utilisateurs p
 
 **Source :** Bitcoinfoundation.org (2026-03-02)
 
-# Ethereum : Guide pour les débutants
+# Ethereum : Résumé
 
-Ethereum est un réseau public décentralisé qui enregistre les transactions et exécute des programmes informatiques de manière transparente et sécurisée. Contrairement à Bitcoin qui se concentre uniquement sur les transferts de valeur, Ethereum permet de créer et d'exécuter des applications décentralisées (dApps) et des contrats intelligents. C'est pourquoi les nouveaux utilisateurs doivent comprendre ce fonctionnement avant d'interagir avec les applications basées sur la blockchain Ethereum.
+Ethereum est un réseau public décentralisé qui enregistre les transactions et exécute des programmes informatiques, permettant à ses utilisateurs d'accéder à des applications décentralisées. Contrairement à Bitcoin qui se concentre uniquement sur les transferts de valeur, Ethereum offre une plateforme programmable pour développer et déployer des applications complexes basées sur la blockchain. C'est pourquoi les nouveaux utilisateurs doivent comprendre son fonctionnement avant d'interagir avec les applications décentralisées (dApps).
 
 [Lire l'article complet →](https://bitcoinfoundation.org/news/ethereum/what-is-ethereum-complete-guide-for-beginners/)
 
@@ -49,9 +47,7 @@ Ethereum est un réseau public décentralisé qui enregistre les transactions et
 
 **Source :** GlobeNewswire (2026-03-02)
 
-# Résumé
-
-Virtune a ajouté cinq nouveaux actifs cryptographiques à son indice Virtune Coinbase 50 Index ETP lors du rééquilibrage trimestriel, portant le nombre total d'actifs inclus à 26. Cette expansion reflète l'évolution du marché des cryptomonnaies et permet aux investisseurs de bénéficier d'une exposition plus diversifiée aux principaux actifs numériques.
+Virtune a annoncé l'ajout de cinq nouveaux actifs cryptographiques à son fonds indiciel Virtune Coinbase 50 Index ETP, portant le nombre total d'actifs à 26. Cette modification intervient lors du rééquilibrage trimestriel du portefeuille. L'ETP, coté en Bourse, offre désormais une exposition plus diversifiée au marché des cryptomonnaies.
 
 [Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/02/3247190/0/en/Virtune-adds-five-new-crypto-assets-to-the-Virtune-Coinbase-50-Index-ETP-expanding-the-index-ETP-to-a-total-of-26-assets.html)
 
@@ -63,7 +59,7 @@ Virtune a ajouté cinq nouveaux actifs cryptographiques à son indice Virtune Co
 
 # Ethereum Classic en baisse
 
-Ethereum Classic (ETC) a chuté de 9%, pénalisé par une domination des positions courtes et une liquidité en contraction sur les marchés. Bien que certains signaux techniques suggèrent un possible rebond, les risques de baisse restent importants et la concentration du capital favorise actuellement les vendeurs à découvert.
+Ethereum Classic (ETC) a enregistré une chute de 9%, amplifiée par une domination des positions courtes et une contraction de la liquidité. Bien que certains signaux techniques suggèrent une possible reprise, les risques de baisse restent importants et les investisseurs demeurent prudents.
 
 [Lire l'article complet →](https://ambcrypto.com/all-about-ethereum-classics-9-slide-and-why-capital-concentration-favors-bears/)
 
