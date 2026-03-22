@@ -8,7 +8,7 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-  defaultTheme = "auto"
+    defaultTheme = "dark"
     dateFormat = "02-01-2006"
       title = "ETC Tracker"
         description = "Suivi quotidien du cours de l'Ethereum Classic avec analyse IA"
