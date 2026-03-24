@@ -1,6 +1,6 @@
 ---
-title: "Actualités ETC du 2026-03-23"
-date: 2026-03-23T08:48:14+01:00
+title: "Actualités ETC du 2026-03-24"
+date: 2026-03-24T08:43:43+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
@@ -11,9 +11,9 @@ description: "Dernières actualités Ethereum Classic reformulées par IA"
 
 **Source :** Decrypt (2026-03-19)
 
-# Reformulation
+# Bitcoin Quantique : un prototype prometteur mais des obstacles majeurs
 
-Un prototype de Bitcoin résistant aux ordinateurs quantiques a été présenté, mais son adoption présenterait un défi majeur : elle nécessiterait que les mineurs et utilisateurs migrent vers une nouvelle blockchain "Bitcoin Quantum" plutôt que d'upgrader le réseau existant. Cette approche fragmenterait l'écosystème et compliquerait significativement la transition.
+Un prototype de Bitcoin résistant aux ordinateurs quantiques a été présenté, mais son adoption se heurte à un défi de taille : les mineurs et utilisateurs devraient migrer vers une nouvelle blockchain "Bitcoin Quantum" plutôt que de simplement mettre à niveau le réseau existant. Cette fragmentation du réseau constitue un frein significatif à son implémentation pratique.
 
 [Lire l'article complet →](https://decrypt.co/361639/quantum-ready-bitcoin-prototype-debuts-adoption-hurdles-loom)
 
@@ -23,9 +23,9 @@ Un prototype de Bitcoin résistant aux ordinateurs quantiques a été présenté
 
 **Source :** Bitcoinfoundation.org (2026-03-10)
 
-# Ethereum : Guide d'achat complet
+# Résumé de l'article
 
-L'article présente un guide complet pour acheter de l'Ether (la cryptomonnaie Ethereum), en expliquant où se procurer les tokens, comment comparer les frais et comment les transférer ultérieurement. Il couvre l'essentiel des étapes nécessaires pour les investisseurs souhaitant débuter avec Ethereum.
+Ce guide complet explique comment acheter de l'Ether (ETH), la cryptomonnaie native du réseau Ethereum, en détaillant les différentes plateformes disponibles, la comparaison des frais de transaction, et les méthodes pour transférer vos tokens après l'achat.
 
 [Lire l'article complet →](https://bitcoinfoundation.org/news/ethereum/how-to-buy-ethereum-complete-guide-to-buying-eth/)
 
@@ -35,9 +35,9 @@ L'article présente un guide complet pour acheter de l'Ether (la cryptomonnaie E
 
 **Source :** Ambcrypto.com (2026-03-03)
 
-# Le fork Bitcoin de Mt. Gox avorté en 17 heures
+# Mt. Gox : pourquoi le hard fork a échoué en 17 heures
 
-La tentative de créer un fork Bitcoin pour récupérer les fonds perdus de Mt. Gox a échoué rapidement face au consensus social fort de la communauté Bitcoin, qui s'est opposée à cette modification du protocole. Cet événement illustre la capacité de Bitcoin à résister aux modifications non consensuelles, même lorsqu'elles visent à corriger une injustice historique. Le refus collectif des utilisateurs et des mineurs démontre que le consensus social reste le véritable gardien de l'intégrité du protocole Bitcoin.
+Une tentative de hard fork de Bitcoin liée à Mt. Gox a été abandonnée rapidement face à l'opposition massive de la communauté crypto, qui a rejeté cette modification unilatérale de la blockchain. Cet événement démontre que le consensus social autour de Bitcoin reste suffisamment fort pour empêcher des bifurcations non autorisées, même lorsqu'elles proviennent d'entités influentes. La robustesse du protocole et l'adhésion des utilisateurs à ses règles établies constituent ainsi une protection durable contre les précédents dangereux pour l'intégrité du réseau.
 
 [Lire l'article complet →](https://ambcrypto.com/the-audacity-met-reality-why-mt-goxs-bitcoin-hard-fork-died-in-17-hours/)
 
@@ -49,7 +49,7 @@ La tentative de créer un fork Bitcoin pour récupérer les fonds perdus de Mt. 
 
 # Ethereum : Guide pour les débutants
 
-Ethereum est un réseau public décentralisé qui enregistre les transactions et exécute des programmes informatiques, permettant aux utilisateurs d'interagir avec des applications décentralisées. Contrairement à Bitcoin, Ethereum offre bien plus qu'une simple monnaie numérique : il fournit une plateforme programmable où les développeurs peuvent créer et déployer des applications complexes directement sur la blockchain.
+Ethereum est un réseau public décentralisé qui enregistre les transactions et exécute des programmes informatiques, offrant bien plus de fonctionnalités que les simples échanges de cryptomonnaies. Cette plateforme permet aux utilisateurs d'accéder à des applications décentralisées (dApps) sans intermédiaire, ce qui en fait un élément fondamental de l'écosystème des cryptomonnaies modernes.
 
 [Lire l'article complet →](https://bitcoinfoundation.org/news/ethereum/what-is-ethereum-complete-guide-for-beginners/)
 
@@ -59,7 +59,9 @@ Ethereum est un réseau public décentralisé qui enregistre les transactions et
 
 **Source :** GlobeNewswire (2026-03-02)
 
-Virtune a ajouté cinq nouveaux actifs cryptographiques à son ETP Virtune Coinbase 50 Index lors du rééquilibrage trimestriel, portant l'indice à un total de 26 actifs. Cette expansion reflète l'évolution du marché des cryptomonnaies et permet aux investisseurs d'accéder à une gamme plus diversifiée d'actifs numériques via cet instrument de placement coté.
+# Résumé de l'article
+
+Virtune a intégré cinq nouveaux actifs cryptographiques à son fonds indiciel coté (ETP) Virtune Coinbase 50 Index, portant le nombre total d'actifs à 26. Cette modification fait suite au rééquilibrage trimestriel du portefeuille effectué en mars 2026.
 
 [Lire l'article complet →](https://www.globenewswire.com/news-release/2026/03/02/3247190/0/en/Virtune-adds-five-new-crypto-assets-to-the-Virtune-Coinbase-50-Index-ETP-expanding-the-index-ETP-to-a-total-of-26-assets.html)
 
