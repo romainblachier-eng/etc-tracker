@@ -1,4 +1,106 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Tous les Posts - ETC Tracker</title><link>https://ethereumclassic.work/posts/</link><description>Tous les Posts | ETC Tracker</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><lastBuildDate>Mon, 23 Mar 2026 05:14:14 +0100</lastBuildDate><atom:link href="https://ethereumclassic.work/posts/" rel="self" type="application/rss+xml"/><item><title>ETC 2026-03-23 — 8.2000 $ (-0.49%)</title><link>https://ethereumclassic.work/posts/etc-2026-03-23/</link><pubDate>Mon, 23 Mar 2026 05:14:14 +0100</pubDate><author>ETC Tracker</author><guid>https://ethereumclassic.work/posts/etc-2026-03-23/</guid><description><![CDATA[<h2 id="cours-du-23-march-2026-">Cours du 23 March 2026 📉</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Tous les Posts - ETC Tracker</title><link>https://ethereumclassic.work/posts/</link><description>Tous les Posts | ETC Tracker</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><lastBuildDate>Wed, 25 Mar 2026 08:41:50 +0100</lastBuildDate><atom:link href="https://ethereumclassic.work/posts/" rel="self" type="application/rss+xml"/><item><title>ETC 2026-03-25 — 8.7300 $ (+2.23%)</title><link>https://ethereumclassic.work/posts/etc-2026-03-25/</link><pubDate>Wed, 25 Mar 2026 08:41:50 +0100</pubDate><author>ETC Tracker</author><guid>https://ethereumclassic.work/posts/etc-2026-03-25/</guid><description><![CDATA[<h2 id="cours-du-25-march-2026-">Cours du 25 March 2026 📈</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Indicateur</th>
+          <th>Valeur</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Prix USD</strong></td>
+          <td>8.7300 $</td>
+      </tr>
+      <tr>
+          <td><strong>Prix EUR</strong></td>
+          <td>7.5200 €</td>
+      </tr>
+      <tr>
+          <td><strong>Variation 24h</strong></td>
+          <td>+2.23%</td>
+      </tr>
+      <tr>
+          <td><strong>Variation 7 jours</strong></td>
+          <td>-1.15%</td>
+      </tr>
+      <tr>
+          <td><strong>Variation 30 jours</strong></td>
+          <td>+4.98%</td>
+      </tr>
+      <tr>
+          <td><strong>Capitalisation</strong></td>
+          <td>1.36 Mrd USD</td>
+      </tr>
+      <tr>
+          <td><strong>Volume 24h</strong></td>
+          <td>48.30 M USD</td>
+      </tr>
+      <tr>
+          <td><strong>Plus haut historique</strong></td>
+          <td>167.09 $</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="analyse-du-jour">Analyse du jour</h2>
+<h1 id="analyse-dethereum-classic">Analyse d&rsquo;Ethereum Classic</h1>
+<p>ETC affiche une dynamique mitigée sur les perspectives court et moyen termes. La hausse de 2,23% en 24 heures contraste avec un recul hebdomadaire de 1,15%, suggérant une volatilité caractéristique des actifs de taille moyenne. Sur 30 jours, le gain de 4,98% indique néanmoins une trajectoire positive.</p>
+<p>Avec une capitalisation boursière de 1,36 milliard USD, ETC se positionne parmi les cryptomonnaies établies, bien que le volume quotidien de 48,3 millions USD révèle une liquidité modérée. Ce ratio volume/capitalisation reflète un intérêt de trading limité comparé aux plus grands actifs.</p>
+<p>L&rsquo;écart abyssal avec le plus haut historique de 167,09 USD (mai 2021) demeure saisissant, le cours actuel ne représentant que 5,2% de ce pic. Cette distance souligne les défis structurels auxquels fait face ETC, notamment face à Ethereum (ETH) sur le segment de la finance décentralisée.</p>
+<p>La stabilité relative observée récemment suggère un marché équilibré, sans dynamique directionnelle claire à court terme.</p>
+<hr>
+<p><em>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener noreffer ">CoinGecko</a> (API publique). Analyse générée automatiquement par Claude AI (Anthropic). Ce site est fourni à titre informatif uniquement — pas de conseil en investissement.</em></p>
+]]></description></item><item><title>ETC 2026-03-24 — 8.5400 $ (+5.90%)</title><link>https://ethereumclassic.work/posts/etc-2026-03-24/</link><pubDate>Tue, 24 Mar 2026 08:43:34 +0100</pubDate><author>ETC Tracker</author><guid>https://ethereumclassic.work/posts/etc-2026-03-24/</guid><description><![CDATA[<h2 id="cours-du-24-march-2026-">Cours du 24 March 2026 📈</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Indicateur</th>
+          <th>Valeur</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Prix USD</strong></td>
+          <td>8.5400 $</td>
+      </tr>
+      <tr>
+          <td><strong>Prix EUR</strong></td>
+          <td>7.3600 €</td>
+      </tr>
+      <tr>
+          <td><strong>Variation 24h</strong></td>
+          <td>+5.90%</td>
+      </tr>
+      <tr>
+          <td><strong>Variation 7 jours</strong></td>
+          <td>-3.48%</td>
+      </tr>
+      <tr>
+          <td><strong>Variation 30 jours</strong></td>
+          <td>-2.93%</td>
+      </tr>
+      <tr>
+          <td><strong>Capitalisation</strong></td>
+          <td>1.33 Mrd USD</td>
+      </tr>
+      <tr>
+          <td><strong>Volume 24h</strong></td>
+          <td>61.16 M USD</td>
+      </tr>
+      <tr>
+          <td><strong>Plus haut historique</strong></td>
+          <td>167.09 $</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="analyse-du-jour">Analyse du jour</h2>
+<h1 id="commentaire-de-marché---etc">Commentaire de marché - ETC</h1>
+<p>Cette cryptomonnaie affiche une dynamique contrastée sur différentes temporalités. Le rebond de 5,90% sur 24 heures suggère une récente pression acheteuse, bien que les perspectives à moyen terme restent mitigées avec des replis de -3,48% sur 7 jours et -2,93% sur un mois.</p>
+<p>Avec une capitalisation de 1,33 milliard USD, l&rsquo;actif conserve une position notable dans l&rsquo;écosystème crypto, mais demeure très éloigné de son plus haut historique de 167,09 USD atteint en mai 2021 – illustrant une perte de valeur de plus de 94% depuis le pic du marché haussier précédent.</p>
+<p>Le volume d&rsquo;échanges quotidiens de 61,2 millions USD reste modéré relativement à sa capitalisation (ratio volume/market cap d&rsquo;environ 4,6%), ce qui indique une liquidité intermédiaire. Cette configuration suggère une volatilité présente, où les petits ordres peuvent générer des fluctuations notables.</p>
+<p>L&rsquo;actif semble actuellement en phase de consolidation après le rebond du jour, sans signal directif fort à court terme.</p>
+<hr>
+<p><em>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener noreffer ">CoinGecko</a> (API publique). Analyse générée automatiquement par Claude AI (Anthropic). Ce site est fourni à titre informatif uniquement — pas de conseil en investissement.</em></p>
+]]></description></item><item><title>ETC 2026-03-23 — 8.2000 $ (-0.49%)</title><link>https://ethereumclassic.work/posts/etc-2026-03-23/</link><pubDate>Mon, 23 Mar 2026 05:14:14 +0100</pubDate><author>ETC Tracker</author><guid>https://ethereumclassic.work/posts/etc-2026-03-23/</guid><description><![CDATA[<h2 id="cours-du-23-march-2026-">Cours du 23 March 2026 📉</h2>
 <table>
   <thead>
       <tr>
@@ -403,108 +505,6 @@
 <p>Avec une capitalisation boursière approchant 1,4 milliard USD et un volume de trading journalier de 72,7 millions USD, l&rsquo;actif bénéficie d&rsquo;une liquidité acceptable mais inférieure aux grands altcoins. Le ratio volume/capitalisation indique un intérêt commercial notable sans spéculation extrême.</p>
 <p>Contextuellement, le prix actuel (8,91 USD) reste éloigné de son sommet historique de 167,09 USD atteint en mai 2021, reflétant une décorrélation significative vis-à-vis des précédents cycles. Cette situation traduit à la fois les défis de positionnement de l&rsquo;ETC dans l&rsquo;écosystème blockchain et une possible reconstitution depuis les niveaux déprimés.</p>
 <p>Les variations récentes, bien que positives, demeurent mesurées à moyen terme, indiquant une consolidation sans élan décisif.</p>
-<hr>
-<p><em>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener noreffer ">CoinGecko</a> (API publique). Analyse générée automatiquement par Claude AI (Anthropic). Ce site est fourni à titre informatif uniquement — pas de conseil en investissement.</em></p>
-]]></description></item><item><title>ETC 2026-03-15 — 8.3300 $ (+0.64%)</title><link>https://ethereumclassic.work/posts/etc-2026-03-15/</link><pubDate>Sun, 15 Mar 2026 09:50:45 +0100</pubDate><author>ETC Tracker</author><guid>https://ethereumclassic.work/posts/etc-2026-03-15/</guid><description><![CDATA[<h2 id="cours-du-15-march-2026-">Cours du 15 March 2026 📈</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Indicateur</th>
-          <th>Valeur</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Prix USD</strong></td>
-          <td>8.3300 $</td>
-      </tr>
-      <tr>
-          <td><strong>Prix EUR</strong></td>
-          <td>7.2700 €</td>
-      </tr>
-      <tr>
-          <td><strong>Variation 24h</strong></td>
-          <td>+0.64%</td>
-      </tr>
-      <tr>
-          <td><strong>Variation 7 jours</strong></td>
-          <td>+2.91%</td>
-      </tr>
-      <tr>
-          <td><strong>Variation 30 jours</strong></td>
-          <td>+1.86%</td>
-      </tr>
-      <tr>
-          <td><strong>Capitalisation</strong></td>
-          <td>1.30 Mrd USD</td>
-      </tr>
-      <tr>
-          <td><strong>Volume 24h</strong></td>
-          <td>37.26 M USD</td>
-      </tr>
-      <tr>
-          <td><strong>Plus haut historique</strong></td>
-          <td>167.09 $</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="analyse-du-jour">Analyse du jour</h2>
-<h1 id="analyse-du-marché-etc">Analyse du marché ETC</h1>
-<p>Cet actif affiche une performance positive mais modérée sur les trois horizons temporels observés. La hausse de 0.64% en 24 heures et de 2.91% sur sept jours suggère une dynamique constructive, bien que la variation mensuelle à +1.86% indique une consolidation relative depuis quatre semaines.</p>
-<p>La capitalisation boursière approchant 1.3 milliard USD positionne cet actif parmi les cryptomonnaies établies. Cependant, le ratio volume/capitalisation révèle un marché peu liquide, avec un volume quotidien représentant seulement 2.9% de la capitalisation, ce qui peut accentuer la volatilité lors de transactions importantes.</p>
-<p>La perspective historique reste frappante : le cours actuel de 8.33 USD se situe à environ 5% de son plus haut historique de 167.09 USD (mai 2021), reflétant une dépression significative depuis le précédent cycle haussier. Cette valorisation déprimée suggère soit un marché peu convaincu par les fondamentaux actuels, soit une opportunité selon la thèse des investisseurs.</p>
-<p>Le contexte général demeure un élément déterminant pour comprendre ces mouvements microéconomiques.</p>
-<hr>
-<p><em>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener noreffer ">CoinGecko</a> (API publique). Analyse générée automatiquement par Claude AI (Anthropic). Ce site est fourni à titre informatif uniquement — pas de conseil en investissement.</em></p>
-]]></description></item><item><title>ETC 2026-03-14 — 8.2800 $ (-1.78%)</title><link>https://ethereumclassic.work/posts/etc-2026-03-14/</link><pubDate>Sat, 14 Mar 2026 09:04:05 +0100</pubDate><author>ETC Tracker</author><guid>https://ethereumclassic.work/posts/etc-2026-03-14/</guid><description><![CDATA[<h2 id="cours-du-14-march-2026-">Cours du 14 March 2026 📉</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Indicateur</th>
-          <th>Valeur</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Prix USD</strong></td>
-          <td>8.2800 $</td>
-      </tr>
-      <tr>
-          <td><strong>Prix EUR</strong></td>
-          <td>7.2200 €</td>
-      </tr>
-      <tr>
-          <td><strong>Variation 24h</strong></td>
-          <td>-1.78%</td>
-      </tr>
-      <tr>
-          <td><strong>Variation 7 jours</strong></td>
-          <td>+0.96%</td>
-      </tr>
-      <tr>
-          <td><strong>Variation 30 jours</strong></td>
-          <td>-0.22%</td>
-      </tr>
-      <tr>
-          <td><strong>Capitalisation</strong></td>
-          <td>1.29 Mrd USD</td>
-      </tr>
-      <tr>
-          <td><strong>Volume 24h</strong></td>
-          <td>47.74 M USD</td>
-      </tr>
-      <tr>
-          <td><strong>Plus haut historique</strong></td>
-          <td>167.09 $</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="analyse-du-jour">Analyse du jour</h2>
-<h1 id="commentaire-de-marché--etc">Commentaire de marché — ETC</h1>
-<p>Les données révèlent un actif en phase de consolidation à bas niveau. Coté à 8,28 USD, l&rsquo;ETC affiche une baisse de 1,78% sur 24 heures, mais reste stable à moyen terme avec une variation quasi-nulle sur 30 jours (+0,96% sur 7 jours).</p>
-<p>La capitalisation boursière de 1,29 milliard USD positionne l&rsquo;ETC parmi les cryptomonnaies de rang intermédiaire. Cependant, le ratio volume/capitalisation (3,7%) indique une liquidité modérée, suggérant des écarts acheteur-vendeur potentiellement importants.</p>
-<p>L&rsquo;écart considérable avec l&rsquo;ATH de 167,09 USD (atteint en mai 2021) reflète une dépréciation d&rsquo;environ 95%. Cette situation illustre les difficultés persistantes de l&rsquo;ETC face à la concurrence : perte de pertinence depuis la fusion d&rsquo;Ethereum en septembre 2022, moins de développeurs actifs, et une proposition de valeur moins claire que d&rsquo;autres blockchains.</p>
-<p>La stabilité relative récente ne doit pas masquer les enjeux structurels de long terme affectant le projet.</p>
 <hr>
 <p><em>Données : <a href="https://www.coingecko.com" target="_blank" rel="noopener noreffer ">CoinGecko</a> (API publique). Analyse générée automatiquement par Claude AI (Anthropic). Ce site est fourni à titre informatif uniquement — pas de conseil en investissement.</em></p>
 ]]></description></item></channel></rss>
