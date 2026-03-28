@@ -54,7 +54,7 @@
         </nav>
 
         {{- /* Related Articles */ -}}
-        {{- $related := (where .Site.RegularPages "Params.category" .Params.category) | without . | first 3 }}
+        {{- $related := where .Site.RegularPages "Params.category" .Params.category }}
         {{- if $related }}
         <section class="related-articles">
             <h2>Articles Similaires</h2>
