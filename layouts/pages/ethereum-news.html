@@ -1,69 +1,440 @@
 {{ define "main" }}
-<main class="news-container">
-    <article>
-        <header>
-            <h1>{{ .Title }}</h1>
-            <p class="meta">Mise à jour : {{ .PublishDate.Format "2 January 2006" }}</p>
-        </header>
-
-        <div class="news-content">
-            {{ .Content }}
+<div class="news-header">
+    <div class="news-header-inner">
+        <div>
+            <h1 class="news-title">{{ .Title }}</h1>
+            <p class="news-subtitle">Actualités ETC reformulées par IA • Mise à jour quotidienne</p>
         </div>
-    </article>
+        <div class="news-header-stat">
+            <div class="stat-number">📰</div>
+            <div class="stat-label">Couverture<br/>complète</div>
+        </div>
+    </div>
+</div>
 
-    <aside class="news-sidebar">
-        <h3>À propos de ce module</h3>
-        <p>
-            Ce module récupère automatiquement les dernières actualités Ethereum Classic
-            et les reformule avec l'IA pour une meilleure compréhension. Mis à jour quotidiennement.
-        </p>
-    </aside>
+<main class="news-main">
+    <div class="news-controls">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="newsSearch" placeholder="Chercher une actualité..." class="news-search-input">
+        </div>
+        <div class="filter-tags">
+            <button class="filter-tag active" data-filter="all">Toutes</button>
+            <button class="filter-tag" data-filter="technique">🔧 Technique</button>
+            <button class="filter-tag" data-filter="marche">📊 Marché</button>
+            <button class="filter-tag" data-filter="ecosystem">🌍 Écosystème</button>
+            <button class="filter-tag" data-filter="securite">🔐 Sécurité</button>
+        </div>
+    </div>
+
+    <div class="news-container">
+        <article class="news-article">
+            <div class="news-content-wrapper">
+                <div class="news-content">
+                    {{ .Content }}
+                </div>
+            </div>
+        </article>
+
+        <aside class="news-sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-icon">ℹ️</div>
+                <h3>À propos de ce module</h3>
+                <p>
+                    Ce module récupère automatiquement les dernières actualités Ethereum Classic
+                    et les reformule avec l'IA pour une meilleure compréhension. Mis à jour quotidiennement.
+                </p>
+            </div>
+
+            <div class="sidebar-card">
+                <div class="sidebar-icon">⚡</div>
+                <h3>Dernière mise à jour</h3>
+                <p class="update-date">{{ .PublishDate.Format "2 January 2006 à 15:04" }}</p>
+            </div>
+
+            <div class="sidebar-card">
+                <div class="sidebar-icon">🎯</div>
+                <h3>Conseil</h3>
+                <p>
+                    Activer les notifications pour recevoir chaque nouvelle actualité automatiquement.
+                </p>
+            </div>
+        </aside>
+    </div>
 </main>
 
 <style>
-    .news-container {
-        display: grid;
-        grid-template-columns: 1fr 300px;
-        gap: 2rem;
-        margin: 2rem auto;
-        max-width: 1000px;
-        padding: 0 1rem;
+    /* ─── News Header ───────────────────────────────────────────── */
+    .news-header {
+        background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);
+        border-bottom: 1px solid var(--border);
+        padding: 40px 24px 32px;
+        position: relative;
+        overflow: hidden;
     }
 
-    .news-content h3 {
-        margin-top: 1.5rem;
-        color: #2c3e50;
-        border-left: 4px solid #3498db;
-        padding-left: 1rem;
+    .news-header::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+        pointer-events: none;
+        opacity: .3;
     }
 
-    .news-content a {
-        color: #3498db;
-        text-decoration: none;
+    .news-header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 32px;
+    }
+
+    .news-title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        letter-spacing: -.02em;
+        color: var(--text);
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+
+    .news-subtitle {
+        font-size: .9rem;
+        color: var(--text-muted);
         font-weight: 500;
     }
 
+    .news-header-stat {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 16px 20px;
+        white-space: nowrap;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: .75rem;
+        color: var(--text-muted);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        line-height: 1.4;
+    }
+
+    /* ─── News Main ─────────────────────────────────────────────── */
+    .news-main {
+        padding: 40px 24px 80px;
+    }
+
+    .news-controls {
+        max-width: 1100px;
+        margin: 0 auto 36px;
+    }
+
+    .search-box {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .search-box i {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+        font-size: .9rem;
+    }
+
+    .news-search-input {
+        width: 100%;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 12px 16px 12px 44px;
+        color: var(--text);
+        font-size: .9rem;
+        font-family: var(--font);
+        transition: border-color .2s, box-shadow .2s;
+    }
+
+    .news-search-input::placeholder {
+        color: var(--text-muted);
+    }
+
+    .news-search-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .filter-tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .filter-tag {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-size: .85rem;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 24px;
+        cursor: pointer;
+        transition: all .2s;
+        font-family: var(--font);
+    }
+
+    .filter-tag:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+    .filter-tag.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #0b0e11;
+        font-weight: 700;
+    }
+
+    /* ─── News Container ────────────────────────────────────────── */
+    .news-container {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 28px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* ─── News Article ──────────────────────────────────────────── */
+    .news-article {
+        background: transparent;
+    }
+
+    .news-content-wrapper {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .news-content h2 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--text);
+        margin: 28px 0 14px;
+        letter-spacing: -.01em;
+        line-height: 1.35;
+    }
+
+    .news-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .news-content h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text);
+        margin: 24px 0 10px;
+        border-left: 3px solid var(--accent);
+        padding-left: 14px;
+    }
+
+    .news-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 14px;
+        font-size: .95rem;
+    }
+
+    .news-content a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color .2s;
+    }
+
     .news-content a:hover {
+        color: #33e6c0;
         text-decoration: underline;
     }
 
+    .news-content ul,
+    .news-content ol {
+        margin-left: 20px;
+        margin-bottom: 16px;
+    }
+
+    .news-content li {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+
+    .news-content strong {
+        color: var(--text);
+        font-weight: 700;
+    }
+
+    .news-content em {
+        color: var(--text-muted);
+        font-size: .9rem;
+    }
+
+    .news-content hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 24px 0;
+    }
+
+    /* ─── News Sidebar ──────────────────────────────────────────── */
     .news-sidebar {
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
         height: fit-content;
-        border-left: 4px solid #27ae60;
+        position: sticky;
+        top: 24px;
     }
 
-    .news-sidebar h3 {
-        margin-top: 0;
-        color: #2c3e50;
+    .sidebar-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 20px;
+        transition: border-color .2s;
     }
 
+    .sidebar-card:hover {
+        border-color: var(--accent);
+    }
+
+    .sidebar-icon {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-card h3 {
+        font-size: .9rem;
+        font-weight: 700;
+        color: var(--text);
+        margin: 0 0 8px;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        font-size: .82rem;
+    }
+
+    .sidebar-card p {
+        font-size: .85rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .update-date {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: .9rem;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
     @media (max-width: 768px) {
+        .news-header-inner {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-title {
+            font-size: 1.7rem;
+        }
+
         .news-container {
             grid-template-columns: 1fr;
         }
+
+        .news-sidebar {
+            position: static;
+        }
+
+        .filter-tags {
+            gap: 8px;
+        }
+
+        .filter-tag {
+            font-size: .8rem;
+            padding: 6px 12px;
+        }
+
+        .news-content-wrapper {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .news-header {
+            padding: 24px 16px 20px;
+        }
+
+        .news-main {
+            padding: 20px 16px 60px;
+        }
+
+        .news-title {
+            font-size: 1.4rem;
+        }
+
+        .news-header-stat {
+            font-size: .8rem;
+            padding: 12px 14px;
+        }
     }
 </style>
+
+<script>
+    // Search functionality
+    document.getElementById('newsSearch').addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        const articles = document.querySelectorAll('.news-content h2, .news-content h3, .news-content p');
+
+        if (query.length > 0) {
+            articles.forEach(el => {
+                if (el.textContent.toLowerCase().includes(query)) {
+                    el.closest('.news-article').style.display = 'block';
+                } else {
+                    el.closest('.news-article').style.display = 'none';
+                }
+            });
+        } else {
+            articles.forEach(el => {
+                el.closest('.news-article').style.display = 'block';
+            });
+        }
+    });
+
+    // Filter functionality
+    document.querySelectorAll('.filter-tag').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            // Filter logic can be extended based on content categories
+        });
+    });
+</script>
 {{ end }}

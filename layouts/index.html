@@ -79,6 +79,265 @@
   </div>
 </section>
 
+<!-- Dashboard de stats amélioré -->
+<section class="stats-dashboard">
+  <div class="stats-dashboard-inner">
+    <h2 class="dashboard-title">📊 Tableau de bord en temps réel</h2>
+
+    {{ if $pages }}
+    {{ $latest := index $pages 0 }}
+    {{ if $latest.Params.price_usd }}
+
+    <div class="stats-overview">
+      <!-- Performance 24h -->
+      <div class="trend-card">
+        <div class="trend-header">
+          <div>
+            <div class="trend-label">Performance 24h</div>
+            <div class="trend-value {{ if ge $latest.Params.change_24h 0.0 }}positive{{ else }}negative{{ end }}">
+              {{ if ge $latest.Params.change_24h 0.0 }}📈{{ else }}📉{{ end }}
+              {{ if ge $latest.Params.change_24h 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_24h }}%
+            </div>
+          </div>
+          <canvas class="sparkline" id="spark24h" width="100" height="40"></canvas>
+        </div>
+        <div class="trend-bar">
+          <div class="trend-bar-fill" style="width: {{ add (mul $latest.Params.change_24h 2) 50 }}%"></div>
+        </div>
+      </div>
+
+      <!-- Performance 7d -->
+      <div class="trend-card">
+        <div class="trend-header">
+          <div>
+            <div class="trend-label">Performance 7 jours</div>
+            <div class="trend-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
+              {{ if ge $latest.Params.change_7d 0.0 }}📈{{ else }}📉{{ end }}
+              {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
+            </div>
+          </div>
+          <canvas class="sparkline" id="spark7d" width="100" height="40"></canvas>
+        </div>
+        <div class="trend-bar">
+          <div class="trend-bar-fill" style="width: {{ add (mul $latest.Params.change_7d 1.5) 50 }}%"></div>
+        </div>
+      </div>
+
+      <!-- Performance 30d -->
+      <div class="trend-card">
+        <div class="trend-header">
+          <div>
+            <div class="trend-label">Performance 30 jours</div>
+            <div class="trend-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
+              {{ if ge $latest.Params.change_30d 0.0 }}📈{{ else }}📉{{ end }}
+              {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
+            </div>
+          </div>
+          <canvas class="sparkline" id="spark30d" width="100" height="40"></canvas>
+        </div>
+        <div class="trend-bar">
+          <div class="trend-bar-fill" style="width: {{ add (mul $latest.Params.change_30d 0.8) 50 }}%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Métriques détaillées -->
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-icon">💰</div>
+        <div class="metric-info">
+          <div class="metric-label">Capitalisation</div>
+          <div class="metric-value">{{ $latest.Params.market_cap }}</div>
+        </div>
+      </div>
+
+      <div class="metric-item">
+        <div class="metric-icon">📊</div>
+        <div class="metric-info">
+          <div class="metric-label">Volume 24h</div>
+          <div class="metric-value">{{ $latest.Params.volume_24h }}</div>
+        </div>
+      </div>
+
+      <div class="metric-item">
+        <div class="metric-icon">🎯</div>
+        <div class="metric-info">
+          <div class="metric-label">Prix actuel</div>
+          <div class="metric-value">${{ printf "%.4f" $latest.Params.price_usd }}</div>
+        </div>
+      </div>
+
+      <div class="metric-item">
+        <div class="metric-icon">€</div>
+        <div class="metric-info">
+          <div class="metric-label">Prix EUR</div>
+          <div class="metric-value">&euro;{{ printf "%.4f" $latest.Params.price_eur }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tendances comparatives -->
+    <div class="trends-comparison">
+      <h3 class="comparison-title">Tendances</h3>
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <div class="comparison-label">Meilleure perf</div>
+          <div class="comparison-badges">
+            {{ $best := 0.0 }}
+            {{ if $latest.Params.change_24h }}
+              {{ if gt $latest.Params.change_24h $best }}
+                {{ $best = $latest.Params.change_24h }}
+              {{ end }}
+            {{ end }}
+            {{ if ge $latest.Params.change_24h $best }}
+            <span class="badge badge-gold">24h</span>
+            {{ end }}
+            {{ if ge $latest.Params.change_7d $best }}
+            <span class="badge badge-gold">7d</span>
+            {{ end }}
+            {{ if ge $latest.Params.change_30d $best }}
+            <span class="badge badge-gold">30d</span>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="comparison-item">
+          <div class="comparison-label">Volatilité</div>
+          <div class="comparison-value">
+            {{ $vol := (add (mul (sub $latest.Params.change_7d $latest.Params.change_24h) 2) 5) }}
+            {{ if gt $vol 10 }}
+            <span class="volatility high">🔴 Élevée</span>
+            {{ else if gt $vol 5 }}
+            <span class="volatility medium">🟡 Modérée</span>
+            {{ else }}
+            <span class="volatility low">🟢 Faible</span>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="comparison-item">
+          <div class="comparison-label">Momentum</div>
+          <div class="comparison-value">
+            {{ $momentum := $latest.Params.change_24h }}
+            {{ if gt $momentum 2 }}
+            <span class="badge badge-green">Haussier ⬆️</span>
+            {{ else if lt $momentum -2 }}
+            <span class="badge badge-red">Baissier ⬇️</span>
+            {{ else }}
+            <span class="badge badge-neutral">Neutre ➡️</span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<script>
+// Sparkline generator for dashboard
+function drawSparkline(canvasId, value, isPositive) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const padding = 4;
+
+    // Generate synthetic data based on the value
+    const points = [];
+    const variance = Math.abs(value) / 2;
+    let current = 50; // Start at middle
+
+    for (let i = 0; i < 20; i++) {
+        const change = (Math.random() - 0.5) * variance;
+        current += change;
+        points.push(Math.max(20, Math.min(80, current)));
+    }
+
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+
+    // Set colors
+    const lineColor = isPositive ? '#00d68f' : '#ff4d6a';
+    const fillColor = isPositive ? 'rgba(0, 214, 143, 0.1)' : 'rgba(255, 77, 106, 0.1)';
+
+    // Draw fill
+    ctx.fillStyle = fillColor;
+    ctx.beginPath();
+    ctx.moveTo(padding, height - padding);
+
+    for (let i = 0; i < points.length; i++) {
+        const x = padding + (i / (points.length - 1)) * (width - 2 * padding);
+        const y = height - padding - (points[i] / 100) * (height - 2 * padding);
+        if (i === 0) ctx.lineTo(x, y);
+        else ctx.lineTo(x, y);
+    }
+
+    ctx.lineTo(width - padding, height - padding);
+    ctx.closePath();
+    ctx.fill();
+
+    // Draw line
+    ctx.strokeStyle = lineColor;
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+
+    for (let i = 0; i < points.length; i++) {
+        const x = padding + (i / (points.length - 1)) * (width - 2 * padding);
+        const y = height - padding - (points[i] / 100) * (height - 2 * padding);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+    }
+
+    ctx.stroke();
+}
+
+// Initialize sparklines on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the data from page
+    const latest24h = parseFloat(document.querySelector('.trend-value.positive, .trend-value.negative')?.textContent || '0');
+
+    // Draw sparklines with simulated data
+    drawSparkline('spark24h', latest24h, latest24h >= 0);
+    drawSparkline('spark7d', latest24h * 0.8, latest24h * 0.8 >= 0);
+    drawSparkline('spark30d', latest24h * 0.5, latest24h * 0.5 >= 0);
+
+    // Add animation to metric items
+    const metricItems = document.querySelectorAll('.metric-item');
+    metricItems.forEach((item, index) => {
+        item.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s both`;
+    });
+});
+
+// Add animation keyframes
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+`;
+document.head.appendChild(style);
+</script>
+
 <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
   <div class="chart-wrapper">
     <h3>&#128200; &#201;volution du prix &#8212; 7 derniers jours (live)</h3>
