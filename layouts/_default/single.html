@@ -1,0 +1,116 @@
+{{- define "content" -}}
+<div class="container">
+    <article class="article-single">
+        {{- if .Params.featured_image }}
+        <div class="article-featured-image">
+            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+        {{- end }}
+
+        <div class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+
+            <div class="article-meta-full">
+                <span class="meta-date">📅 {{ .Date.Format "02 January 2006" }}</span>
+                {{- if .Params.author }}
+                <span class="meta-author">✍️ {{ .Params.author }}</span>
+                {{- end }}
+                <span class="meta-reading-time">⏱️ {{ math.Ceil (div (len (split .Content " ")) 200) }} min de lecture</span>
+            </div>
+
+            {{- if .Params.category }}
+            <div class="article-categories">
+                <span class="article-category">{{ .Params.category }}</span>
+            </div>
+            {{- end }}
+        </div>
+
+        <div class="article-body">
+            {{ .Content }}
+        </div>
+
+        {{- /* Tags */ -}}
+        {{- with .GetTerms "tags" }}
+        <div class="article-tags">
+            <strong>Tags:</strong>
+            {{- range . }}
+            <a href="{{ .RelPermalink }}" class="tag-link">#{{ .Title }}</a>
+            {{- end }}
+        </div>
+        {{- end }}
+
+        {{- /* Article Navigation */ -}}
+        <nav class="article-navigation">
+            {{- with .PrevInSection }}
+            <div class="nav-prev">
+                <a href="{{ .RelPermalink }}" class="nav-link">← {{ .Title }}</a>
+            </div>
+            {{- end }}
+            {{- with .NextInSection }}
+            <div class="nav-next">
+                <a href="{{ .RelPermalink }}" class="nav-link">{{ .Title }} →</a>
+            </div>
+            {{- end }}
+        </nav>
+
+        {{- /* Related Articles */ -}}
+        {{- $related := (where .Site.RegularPages "Params.category" .Params.category) | without . | first 3 }}
+        {{- if $related }}
+        <section class="related-articles">
+            <h2>Articles Similaires</h2>
+            <div class="articles-grid">
+                {{- range $related }}
+                <article class="article-card">
+                    {{- if .Params.featured_image }}
+                    <div class="article-image">
+                        <a href="{{ .RelPermalink }}">
+                            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
+                        </a>
+                    </div>
+                    {{- end }}
+                    <div class="article-content">
+                        <h3 class="article-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h3>
+                        <p class="article-excerpt">{{ .Summary }}</p>
+                        <div class="article-meta">
+                            <span class="meta-date">{{ .Date.Format "02 Jan" }}</span>
+                        </div>
+                    </div>
+                </article>
+                {{- end }}
+            </div>
+        </section>
+        {{- end }}
+    </article>
+
+    {{- /* Sidebar */ -}}
+    <aside class="articles-sidebar">
+        {{- /* Categories */ -}}
+        <div class="widget">
+            <h3 class="widget-title">Catégories</h3>
+            <ul class="widget-list">
+                {{- range .Site.Taxonomies.categories }}
+                <li>
+                    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+                    <span class="count">({{ len .Pages }})</span>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+
+        {{- /* Recent Posts */ -}}
+        <div class="widget">
+            <h3 class="widget-title">Articles Récents</h3>
+            <ul class="widget-list recent-posts-list">
+                {{- range first 5 .Site.RegularPages.ByDate.Reverse }}
+                <li>
+                    <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+                    <span class="post-date">{{ .Date.Format "02 Jan" }}</span>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+    </aside>
+</div>
+{{- end -}}

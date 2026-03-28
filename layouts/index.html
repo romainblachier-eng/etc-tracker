@@ -1,146 +1,159 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" dir="auto">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ .Site.Title }}</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23667eea'>₿</text></svg>">
+
     <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
+    <link rel="stylesheet" href="{{ `css/magazine.css` | relURL }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body data-header-desktop="fixed" data-header-mobile="auto">
-    <div class="wrapper">
-        <!-- Header -->
-        <header id="header-desktop" style="background: rgba(10,12,15,.8); backdrop-filter: blur(30px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;">
-            <div class="header-wrapper" style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
-                <div class="header-title" style="display: flex; align-items: center; gap: 8px;">
-                    <div style="font-size: 1.2rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{{ .Site.Title }}</div>
-                </div>
-                <nav class="menu" style="display: flex; gap: 24px;">
-                    <a href="/" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Accueil</a>
-                    <a href="/posts/" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Analyses</a>
-                    <a href="/#newsletter" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Newsletter</a>
-                </nav>
-            </div>
-        </header>
+<body class="magazine-theme">
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
-        <main class="main">
-            {{ $pages := where .Site.RegularPages "Section" "posts" }}
-            {{ $pages := $pages.ByDate.Reverse }}
+    {{ partial "header.html" . }}
 
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="hero-inner">
-                    <div class="hero-top">
-                        <div class="hero-coin">
-                            <div class="coin-avatar">ETC</div>
-                            <div>
-                                <div class="coin-name">Ethereum Classic</div>
-                                <div class="coin-sub">ETC · Proof of Work · Mise à jour quotidienne</div>
+    <main id="main-content" class="main-content">
+        {{ $pages := where .Site.RegularPages "Section" "posts" }}
+        {{ $pages := $pages.ByDate.Reverse }}
+
+        <div class="container">
+            <div class="articles-layout">
+                <div class="articles-main">
+                    {{- /* Latest Analysis */ -}}
+                    {{ if first 1 $pages }}
+                    {{ $latest := index $pages 0 }}
+                    <section class="featured-section latest-analysis">
+                        <h2 class="section-title">Analyse du Jour</h2>
+                        <div class="latest-card">
+                            <div class="latest-header">
+                                <span class="latest-badge">🔥 Dernière mise à jour</span>
+                                <span class="latest-date">{{ $latest.Date.Format "02 January 2006" }}</span>
                             </div>
-                        </div>
-                        {{ if first 1 $pages }}
-                        {{ $latest := index $pages 0 }}
-                        {{ if $latest.Params.price_usd }}
-                        <div class="hero-price-block">
-                            <div class="hero-price">${{ printf "%.4f" $latest.Params.price_usd }}</div>
-                            {{ if $latest.Params.change_24h }}
-                                {{ if ge $latest.Params.change_24h 0.0 }}
-                                <div class="price-change up">▲ +{{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
-                                {{ else }}
-                                <div class="price-change down">▼ {{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
+                            <h2 class="latest-title">{{ $latest.Title }}</h2>
+
+                            {{- if $latest.Params.price_usd }}
+                            <div class="price-info">
+                                <div class="price-main">
+                                    <span class="label">Prix USD:</span>
+                                    <span class="value">${{ printf "%.4f" $latest.Params.price_usd }}</span>
+                                </div>
+                                {{ if $latest.Params.change_24h }}
+                                <div class="change-24h {{ if ge $latest.Params.change_24h 0.0 }}positive{{ else }}negative{{ end }}">
+                                    {{ if ge $latest.Params.change_24h 0.0 }}📈 +{{ else }}📉 {{ end }}{{ printf "%.2f" $latest.Params.change_24h }}% (24h)
+                                </div>
                                 {{ end }}
+                            </div>
+                            {{- end }}
+
+                            <p class="latest-excerpt">{{ $latest.Summary }}</p>
+                            <a href="{{ $latest.Permalink }}" class="btn btn-primary">Lire l'analyse complète →</a>
+                        </div>
+                    </section>
+                    {{ end }}
+
+                    {{- /* Articles Grid */ -}}
+                    {{ if gt (len $pages) 1 }}
+                    <section class="articles-section">
+                        <h2 class="section-title">Historique des Analyses</h2>
+                        <div class="articles-grid">
+                            {{ range after 1 $pages }}
+                            <article class="article-card">
+                                <div class="article-content">
+                                    <h3 class="article-title">
+                                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                    </h3>
+                                    <p class="article-excerpt">{{ .Summary }}</p>
+                                    <div class="article-meta">
+                                        <span class="meta-date">{{ .Date.Format "02 Jan" }}</span>
+                                        {{ if .Params.change_24h }}
+                                        <span class="meta-change {{ if ge .Params.change_24h 0.0 }}positive{{ else }}negative{{ end }}">
+                                            {{ if ge .Params.change_24h 0.0 }}+{{ end }}{{ printf "%.2f" .Params.change_24h }}%
+                                        </span>
+                                        {{ end }}
+                                    </div>
+                                    <a href="{{ .Permalink }}" class="read-more">Voir plus →</a>
+                                </div>
+                            </article>
                             {{ end }}
                         </div>
-                        {{ end }}
-                        {{ end }}
-                    </div>
+                    </section>
+                    {{ end }}
+                </div>
 
+                {{- /* Sidebar */ -}}
+                <aside class="articles-sidebar">
+                    {{- /* Current Stats */ -}}
                     {{ if first 1 $pages }}
                     {{ $latest := index $pages 0 }}
                     {{ if $latest.Params.price_usd }}
-                    <div class="stat-grid">
-                        {{ if $latest.Params.price_eur }}
-                        <div class="stat-card">
-                            <div class="stat-label">Prix EUR</div>
-                            <div class="stat-value">€{{ printf "%.4f" $latest.Params.price_eur }}</div>
-                        </div>
-                        {{ end }}
-                        {{ if $latest.Params.change_7d }}
-                        <div class="stat-card">
-                            <div class="stat-label">7 jours</div>
-                            <div class="stat-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
-                                {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
+                    <div class="widget stats-widget">
+                        <h3 class="widget-title">Statistiques ETC</h3>
+                        <div class="stats-list">
+                            {{ if $latest.Params.price_eur }}
+                            <div class="stat-item">
+                                <span class="stat-label">Prix EUR</span>
+                                <span class="stat-val">€{{ printf "%.4f" $latest.Params.price_eur }}</span>
                             </div>
-                        </div>
-                        {{ end }}
-                        {{ if $latest.Params.change_30d }}
-                        <div class="stat-card">
-                            <div class="stat-label">30 jours</div>
-                            <div class="stat-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
-                                {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
-                            </div>
-                        </div>
-                        {{ end }}
-                        {{ if $latest.Params.market_cap }}
-                        <div class="stat-card">
-                            <div class="stat-label">Capitalisation</div>
-                            <div class="stat-value">{{ $latest.Params.market_cap }}</div>
-                        </div>
-                        {{ end }}
-                    </div>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </section>
-
-            <!-- Latest Article -->
-            <div class="page-main">
-                <div class="page-inner">
-                    {{ if first 1 $pages }}
-                    {{ $latest := index $pages 0 }}
-                    <p class="section-title">Analyse du jour</p>
-                    <div class="latest-card">
-                        <span class="latest-badge">Dernière mise à jour</span>
-                        <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
-                        <p class="card-meta">{{ $latest.Date.Format "2 January 2006" }}</p>
-                        <p class="card-excerpt">{{ $latest.Summary }}</p>
-                        <a href="{{ $latest.Permalink }}" class="btn">Lire l'analyse complète →</a>
-                    </div>
-                    {{ end }}
-
-                    <!-- Archive -->
-                    {{ if gt (len $pages) 1 }}
-                    <p class="section-title" style="margin-top: 40px;">Historique des analyses</p>
-                    <ul class="archive-list">
-                        {{ range after 1 $pages }}
-                        <li class="archive-item">
-                            <a href="{{ .Permalink }}">{{ .Title }}</a>
-                            {{ if .Params.change_24h }}
-                                {{ if ge .Params.change_24h 0.0 }}
-                                <span class="archive-badge up">+{{ printf "%.2f" .Params.change_24h }}%</span>
-                                {{ else }}
-                                <span class="archive-badge down">{{ printf "%.2f" .Params.change_24h }}%</span>
-                                {{ end }}
                             {{ end }}
-                            <span class="archive-date">{{ .Date.Format "02/01/2006" }}</span>
-                        </li>
-                        {{ end }}
-                    </ul>
+                            {{ if $latest.Params.change_7d }}
+                            <div class="stat-item {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
+                                <span class="stat-label">7 jours</span>
+                                <span class="stat-val">{{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%</span>
+                            </div>
+                            {{ end }}
+                            {{ if $latest.Params.change_30d }}
+                            <div class="stat-item {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
+                                <span class="stat-label">30 jours</span>
+                                <span class="stat-val">{{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%</span>
+                            </div>
+                            {{ end }}
+                            {{ if $latest.Params.market_cap }}
+                            <div class="stat-item">
+                                <span class="stat-label">Market Cap</span>
+                                <span class="stat-val">{{ $latest.Params.market_cap }}</span>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
                     {{ end }}
-                </div>
+                    {{ end }}
+
+                    {{- /* Latest Articles */ -}}
+                    <div class="widget">
+                        <h3 class="widget-title">Articles Récents</h3>
+                        <ul class="widget-list recent-posts-list">
+                            {{- range first 5 .Site.RegularPages.ByDate.Reverse }}
+                            <li>
+                                <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
+                                <span class="post-date">{{ .Date.Format "02 Jan" }}</span>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+
+                    {{- /* Search */ -}}
+                    <div class="widget">
+                        <h3 class="widget-title">Rechercher</h3>
+                        <form method="get" action="{{ .Site.BaseURL }}search/" class="widget-search">
+                            <input type="search" name="q" placeholder="Rechercher..." class="search-input">
+                            <button type="submit" class="search-btn">🔍</button>
+                        </form>
+                    </div>
+                </aside>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <!-- Footer -->
-        <footer class="footer" style="background: var(--bg); border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
-            <p style="margin-bottom: 12px;">© {{ now.Year }} {{ .Site.Title }} - Suivi automatisé du cours Ethereum Classic</p>
-            <p style="color: var(--text-muted); font-size: 0.75rem;">Construit avec Hugo</p>
-        </footer>
-    </div>
+    {{ partial "footer.html" . }}
 
-    <script src="{{ `js/script.js` | relURL }}" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="{{ `js/main.js` | relURL }}"></script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<header class="site-header">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-branding">
+                    <div class="site-logo">₿</div>
+                    <div class="site-title-group">
+                        <h1 class="site-title">
+                            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+                        </h1>
+                        <p class="site-description">{{ .Site.Params.description }}</p>
+                    </div>
+                </div>
+
+                <nav class="site-navigation">
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul id="main-menu" class="main-menu">
+                        <li><a href="{{ .Site.BaseURL }}" class="nav-link{{ if eq .Section "" }} active{{ end }}">Accueil</a></li>
+                        <li><a href="{{ .Site.BaseURL }}posts/" class="nav-link{{ if eq .Section "posts" }} active{{ end }}">Articles</a></li>
+                        <li><a href="{{ .Site.BaseURL }}categories/" class="nav-link">Catégories</a></li>
+                        <li><a href="{{ .Site.BaseURL }}about/" class="nav-link">À Propos</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-search">
+                    <form method="get" action="{{ .Site.BaseURL }}search/" class="search-form">
+                        <input type="search" name="q" placeholder="Rechercher..." class="search-input">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{- if .IsHome }}
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>{{ .Site.Params.description }}</h2>
+                <p>Suivez les dernières actualités et analyses du cours de l'Ethereum Classic</p>
+            </div>
+        </div>
+    </div>
+    {{- end }}
+</header>

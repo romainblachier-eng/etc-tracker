@@ -1,0 +1,112 @@
+{{- define "content" -}}
+<div class="container">
+    <div class="articles-layout">
+        <div class="articles-main">
+            {{- if not .IsHome }}
+            <section class="archive-header">
+                <h1>{{ .Title }}</h1>
+                {{- if .Description }}
+                <p class="archive-description">{{ .Description }}</p>
+                {{- end }}
+            </section>
+            {{- end }}
+
+            {{- /* Articles Grid */ -}}
+            {{- if .Pages }}
+            <div class="articles-grid">
+                {{- range .Pages }}
+                <article class="article-card">
+                    {{- if .Params.featured_image }}
+                    <div class="article-image">
+                        <a href="{{ .RelPermalink }}">
+                            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
+                        </a>
+                    </div>
+                    {{- end }}
+
+                    <div class="article-content">
+                        {{- if .Params.category }}
+                        <span class="article-category">{{ .Params.category }}</span>
+                        {{- end }}
+
+                        <h2 class="article-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h2>
+
+                        <p class="article-excerpt">{{ .Summary }}</p>
+
+                        <div class="article-meta">
+                            <span class="meta-date">{{ .Date.Format "02 Jan 2006" }}</span>
+                            {{- if .Params.author }}
+                            <span class="meta-author">Par {{ .Params.author }}</span>
+                            {{- end }}
+                            <span class="meta-reading-time">{{ math.Ceil (div (len (split .Content " ")) 200) }} min</span>
+                        </div>
+
+                        <a href="{{ .RelPermalink }}" class="read-more">Lire la suite →</a>
+                    </div>
+                </article>
+                {{- end }}
+            </div>
+
+            {{- /* Pagination */ -}}
+            {{ template "partials/pagination.html" . }}
+            {{- else }}
+            <div class="no-content">
+                <p>Aucun article trouvé.</p>
+            </div>
+            {{- end }}
+        </div>
+
+        {{- /* Sidebar */ -}}
+        <aside class="articles-sidebar">
+            {{- /* Search */ -}}
+            <div class="widget">
+                <h3 class="widget-title">Rechercher</h3>
+                <form method="get" action="{{ .Site.BaseURL }}search/" class="widget-search">
+                    <input type="search" name="q" placeholder="Rechercher..." class="search-input">
+                    <button type="submit" class="search-btn">🔍</button>
+                </form>
+            </div>
+
+            {{- /* Categories */ -}}
+            <div class="widget">
+                <h3 class="widget-title">Catégories</h3>
+                <ul class="widget-list">
+                    {{- range .Site.Taxonomies.categories }}
+                    <li>
+                        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+                        <span class="count">({{ len .Pages }})</span>
+                    </li>
+                    {{- end }}
+                </ul>
+            </div>
+
+            {{- /* Recent Posts */ -}}
+            <div class="widget">
+                <h3 class="widget-title">Articles Récents</h3>
+                <ul class="widget-list recent-posts-list">
+                    {{- range first 5 .Site.RegularPages.ByDate.Reverse }}
+                    <li>
+                        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+                        <span class="post-date">{{ .Date.Format "02 Jan" }}</span>
+                    </li>
+                    {{- end }}
+                </ul>
+            </div>
+
+            {{- /* Tags */ -}}
+            {{- if .Site.Taxonomies.tags }}
+            <div class="widget">
+                <h3 class="widget-title">Tags</h3>
+                <div class="widget-tags">
+                    {{- range .Site.Taxonomies.tags.ByCount.Limit 20 }}
+                    <a href="{{ .Page.RelPermalink }}" class="tag">#{{ .Page.Title }}</a>
+                    {{- end }}
+                </div>
+            </div>
+            {{- end }}
+        </aside>
+    </div>
+</div>
+{{- end -}}

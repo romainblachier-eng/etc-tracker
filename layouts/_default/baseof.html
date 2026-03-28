@@ -1,0 +1,41 @@
+{{- define "main" -}}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Site.Params.description | default .Site.Params.description }}">
+    <title>{{ .Site.Title }}</title>
+
+    {{- /* Favicon */ -}}
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23667eea'>₿</text></svg>">
+
+    {{- /* CSS */ -}}
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/magazine.css" | relURL }}">
+
+    {{- /* Fonts */ -}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="magazine-theme">
+    {{- /* Skip to content */ -}}
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+
+    {{- /* Header */ -}}
+    {{ partial "header.html" . }}
+
+    {{- /* Main Content */ -}}
+    <main id="main-content" class="main-content">
+        {{ block "content" . }}{{ end }}
+    </main>
+
+    {{- /* Footer */ -}}
+    {{ partial "footer.html" . }}
+
+    {{- /* Scripts */ -}}
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>
+{{- end -}}

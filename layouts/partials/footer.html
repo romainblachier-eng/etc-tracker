@@ -1,0 +1,50 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ .Site.Title }}</h3>
+                <p>{{ .Site.Params.description }}</p>
+                <div class="footer-links">
+                    <a href="https://github.com/romainblachier-eng/etc-tracker" target="_blank" rel="noopener">GitHub</a>
+                    <a href="{{ .Site.BaseURL }}feed.xml" target="_blank">RSS</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="{{ .Site.BaseURL }}">Accueil</a></li>
+                    <li><a href="{{ .Site.BaseURL }}posts/">Articles</a></li>
+                    <li><a href="{{ .Site.BaseURL }}categories/">Catégories</a></li>
+                    <li><a href="{{ .Site.BaseURL }}about/">À Propos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Catégories</h3>
+                <ul>
+                    {{- range .Site.Taxonomies.categories }}
+                    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} ({{ len .Pages }})</a></li>
+                    {{- end }}
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Articles Récents</h3>
+                <ul class="recent-posts">
+                    {{- range first 5 .Site.RegularPages.ByDate.Reverse }}
+                    <li>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <span class="date">{{ .Date.Format "02 Jan" }}</span>
+                    </li>
+                    {{- end }}
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. Tous droits réservés.</p>
+            <p>Conçu avec passion par <a href="https://romainblachier.dev" target="_blank" rel="noopener">Romain Blachier</a></p>
+        </div>
+    </div>
+</footer>
