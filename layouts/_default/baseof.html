@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}France Formosa — Think tank franco-taïwanais{{ else }}{{ .Title }} — France Formosa{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
+            </a>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
+                    </div>
+                    <p class="footer-tagline">Paradiplomatie culturelle au service des liens entre la France et Taïwan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="/contact/">Nous contacter</a>
+                    <p class="footer-email">contact@france-formosa.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.Year }} France Formosa. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('open');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

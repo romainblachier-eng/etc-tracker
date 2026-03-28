@@ -1,146 +1,120 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
-</head>
-<body data-header-desktop="fixed" data-header-mobile="auto">
-    <div class="wrapper">
-        <!-- Header -->
-        <header id="header-desktop" style="background: rgba(10,12,15,.8); backdrop-filter: blur(30px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;">
-            <div class="header-wrapper" style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
-                <div class="header-title" style="display: flex; align-items: center; gap: 8px;">
-                    <div style="font-size: 1.2rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{{ .Site.Title }}</div>
-                </div>
-                <nav class="menu" style="display: flex; gap: 24px;">
-                    <a href="/" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Accueil</a>
-                    <a href="/posts/" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Analyses</a>
-                    <a href="/#newsletter" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Newsletter</a>
-                </nav>
+{{ define "main" }}
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-label">Diplomatie culturelle franco-taïwanaise</p>
+            <h1>Renforcer les liens entre <em>la France</em> et <em>Taïwan</em></h1>
+            <p class="hero-subtitle">Association de paradiplomatie culturelle au service des liens entre la France et Taïwan.</p>
+            <div class="hero-actions">
+                <a href="/mission/" class="btn btn-primary">Découvrir notre mission</a>
+                <a href="/contact/" class="btn btn-outline">Nous contacter</a>
             </div>
-        </header>
-
-        <main class="main">
-            {{ $pages := where .Site.RegularPages "Section" "posts" }}
-            {{ $pages := $pages.ByDate.Reverse }}
-
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="hero-inner">
-                    <div class="hero-top">
-                        <div class="hero-coin">
-                            <div class="coin-avatar">ETC</div>
-                            <div>
-                                <div class="coin-name">Ethereum Classic</div>
-                                <div class="coin-sub">ETC · Proof of Work · Mise à jour quotidienne</div>
-                            </div>
-                        </div>
-                        {{ if first 1 $pages }}
-                        {{ $latest := index $pages 0 }}
-                        {{ if $latest.Params.price_usd }}
-                        <div class="hero-price-block">
-                            <div class="hero-price">${{ printf "%.4f" $latest.Params.price_usd }}</div>
-                            {{ if $latest.Params.change_24h }}
-                                {{ if ge $latest.Params.change_24h 0.0 }}
-                                <div class="price-change up">▲ +{{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
-                                {{ else }}
-                                <div class="price-change down">▼ {{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
-                                {{ end }}
-                            {{ end }}
-                        </div>
-                        {{ end }}
-                        {{ end }}
-                    </div>
-
-                    {{ if first 1 $pages }}
-                    {{ $latest := index $pages 0 }}
-                    {{ if $latest.Params.price_usd }}
-                    <div class="stat-grid">
-                        {{ if $latest.Params.price_eur }}
-                        <div class="stat-card">
-                            <div class="stat-label">Prix EUR</div>
-                            <div class="stat-value">€{{ printf "%.4f" $latest.Params.price_eur }}</div>
-                        </div>
-                        {{ end }}
-                        {{ if $latest.Params.change_7d }}
-                        <div class="stat-card">
-                            <div class="stat-label">7 jours</div>
-                            <div class="stat-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
-                                {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
-                            </div>
-                        </div>
-                        {{ end }}
-                        {{ if $latest.Params.change_30d }}
-                        <div class="stat-card">
-                            <div class="stat-label">30 jours</div>
-                            <div class="stat-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
-                                {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
-                            </div>
-                        </div>
-                        {{ end }}
-                        {{ if $latest.Params.market_cap }}
-                        <div class="stat-card">
-                            <div class="stat-label">Capitalisation</div>
-                            <div class="stat-value">{{ $latest.Params.market_cap }}</div>
-                        </div>
-                        {{ end }}
-                    </div>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </section>
-
-            <!-- Latest Article -->
-            <div class="page-main">
-                <div class="page-inner">
-                    {{ if first 1 $pages }}
-                    {{ $latest := index $pages 0 }}
-                    <p class="section-title">Analyse du jour</p>
-                    <div class="latest-card">
-                        <span class="latest-badge">Dernière mise à jour</span>
-                        <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
-                        <p class="card-meta">{{ $latest.Date.Format "2 January 2006" }}</p>
-                        <p class="card-excerpt">{{ $latest.Summary }}</p>
-                        <a href="{{ $latest.Permalink }}" class="btn">Lire l'analyse complète →</a>
-                    </div>
-                    {{ end }}
-
-                    <!-- Archive -->
-                    {{ if gt (len $pages) 1 }}
-                    <p class="section-title" style="margin-top: 40px;">Historique des analyses</p>
-                    <ul class="archive-list">
-                        {{ range after 1 $pages }}
-                        <li class="archive-item">
-                            <a href="{{ .Permalink }}">{{ .Title }}</a>
-                            {{ if .Params.change_24h }}
-                                {{ if ge .Params.change_24h 0.0 }}
-                                <span class="archive-badge up">+{{ printf "%.2f" .Params.change_24h }}%</span>
-                                {{ else }}
-                                <span class="archive-badge down">{{ printf "%.2f" .Params.change_24h }}%</span>
-                                {{ end }}
-                            {{ end }}
-                            <span class="archive-date">{{ .Date.Format "02/01/2006" }}</span>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer" style="background: var(--bg); border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
-            <p style="margin-bottom: 12px;">© {{ now.Year }} {{ .Site.Title }} - Suivi automatisé du cours Ethereum Classic</p>
-            <p style="color: var(--text-muted); font-size: 0.75rem;">Construit avec Hugo</p>
-        </footer>
+        </div>
     </div>
+</section>
 
-    <script src="{{ `js/script.js` | relURL }}" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</body>
-</html>
+<!-- Chiffres clés -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Missions officielles sous l'égide du MOFA</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Revues de référence (Conflits, Taipei Times, Taiwan Insight)</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">2019</span>
+                <span class="stat-label">Première mission diplomatique à Taïwan</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">2025</span>
+                <span class="stat-label">Dernière mission officielle MOFA</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Axes de travail -->
+<section class="axes">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">Nos domaines d'action</p>
+            <h2>Une approche pluridisciplinaire des relations franco-taïwanaises</h2>
+        </div>
+        <div class="axes-grid">
+            <div class="axe-card">
+                <div class="axe-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                </div>
+                <h3>Production intellectuelle</h3>
+                <p>Publications dans des revues de référence et conférences sur la géopolitique taïwanaise.</p>
+            </div>
+            <div class="axe-card">
+                <div class="axe-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 003 12c0-1.97.633-3.793 1.708-5.272"/></svg>
+                </div>
+                <h3>Diplomatie de terrain</h3>
+                <p>Missions officielles et relations suivies avec les représentations taïwanaises en France.</p>
+            </div>
+            <div class="axe-card">
+                <div class="axe-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+                </div>
+                <h3>Médiation culturelle</h3>
+                <p>Conférences, événements et initiatives pour la visibilité de Taïwan en France.</p>
+            </div>
+            <div class="axe-card">
+                <div class="axe-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                </div>
+                <h3>Coopérations institutionnelles</h3>
+                <p>Partenariats avec les institutions culturelles taïwanaises.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- À propos -->
+<section class="about-preview">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <p class="section-label">Qui sommes-nous</p>
+                <h2>Un pont entre deux démocraties</h2>
+                <p>France Formosa réunit des chercheurs, des entrepreneurs, des diplomates et des citoyens engagés autour d'une conviction commune : les relations entre la France et Taïwan sont un levier stratégique pour l'avenir de l'Europe en Asie-Pacifique.</p>
+                <p>Notre association produit des analyses, organise des conférences et facilite les rencontres entre acteurs des deux pays.</p>
+                <a href="/mission/" class="btn btn-primary">En savoir plus</a>
+            </div>
+            <div class="about-visual">
+                <div class="about-card-stack">
+                    <div class="about-card">
+                        <h4>Recherche</h4>
+                        <p>Publications et notes d'analyse sur les enjeux franco-taïwanais</p>
+                    </div>
+                    <div class="about-card">
+                        <h4>Événements</h4>
+                        <p>Conférences, séminaires et tables rondes avec des experts</p>
+                    </div>
+                    <div class="about-card">
+                        <h4>Réseau</h4>
+                        <p>Mise en relation d'acteurs clés des deux pays</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Rejoignez France Formosa</h2>
+        <p>Participez à la construction d'un dialogue franco-taïwanais fort et durable.</p>
+        <a href="/contact/" class="btn btn-white">Nous contacter</a>
+    </div>
+</section>
+{{ end }}
