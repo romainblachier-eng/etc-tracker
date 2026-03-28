@@ -309,33 +309,62 @@ document.addEventListener('DOMContentLoaded', function() {
     drawSparkline('spark7d', latest24h * 0.8, latest24h * 0.8 >= 0);
     drawSparkline('spark30d', latest24h * 0.5, latest24h * 0.5 >= 0);
 
-    // Add animation to metric items
-    const metricItems = document.querySelectorAll('.metric-item');
-    metricItems.forEach((item, index) => {
-        item.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s both`;
+    // Add enhanced animations to elements
+    const animateElements = {
+        '.metric-item': 0.1,
+        '.stat-card': 0.1,
+        '.trend-card': 0.15,
+        '.archive-item': 0.08,
+    };
+
+    Object.entries(animateElements).forEach(([selector, delay]) => {
+        document.querySelectorAll(selector).forEach((item, index) => {
+            item.style.setProperty('--delay', `${index * delay}s`);
+        });
+    });
+
+    // Observe elements for intersection animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.archive-list li').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(10px)';
+        item.style.transition = 'all 0.5s ease-out';
+        observer.observe(item);
+    });
+
+    // Smooth scroll behavior for price-change badges
+    document.querySelectorAll('.price-change').forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.stats-dashboard')?.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Add hover glow effect
+    document.querySelectorAll('.stat-card, .trend-card, .metric-item').forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            this.style.setProperty('--mouse-x', x + 'px');
+            this.style.setProperty('--mouse-y', y + 'px');
+        });
     });
 });
-
-// Add animation keyframes
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.7; }
-    }
-`;
-document.head.appendChild(style);
 </script>
 
 <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
