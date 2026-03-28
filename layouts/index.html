@@ -1,455 +1,146 @@
-{{ define "content" }}
-{{ $pages := where .Site.RegularPages "Section" "posts" }}
-{{ $pages = $pages.ByDate.Reverse }}
-{{ $beehiiv := .Site.Params.beehiiv_embed_url }}
-{{ $coinzilla := .Site.Params.coinzilla_zone_id }}
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-top">
-      <div class="hero-coin">
-        <div class="coin-avatar">ETC</div>
-        <div>
-          <div class="coin-name">Ethereum Classic</div>
-          <div class="coin-sub">ETC &middot; Proof of Work &middot; Mise &agrave; jour quotidienne</div>
-        </div>
-      </div>
-      {{ if $pages }}
-      {{ $latest := index $pages 0 }}
-      {{ if $latest.Params.price_usd }}
-      <div class="hero-price-block">
-        <div class="hero-price">${{ printf "%.4f" $latest.Params.price_usd }}</div>
-        {{ if $latest.Params.change_24h }}
-          {{ if ge $latest.Params.change_24h 0.0 }}
-          <div class="price-change up">&#9650; +{{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
-          {{ else }}
-          <div class="price-change down">&#9660; {{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
-          {{ end }}
-        {{ end }}
-      </div>
-      {{ end }}
-      {{ end }}
-    </div>
-
-    {{ if $pages }}
-    {{ $latest := index $pages 0 }}
-    {{ if $latest.Params.price_usd }}
-    <div class="stat-grid">
-      {{ if $latest.Params.price_eur }}
-      <div class="stat-card">
-        <div class="stat-label">Prix EUR</div>
-        <div class="stat-value">&euro;{{ printf "%.4f" $latest.Params.price_eur }}</div>
-      </div>
-      {{ end }}
-      {{ if $latest.Params.change_7d }}
-      <div class="stat-card">
-        <div class="stat-label">7 jours</div>
-        <div class="stat-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
-          {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
-        </div>
-      </div>
-      {{ end }}
-      {{ if $latest.Params.change_30d }}
-      <div class="stat-card">
-        <div class="stat-label">30 jours</div>
-        <div class="stat-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
-          {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
-        </div>
-      </div>
-      {{ end }}
-      {{ if $latest.Params.market_cap }}
-      <div class="stat-card">
-        <div class="stat-label">Capitalisation</div>
-        <div class="stat-value">{{ $latest.Params.market_cap }}</div>
-      </div>
-      {{ end }}
-      {{ if $latest.Params.volume_24h }}
-      <div class="stat-card">
-        <div class="stat-label">Volume 24h</div>
-        <div class="stat-value">{{ $latest.Params.volume_24h }}</div>
-      </div>
-      {{ end }}
-    </div>
-    {{ end }}
-    {{ end }}
-  </div>
-</section>
-
-<!-- Dashboard de stats amélioré -->
-<section class="stats-dashboard">
-  <div class="stats-dashboard-inner">
-    <h2 class="dashboard-title">📊 Tableau de bord en temps réel</h2>
-
-    {{ if $pages }}
-    {{ $latest := index $pages 0 }}
-    {{ if $latest.Params.price_usd }}
-
-    <div class="stats-overview">
-      <!-- Performance 24h -->
-      <div class="trend-card">
-        <div class="trend-header">
-          <div>
-            <div class="trend-label">Performance 24h</div>
-            <div class="trend-value {{ if ge $latest.Params.change_24h 0.0 }}positive{{ else }}negative{{ end }}">
-              {{ if ge $latest.Params.change_24h 0.0 }}📈{{ else }}📉{{ end }}
-              {{ if ge $latest.Params.change_24h 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_24h }}%
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
+</head>
+<body data-header-desktop="fixed" data-header-mobile="auto">
+    <div class="wrapper">
+        <!-- Header -->
+        <header id="header-desktop" style="background: rgba(10,12,15,.8); backdrop-filter: blur(30px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;">
+            <div class="header-wrapper" style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
+                <div class="header-title" style="display: flex; align-items: center; gap: 8px;">
+                    <div style="font-size: 1.2rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{{ .Site.Title }}</div>
+                </div>
+                <nav class="menu" style="display: flex; gap: 24px;">
+                    <a href="/" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Accueil</a>
+                    <a href="/posts/" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Analyses</a>
+                    <a href="/#newsletter" style="color: var(--text-secondary); font-weight: 600; transition: color 0.2s;">Newsletter</a>
+                </nav>
             </div>
-          </div>
-          <canvas class="sparkline" id="spark24h" width="100" height="40"></canvas>
-        </div>
-        <div class="trend-bar">
-          <div class="trend-bar-fill" style="width: {{ add (mul $latest.Params.change_24h 2) 50 }}%"></div>
-        </div>
-      </div>
+        </header>
 
-      <!-- Performance 7d -->
-      <div class="trend-card">
-        <div class="trend-header">
-          <div>
-            <div class="trend-label">Performance 7 jours</div>
-            <div class="trend-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
-              {{ if ge $latest.Params.change_7d 0.0 }}📈{{ else }}📉{{ end }}
-              {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
+        <main class="main">
+            {{ $pages := where .Site.RegularPages "Section" "posts" }}
+            {{ $pages := $pages.ByDate.Reverse }}
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-inner">
+                    <div class="hero-top">
+                        <div class="hero-coin">
+                            <div class="coin-avatar">ETC</div>
+                            <div>
+                                <div class="coin-name">Ethereum Classic</div>
+                                <div class="coin-sub">ETC · Proof of Work · Mise à jour quotidienne</div>
+                            </div>
+                        </div>
+                        {{ if first 1 $pages }}
+                        {{ $latest := index $pages 0 }}
+                        {{ if $latest.Params.price_usd }}
+                        <div class="hero-price-block">
+                            <div class="hero-price">${{ printf "%.4f" $latest.Params.price_usd }}</div>
+                            {{ if $latest.Params.change_24h }}
+                                {{ if ge $latest.Params.change_24h 0.0 }}
+                                <div class="price-change up">▲ +{{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
+                                {{ else }}
+                                <div class="price-change down">▼ {{ printf "%.2f" $latest.Params.change_24h }}% sur 24h</div>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                        {{ end }}
+                    </div>
+
+                    {{ if first 1 $pages }}
+                    {{ $latest := index $pages 0 }}
+                    {{ if $latest.Params.price_usd }}
+                    <div class="stat-grid">
+                        {{ if $latest.Params.price_eur }}
+                        <div class="stat-card">
+                            <div class="stat-label">Prix EUR</div>
+                            <div class="stat-value">€{{ printf "%.4f" $latest.Params.price_eur }}</div>
+                        </div>
+                        {{ end }}
+                        {{ if $latest.Params.change_7d }}
+                        <div class="stat-card">
+                            <div class="stat-label">7 jours</div>
+                            <div class="stat-value {{ if ge $latest.Params.change_7d 0.0 }}positive{{ else }}negative{{ end }}">
+                                {{ if ge $latest.Params.change_7d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_7d }}%
+                            </div>
+                        </div>
+                        {{ end }}
+                        {{ if $latest.Params.change_30d }}
+                        <div class="stat-card">
+                            <div class="stat-label">30 jours</div>
+                            <div class="stat-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
+                                {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
+                            </div>
+                        </div>
+                        {{ end }}
+                        {{ if $latest.Params.market_cap }}
+                        <div class="stat-card">
+                            <div class="stat-label">Capitalisation</div>
+                            <div class="stat-value">{{ $latest.Params.market_cap }}</div>
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </section>
+
+            <!-- Latest Article -->
+            <div class="page-main">
+                <div class="page-inner">
+                    {{ if first 1 $pages }}
+                    {{ $latest := index $pages 0 }}
+                    <p class="section-title">Analyse du jour</p>
+                    <div class="latest-card">
+                        <span class="latest-badge">Dernière mise à jour</span>
+                        <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
+                        <p class="card-meta">{{ $latest.Date.Format "2 January 2006" }}</p>
+                        <p class="card-excerpt">{{ $latest.Summary }}</p>
+                        <a href="{{ $latest.Permalink }}" class="btn">Lire l'analyse complète →</a>
+                    </div>
+                    {{ end }}
+
+                    <!-- Archive -->
+                    {{ if gt (len $pages) 1 }}
+                    <p class="section-title" style="margin-top: 40px;">Historique des analyses</p>
+                    <ul class="archive-list">
+                        {{ range after 1 $pages }}
+                        <li class="archive-item">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            {{ if .Params.change_24h }}
+                                {{ if ge .Params.change_24h 0.0 }}
+                                <span class="archive-badge up">+{{ printf "%.2f" .Params.change_24h }}%</span>
+                                {{ else }}
+                                <span class="archive-badge down">{{ printf "%.2f" .Params.change_24h }}%</span>
+                                {{ end }}
+                            {{ end }}
+                            <span class="archive-date">{{ .Date.Format "02/01/2006" }}</span>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
             </div>
-          </div>
-          <canvas class="sparkline" id="spark7d" width="100" height="40"></canvas>
-        </div>
-        <div class="trend-bar">
-          <div class="trend-bar-fill" style="width: {{ add (mul $latest.Params.change_7d 1.5) 50 }}%"></div>
-        </div>
-      </div>
+        </main>
 
-      <!-- Performance 30d -->
-      <div class="trend-card">
-        <div class="trend-header">
-          <div>
-            <div class="trend-label">Performance 30 jours</div>
-            <div class="trend-value {{ if ge $latest.Params.change_30d 0.0 }}positive{{ else }}negative{{ end }}">
-              {{ if ge $latest.Params.change_30d 0.0 }}📈{{ else }}📉{{ end }}
-              {{ if ge $latest.Params.change_30d 0.0 }}+{{ end }}{{ printf "%.2f" $latest.Params.change_30d }}%
-            </div>
-          </div>
-          <canvas class="sparkline" id="spark30d" width="100" height="40"></canvas>
-        </div>
-        <div class="trend-bar">
-          <div class="trend-bar-fill" style="width: {{ add (mul $latest.Params.change_30d 0.8) 50 }}%"></div>
-        </div>
-      </div>
+        <!-- Footer -->
+        <footer class="footer" style="background: var(--bg); border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
+            <p style="margin-bottom: 12px;">© {{ now.Year }} {{ .Site.Title }} - Suivi automatisé du cours Ethereum Classic</p>
+            <p style="color: var(--text-muted); font-size: 0.75rem;">Construit avec Hugo</p>
+        </footer>
     </div>
 
-    <!-- Métriques détaillées -->
-    <div class="metrics-grid">
-      <div class="metric-item">
-        <div class="metric-icon">💰</div>
-        <div class="metric-info">
-          <div class="metric-label">Capitalisation</div>
-          <div class="metric-value">{{ $latest.Params.market_cap }}</div>
-        </div>
-      </div>
-
-      <div class="metric-item">
-        <div class="metric-icon">📊</div>
-        <div class="metric-info">
-          <div class="metric-label">Volume 24h</div>
-          <div class="metric-value">{{ $latest.Params.volume_24h }}</div>
-        </div>
-      </div>
-
-      <div class="metric-item">
-        <div class="metric-icon">🎯</div>
-        <div class="metric-info">
-          <div class="metric-label">Prix actuel</div>
-          <div class="metric-value">${{ printf "%.4f" $latest.Params.price_usd }}</div>
-        </div>
-      </div>
-
-      <div class="metric-item">
-        <div class="metric-icon">€</div>
-        <div class="metric-info">
-          <div class="metric-label">Prix EUR</div>
-          <div class="metric-value">&euro;{{ printf "%.4f" $latest.Params.price_eur }}</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tendances comparatives -->
-    <div class="trends-comparison">
-      <h3 class="comparison-title">Tendances</h3>
-      <div class="comparison-grid">
-        <div class="comparison-item">
-          <div class="comparison-label">Meilleure perf</div>
-          <div class="comparison-badges">
-            {{ $best := 0.0 }}
-            {{ if $latest.Params.change_24h }}
-              {{ if gt $latest.Params.change_24h $best }}
-                {{ $best = $latest.Params.change_24h }}
-              {{ end }}
-            {{ end }}
-            {{ if ge $latest.Params.change_24h $best }}
-            <span class="badge badge-gold">24h</span>
-            {{ end }}
-            {{ if ge $latest.Params.change_7d $best }}
-            <span class="badge badge-gold">7d</span>
-            {{ end }}
-            {{ if ge $latest.Params.change_30d $best }}
-            <span class="badge badge-gold">30d</span>
-            {{ end }}
-          </div>
-        </div>
-
-        <div class="comparison-item">
-          <div class="comparison-label">Volatilité</div>
-          <div class="comparison-value">
-            {{ $vol := (add (mul (sub $latest.Params.change_7d $latest.Params.change_24h) 2) 5) }}
-            {{ if gt $vol 10 }}
-            <span class="volatility high">🔴 Élevée</span>
-            {{ else if gt $vol 5 }}
-            <span class="volatility medium">🟡 Modérée</span>
-            {{ else }}
-            <span class="volatility low">🟢 Faible</span>
-            {{ end }}
-          </div>
-        </div>
-
-        <div class="comparison-item">
-          <div class="comparison-label">Momentum</div>
-          <div class="comparison-value">
-            {{ $momentum := $latest.Params.change_24h }}
-            {{ if gt $momentum 2 }}
-            <span class="badge badge-green">Haussier ⬆️</span>
-            {{ else if lt $momentum -2 }}
-            <span class="badge badge-red">Baissier ⬇️</span>
-            {{ else }}
-            <span class="badge badge-neutral">Neutre ➡️</span>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {{ end }}
-    {{ end }}
-    {{ end }}
-  </div>
-</section>
-
-<script>
-// Sparkline generator for dashboard
-function drawSparkline(canvasId, value, isPositive) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    const width = canvas.width;
-    const height = canvas.height;
-    const padding = 4;
-
-    // Generate synthetic data based on the value
-    const points = [];
-    const variance = Math.abs(value) / 2;
-    let current = 50; // Start at middle
-
-    for (let i = 0; i < 20; i++) {
-        const change = (Math.random() - 0.5) * variance;
-        current += change;
-        points.push(Math.max(20, Math.min(80, current)));
-    }
-
-    // Clear canvas
-    ctx.clearRect(0, 0, width, height);
-
-    // Set colors
-    const lineColor = isPositive ? '#00d68f' : '#ff4d6a';
-    const fillColor = isPositive ? 'rgba(0, 214, 143, 0.1)' : 'rgba(255, 77, 106, 0.1)';
-
-    // Draw fill
-    ctx.fillStyle = fillColor;
-    ctx.beginPath();
-    ctx.moveTo(padding, height - padding);
-
-    for (let i = 0; i < points.length; i++) {
-        const x = padding + (i / (points.length - 1)) * (width - 2 * padding);
-        const y = height - padding - (points[i] / 100) * (height - 2 * padding);
-        if (i === 0) ctx.lineTo(x, y);
-        else ctx.lineTo(x, y);
-    }
-
-    ctx.lineTo(width - padding, height - padding);
-    ctx.closePath();
-    ctx.fill();
-
-    // Draw line
-    ctx.strokeStyle = lineColor;
-    ctx.lineWidth = 2;
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-
-    for (let i = 0; i < points.length; i++) {
-        const x = padding + (i / (points.length - 1)) * (width - 2 * padding);
-        const y = height - padding - (points[i] / 100) * (height - 2 * padding);
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-    }
-
-    ctx.stroke();
-}
-
-// Initialize sparklines on page load
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the data from page
-    const latest24h = parseFloat(document.querySelector('.trend-value.positive, .trend-value.negative')?.textContent || '0');
-
-    // Draw sparklines with simulated data
-    drawSparkline('spark24h', latest24h, latest24h >= 0);
-    drawSparkline('spark7d', latest24h * 0.8, latest24h * 0.8 >= 0);
-    drawSparkline('spark30d', latest24h * 0.5, latest24h * 0.5 >= 0);
-
-    // Add enhanced animations to elements
-    const animateElements = {
-        '.metric-item': 0.1,
-        '.stat-card': 0.1,
-        '.trend-card': 0.15,
-        '.archive-item': 0.08,
-    };
-
-    Object.entries(animateElements).forEach(([selector, delay]) => {
-        document.querySelectorAll(selector).forEach((item, index) => {
-            item.style.setProperty('--delay', `${index * delay}s`);
-        });
-    });
-
-    // Observe elements for intersection animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.archive-list li').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(10px)';
-        item.style.transition = 'all 0.5s ease-out';
-        observer.observe(item);
-    });
-
-    // Smooth scroll behavior for price-change badges
-    document.querySelectorAll('.price-change').forEach(el => {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('.stats-dashboard')?.scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    // Add hover glow effect
-    document.querySelectorAll('.stat-card, .trend-card, .metric-item').forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            this.style.setProperty('--mouse-x', x + 'px');
-            this.style.setProperty('--mouse-y', y + 'px');
-        });
-    });
-});
-</script>
-
-<div style="max-width:1100px;margin:0 auto;padding:0 24px;">
-  <div class="chart-wrapper">
-    <h3>&#128200; &#201;volution du prix &#8212; 7 derniers jours (live)</h3>
-    <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
-    <gecko-coin-price-chart-widget locale="fr" outlined="false" coin-id="ethereum-classic" initial-currency="usd" width="100%" height="200"></gecko-coin-price-chart-widget>
-  </div>
-</div>
-
-<main class="page-main">
-  <div class="page-inner">
-    {{ if $pages }}
-    {{ $latest := index $pages 0 }}
-
-    <p class="section-title">Analyse du jour</p>
-    <div class="latest-card">
-      <span class="latest-badge">Derni&#232;re mise &#224; jour</span>
-      <h2><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h2>
-      <p class="card-meta">{{ $latest.Date.Format "2 January 2006" }}</p>
-      <p class="card-excerpt">{{ $latest.Summary }}</p>
-      <a href="{{ $latest.Permalink }}" class="btn">Lire l'analyse compl&#232;te &#8594;</a>
-    </div>
-
-    <div class="news-newsletter-grid">
-      <div class="news-module">
-        <p class="section-title">Actualit&#233;s ETC</p>
-        <div class="news-module-card">
-          <div class="news-module-header">
-            <span class="news-icon">&#128240;</span>
-            <span>Infos reformul&#233;es par IA</span>
-          </div>
-          {{ $newsPage := .Site.GetPage "/pages/ethereum-news" }}
-          {{ if $newsPage }}
-          <div class="news-items-preview">
-            {{ $newsPage.Content | safeHTML }}
-          </div>
-          <a href="{{ $newsPage.Permalink }}" class="btn btn-news">Toutes les actualit&#233;s &#8594;</a>
-          {{ else }}
-          <div class="news-empty">
-            <p>&#9203; Les actualit&#233;s seront disponibles apr&#232;s la prochaine mise &#224; jour.</p>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-
-      <div class="newsletter-module">
-        <div class="newsletter-section" id="newsletter">
-          <h3>&#128236; Recevoir l'analyse ETC chaque matin</h3>
-          <p>Abonne-toi gratuitement &#8212; l'analyse quotidienne directement dans ta bo&#238;te mail.</p>
-          {{ if $beehiiv }}
-          <iframe src="{{ $beehiiv }}" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width:100%;max-width:480px;height:320px;border-radius:10px;border:1px solid #2a3042;background:transparent;"></iframe>
-          {{ else }}
-          <div class="newsletter-placeholder">&#9881;&#65039; Abonnement bient&#244;t disponible</div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-
-    {{ if gt (len $pages) 1 }}
-    <p class="section-title">Historique des analyses</p>
-    <ul class="archive-list">
-      {{ range after 1 $pages }}
-      <li class="archive-item">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{ if .Params.change_24h }}
-          {{ if ge .Params.change_24h 0.0 }}
-          <span class="archive-badge up">+{{ printf "%.2f" .Params.change_24h }}%</span>
-          {{ else }}
-          <span class="archive-badge down">{{ printf "%.2f" .Params.change_24h }}%</span>
-          {{ end }}
-        {{ end }}
-        <span class="archive-date">{{ .Date.Format "02/01/2006" }}</span>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-
-    {{ else }}
-    <div style="text-align:center;padding:80px 24px;">
-      <div style="font-size:3rem;margin-bottom:20px;">&#9203;</div>
-      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:12px;color:var(--text);">Le site se met en place&#8230;</h2>
-      <p style="color:var(--text-muted);max-width:400px;margin:0 auto;">Le premier article sera g&#233;n&#233;r&#233; lors de la prochaine ex&#233;cution du workflow GitHub Actions.</p>
-    </div>
-    {{ end }}
-  </div>
-</main>
-{{ end }}
+    <script src="{{ `js/script.js` | relURL }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</body>
+</html>

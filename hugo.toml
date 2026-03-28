@@ -3,7 +3,6 @@ languageCode = "fr-FR"
 languageName = "Français"
 title = "ETC Tracker"
 defaultContentLanguage = "fr"
-theme = "LoveIt"
 enableRobotsTXT = true
 enableEmoji = true
 
