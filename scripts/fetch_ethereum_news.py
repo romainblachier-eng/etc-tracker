@@ -13,6 +13,7 @@ Variables d'environnement :
 import os
 import sys
 import json
+import re
 import requests
 from datetime import datetime
 from typing import Optional
@@ -23,13 +24,19 @@ from typing import Optional
 # ──────────────────────────────────────────────
 
 def fetch_ethereum_news(api_key: str, max_articles: int = 5) -> list:
-    """Récupère les actualités Ethereum Classic depuis NewsAPI."""
+    """Récupère les actualités Ethereum Classic depuis NewsAPI.
+    
+    Demande un pool large (20) puis filtre strictement les articles
+    qui mentionnent explicitement 'Ethereum Classic' dans le titre
+    ou la description. Retourne max_articles résultats.
+    """
     url = "https://newsapi.org/v2/everything"
+    # On demande 20 articles pour compenser le filtrage strict
     params = {
         "q": "\"Ethereum Classic\"",
         "sortBy": "publishedAt",
         "language": "en",
-        "pageSize": max_articles,
+        "pageSize": 20,
     }
     headers = {"Authorization": api_key}
 
@@ -43,8 +50,15 @@ def fetch_ethereum_news(api_key: str, max_articles: int = 5) -> list:
             print(f"⚠️  NewsAPI : {error_msg}")
             return []
 
-        articles = data.get("articles", [])
-        return articles[:max_articles]
+        raw_articles = data.get("articles", [])
+        print(f"   NewsAPI a renvoyé {len(raw_articles)} article(s) brut(s)")
+
+        # FILTRE STRICT : ne garder que les articles mentionnant
+        # explicitement "ethereum classic" dans le titre ou la description
+        filtered = filter_strict_etc(raw_articles)
+        print(f"   {len(filtered)} article(s) mentionnent réellement 'Ethereum Classic'")
+
+        return filtered[:max_articles]
 
     except requests.exceptions.HTTPError as exc:
         print(f"❌ Erreur HTTP NewsAPI ({exc.response.status_code}) : {exc}")
@@ -52,6 +66,32 @@ def fetch_ethereum_news(api_key: str, max_articles: int = 5) -> list:
     except Exception as exc:
         print(f"❌ Erreur lors de la récupération des news : {exc}")
         return []
+
+
+def filter_strict_etc(articles: list) -> list:
+    """Filtre strict : ne garde que les articles dont le titre OU
+    la description contient littéralement 'Ethereum Classic' (insensible à la casse).
+    
+    Exclut aussi les articles [Removed] qui sont des placeholders NewsAPI.
+    """
+    pattern = re.compile(r"ethereum\s+classic", re.IGNORECASE)
+    kept = []
+
+    for article in articles:
+        title = article.get("title") or ""
+        description = article.get("description") or ""
+
+        # Exclure les articles supprimes/placeholder
+        if title == "[Removed]" or description == "[Removed]":
+            continue
+
+        # Verifier la mention explicite d'Ethereum Classic
+        if pattern.search(title) or pattern.search(description):
+            kept.append(article)
+        else:
+            print(f"   ✗ Filtré (pas de mention ETC) : {title[:80]}")
+
+    return kept
 
 
 # ──────────────────────────────────────────────
@@ -67,7 +107,8 @@ def reformulate_article(title: str, description: str, api_key: str) -> Optional[
         "Tu es un spécialiste des cryptomonnaies. "
         "Reformule cet article d'actualité en français en 2-3 phrases claires et précises. "
         "Concentre-toi sur l'essentiel. "
-        "Ne commence pas par 'Cet article...' ou 'L\'actualité...'.\n\n"
+        "Ne commence pas par 'Cet article...' ou 'L'actualité...'."
+        "\n\n"
         f"Titre : {title}\n"
         f"Contenu : {description}"
     )
@@ -167,15 +208,15 @@ def main() -> None:
     if not anthropic_key:
         print("⚠️  Variable ANTHROPIC_API_KEY manquante — utilisation des résumés originaux.")
 
-    # 4-b. Récupération des actualités
-    print("\n📰 Récupération des actualités ETC (NewsAPI)…")
+    # 4-b. Récupération des actualités (avec filtre strict)
+    print("\n📰 Récupération des actualités ETC (NewsAPI + filtre strict)…")
     articles = fetch_ethereum_news(newsapi_key, max_articles=5)
 
     if not articles:
-        print("❌ Aucune actualité trouvée — module d'actualités désactivé.")
+        print("❌ Aucune actualité Ethereum Classic trouvée après filtrage strict.")
         return
 
-    print(f"   {len(articles)} actualité(s) trouvée(s)")
+    print(f"   {len(articles)} actualité(s) validée(s) après filtrage")
 
     # 4-c. Reformulation avec Claude
     reformulated = {}
@@ -201,3 +242,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
