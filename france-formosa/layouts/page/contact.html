@@ -1,42 +1,43 @@
 {{ define "main" }}
 <section class="page-hero">
     <div class="container">
-        <h1>{{ .Title }}</h1>
-        <p class="page-subtitle">{{ .Params.subtitle }}</p>
+        <div class="page-hero-content" data-reveal>
+            <span class="overline">France Formosa</span>
+            <h1>{{ .Title }}</h1>
+            {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
+        </div>
     </div>
 </section>
-<section class="contact-section">
+<section class="page-body">
     <div class="container">
-        <div class="contact-grid">
+        <div class="contact-layout" data-reveal>
             <div class="contact-info">
-                <h3>{{ i18n "contact_title" }}</h3>
+                <h2>{{ i18n "contact_title" }}</h2>
                 <p>{{ i18n "contact_text" }}</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                        <span>{{ i18n "contact_location" }}</span>
-                    </div>
+                <div class="contact-detail">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                    <span>{{ i18n "contact_location" }}</span>
                 </div>
             </div>
-            <div class="contact-form-wrapper">
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="hidden" style="display:none">
-                        <label>Do not fill: <input name="bot-field"></label>
-                    </p>
-                    <div class="form-group">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                <input type="hidden" name="form-name" value="contact">
+                <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
+                <div class="form-row">
+                    <div class="field">
                         <label for="name">{{ i18n "form_name" }}</label>
                         <input type="text" id="name" name="name" required placeholder="{{ i18n "form_name_placeholder" }}">
                     </div>
-                    <div class="form-group">
+                    <div class="field">
                         <label for="email">{{ i18n "form_email" }}</label>
                         <input type="email" id="email" name="email" required placeholder="{{ i18n "form_email_placeholder" }}">
                     </div>
-                    <div class="form-group">
+                </div>
+                <div class="form-row">
+                    <div class="field">
                         <label for="organization">{{ i18n "form_org" }}</label>
                         <input type="text" id="organization" name="organization" placeholder="{{ i18n "form_org_placeholder" }}">
                     </div>
-                    <div class="form-group">
+                    <div class="field">
                         <label for="subject">{{ i18n "form_subject" }}</label>
                         <select id="subject" name="subject" required>
                             <option value="">{{ i18n "form_subject_select" }}</option>
@@ -47,13 +48,13 @@
                             <option value="other">{{ i18n "form_subject_other" }}</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="message">{{ i18n "form_message" }}</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="{{ i18n "form_message_placeholder" }}"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">{{ i18n "form_submit" }}</button>
-                </form>
-            </div>
+                </div>
+                <div class="field">
+                    <label for="message">{{ i18n "form_message" }}</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="{{ i18n "form_message_placeholder" }}"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">{{ i18n "form_submit" }}</button>
+            </form>
         </div>
     </div>
 </section>
