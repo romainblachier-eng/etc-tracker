@@ -1,22 +1,29 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<div class="list-header" data-reveal>
+    <h1>{{ .Title }}</h1>
+</div>
 {{ .Content }}
 
 {{ $paginator := .Paginate .Pages 15 }}
+<section class="posts-grid">
 {{ range $paginator.Pages }}
-<article class="post-card">
-    <a href="{{ .Permalink }}">
-        <h3>{{ .Title }}</h3>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    </a>
-</article>
+    <article class="post-card" data-reveal>
+        <a href="{{ .Permalink }}">
+            <div class="post-card-body">
+                <h3>{{ .Title }}</h3>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+                {{ with .Description }}<p>{{ . }}</p>{{ end }}
+            </div>
+            <span class="arrow">&rarr;</span>
+        </a>
+    </article>
 {{ end }}
+</section>
 
 {{ if gt $paginator.TotalPages 1 }}
-<nav class="pagination">
+<nav class="pagination" data-reveal>
     {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">&larr; Precedent</a>{{ end }}
-    <span>Page {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+    <span>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
     {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Suivant &rarr;</a>{{ end }}
 </nav>
 {{ end }}

@@ -1,22 +1,39 @@
 {{ define "main" }}
 <section class="hero">
-    <h1>ETC Tracker</h1>
-    <p class="subtitle">Suivi quotidien du cours Ethereum Classic (ETC) avec analyse IA</p>
+    <div class="hero-overline" data-reveal>
+        <span class="pulse"></span>
+        Suivi en temps reel
+    </div>
+    <h1 data-reveal><span class="gradient">Ethereum Classic</span><br>Tracker</h1>
+    <p class="subtitle" data-reveal>Analyse quotidienne du cours ETC, generee par intelligence artificielle.</p>
 </section>
 
-<section class="latest-posts">
-    <h2>Derniers cours</h2>
+<div class="section-header" data-reveal>
+    <h2>Derniers rapports</h2>
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ if gt (len $posts) 10 }}
+    <a href="/posts/" class="view-all">Voir tout &rarr;</a>
+    {{ end }}
+</div>
+
+<section class="posts-grid">
     {{ $posts := where .Site.RegularPages "Section" "posts" }}
     {{ range first 10 $posts }}
-    <article class="post-card">
+    <article class="post-card" data-reveal>
         <a href="{{ .Permalink }}">
-            <h3>{{ .Title }}</h3>
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
-            {{ with .Description }}<p>{{ . }}</p>{{ end }}
+            <div class="post-card-body">
+                <h3>{{ .Title }}</h3>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+                {{ with .Description }}<p>{{ . }}</p>{{ end }}
+            </div>
+            <span class="arrow">&rarr;</span>
         </a>
     </article>
     {{ else }}
-    <p>Aucun article pour le moment. Le premier cours sera publie demain a 9h.</p>
+    <div class="empty-state" data-reveal>
+        <div class="icon">&#9684;</div>
+        <p>Aucun rapport pour le moment. Le premier cours sera publie demain a 9h.</p>
+    </div>
     {{ end }}
 </section>
 {{ end }}
