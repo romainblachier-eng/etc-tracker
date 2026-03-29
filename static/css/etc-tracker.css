@@ -204,21 +204,21 @@ body {
    Hero
    ============================================================ */
 .hero {
-  padding: var(--sp-3xl) 0 var(--sp-2xl);
+  padding: var(--sp-xl) 0 var(--sp-lg);
   text-align: center;
   position: relative;
 }
 .hero::before {
   content: "";
   position: absolute;
-  top: -40px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 480px;
-  height: 480px;
+  width: 320px;
+  height: 320px;
   background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   pointer-events: none;
-  opacity: .35;
+  opacity: .25;
 }
 
 .hero-overline {
@@ -247,12 +247,12 @@ body {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: var(--fs-4xl);
+  font-size: var(--fs-2xl);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -.03em;
+  line-height: 1.2;
+  letter-spacing: -.02em;
   color: var(--text);
-  margin-bottom: var(--sp-md);
+  margin-bottom: var(--sp-sm);
   position: relative;
 }
 .hero h1 .gradient {
@@ -263,11 +263,11 @@ body {
 }
 
 .hero .subtitle {
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
   color: var(--text-muted);
-  max-width: 520px;
+  max-width: 480px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -338,7 +338,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--sp-sm);
-  padding-bottom: var(--sp-3xl);
+  padding-bottom: var(--sp-xl);
 }
 
 .post-card {
@@ -733,15 +733,15 @@ body {
    ============================================================ */
 @media (max-width: 768px) {
   :root {
-    --fs-4xl: 2.25rem;
-    --fs-3xl: 1.75rem;
-    --fs-2xl: 1.5rem;
+    --fs-4xl: 1.75rem;
+    --fs-3xl: 1.5rem;
+    --fs-2xl: 1.3rem;
   }
   .site-header .container {
     height: 52px;
   }
   .hero {
-    padding: var(--sp-2xl) 0 var(--sp-xl);
+    padding: var(--sp-lg) 0 var(--sp-md);
   }
   .stats-bar {
     grid-template-columns: 1fr;
@@ -756,9 +756,9 @@ body {
 
 @media (max-width: 480px) {
   :root {
-    --fs-4xl: 1.75rem;
-    --fs-2xl: 1.3rem;
-    --fs-xl: 1.2rem;
+    --fs-4xl: 1.5rem;
+    --fs-2xl: 1.15rem;
+    --fs-xl: 1.1rem;
   }
   .container {
     padding: 0 var(--sp-md);
