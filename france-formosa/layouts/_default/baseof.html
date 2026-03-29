@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}France Formosa — {{ if eq .Language.Lang "fr" }}Think tank franco-taiwanais{{ else }}Franco-Taiwanese think tank{{ end }}{{ else }}{{ .Title }} — France Formosa{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    {{ if .IsTranslated }}
+    {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="{{ .Site.Home.RelPermalink }}" class="logo">
+                <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
+            </a>
+            <div class="header-right">
+                <nav class="main-nav">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                    {{ end }}
+                </nav>
+                <div class="lang-switcher">
+                    {{ if .IsTranslated }}
+                    {{ range .Translations }}
+                    <a href="{{ .Permalink }}" class="lang-btn" title="{{ .Language.LanguageName }}">
+                        {{ if eq .Language.Lang "fr" }}FR{{ else }}EN{{ end }}
+                    </a>
+                    {{ end }}
+                    {{ else }}
+                    {{ if eq .Language.Lang "fr" }}
+                    <a href="/en/" class="lang-btn" title="English">EN</a>
+                    {{ else }}
+                    <a href="/fr/" class="lang-btn" title="Francais">FR</a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
+                    </div>
+                    <p class="footer-tagline">{{ i18n "footer_tagline" }}</p>
+                </div>
+                <div class="footer-col">
+                    <h4>{{ i18n "footer_nav" }}</h4>
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+                <div class="footer-col">
+                    <h4>{{ i18n "footer_contact" }}</h4>
+                    <a href="{{ "contact/" | relLangURL }}">{{ i18n "footer_contact_link" }}</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.Year }} France Formosa. {{ i18n "footer_rights" }}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('open');
+            this.classList.toggle('active');
+        });
+
+        // Auto-detect browser language and redirect on first visit
+        (function() {
+            if (sessionStorage.getItem('lang-redirected')) return;
+            sessionStorage.setItem('lang-redirected', '1');
+
+            var path = window.location.pathname;
+            // Only redirect from root or if not already on a language path
+            if (path === '/' || path === '') {
+                var lang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+                if (lang.startsWith('fr')) {
+                    window.location.replace('/fr/');
+                } else {
+                    window.location.replace('/en/');
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

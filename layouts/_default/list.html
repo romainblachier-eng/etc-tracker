@@ -1,20 +1,23 @@
 {{ define "main" }}
-<section class="page-hero">
-    <div class="container">
-        <h1>{{ .Title }}</h1>
-        {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
-    </div>
-</section>
-<section class="page-content">
-    <div class="container container-narrow">
-        {{ .Content }}
-        {{ range .Pages }}
-        <article class="publication-card">
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <time>{{ .Date.Format "2 January 2006" }}</time>
-            <p>{{ .Summary }}</p>
-        </article>
-        {{ end }}
-    </div>
-</section>
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+{{ $paginator := .Paginate .Pages 15 }}
+{{ range $paginator.Pages }}
+<article class="post-card">
+    <a href="{{ .Permalink }}">
+        <h3>{{ .Title }}</h3>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </a>
+</article>
+{{ end }}
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">&larr; Precedent</a>{{ end }}
+    <span>Page {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Suivant &rarr;</a>{{ end }}
+</nav>
+{{ end }}
 {{ end }}

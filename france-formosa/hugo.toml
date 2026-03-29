@@ -1,0 +1,72 @@
+baseURL = "https://www.france-formosa.org/"
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+
+[languages]
+  [languages.fr]
+    languageCode = "fr-FR"
+    languageName = "Francais"
+    contentDir = "content/fr"
+    weight = 1
+    title = "France Formosa"
+    [languages.fr.params]
+      description = "Association de diplomatie culturelle franco-taiwanaise"
+      author = "France Formosa"
+
+    [[languages.fr.menu.main]]
+      name = "Accueil"
+      url = "/"
+      weight = 1
+    [[languages.fr.menu.main]]
+      name = "Notre mission"
+      url = "/mission/"
+      weight = 2
+    [[languages.fr.menu.main]]
+      name = "Nos axes"
+      url = "/axes/"
+      weight = 3
+    [[languages.fr.menu.main]]
+      name = "Publications"
+      url = "/publications/"
+      weight = 4
+    [[languages.fr.menu.main]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 5
+
+  [languages.en]
+    languageCode = "en-US"
+    languageName = "English"
+    contentDir = "content/en"
+    weight = 2
+    title = "France Formosa"
+    [languages.en.params]
+      description = "Cultural diplomacy association between France and Taiwan"
+      author = "France Formosa"
+
+    [[languages.en.menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 1
+    [[languages.en.menu.main]]
+      name = "Our Mission"
+      url = "/mission/"
+      weight = 2
+    [[languages.en.menu.main]]
+      name = "Our Focus"
+      url = "/axes/"
+      weight = 3
+    [[languages.en.menu.main]]
+      name = "Publications"
+      url = "/publications/"
+      weight = 4
+    [[languages.en.menu.main]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,36 +1,30 @@
-baseURL = "https://www.france-formosa.org/"
+baseURL = "https://ethereumclassic.work/"
 languageCode = "fr-FR"
-title = "France Formosa"
+title = "ETC Tracker"
 defaultContentLanguage = "fr"
 enableRobotsTXT = true
+paginate = 15
 
 [params]
-  description = "Think tank dédié aux relations franco-taïwanaises"
-  author = "France Formosa"
+  description = "Suivi quotidien du cours Ethereum Classic (ETC) avec analyse IA"
+  author = "ETC Tracker"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Accueil"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "posts"
+    name = "Cours ETC"
+    url = "/posts/"
+    weight = 2
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
 
-[menu]
-  [[menu.main]]
-    name = "Accueil"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Notre mission"
-    url = "/mission/"
-    weight = 2
-  [[menu.main]]
-    name = "Nos axes"
-    url = "/axes/"
-    weight = 3
-  [[menu.main]]
-    name = "Publications"
-    url = "/publications/"
-    weight = 4
-  [[menu.main]]
-    name = "Contact"
-    url = "/contact/"
-    weight = 5
+[outputs]
+  home = ["HTML", "RSS"]

@@ -1,4 +1,4 @@
 ---
-title: "France Formosa"
-description: "Association de diplomatie culturelle franco-taïwanaise"
+title: "ETC Tracker"
+description: "Suivi quotidien du cours Ethereum Classic (ETC) avec analyse IA"
 ---
