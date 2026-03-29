@@ -31,7 +31,7 @@ France Formosa développe des projets de conférences, des partenariats événem
 
 Nous organisons et participons à des événements qui mettent en lumière la richesse culturelle taïwanaise auprès du public français.
 
-En 2024, France Formosa a organisé un **colloque sur Taïwan à l'Assemblée nationale** réunissant des parlementaires français et des experts des relations franco-taïwanaises.
+France Formosa a organisé un **colloque sur Taïwan à l'Assemblée nationale** réunissant des parlementaires français et des experts des relations franco-taïwanaises.
 
 ---
 
