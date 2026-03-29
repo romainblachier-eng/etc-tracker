@@ -31,6 +31,8 @@ France Formosa develops conference projects, event partnerships and initiatives 
 
 We organize and participate in events that highlight Taiwan's cultural richness for the French public.
 
+In 2024, France Formosa organized a **Taiwan symposium at the French National Assembly**, bringing together French parliamentarians and experts on Franco-Taiwanese relations.
+
 ---
 
 ## Institutional partnerships development

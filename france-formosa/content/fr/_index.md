@@ -1,4 +1,4 @@
 ---
 title: "France Formosa"
-description: "Association de diplomatie culturelle franco-taiwanaise"
+description: "Association de diplomatie culturelle franco-taïwanaise"
 ---

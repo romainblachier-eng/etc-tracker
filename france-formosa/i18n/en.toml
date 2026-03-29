@@ -24,8 +24,8 @@ other = "Official missions under MOFA auspices"
 other = "Leading journals (Conflits, Taipei Times, Taiwan Insight)"
 [stat_first_mission]
 other = "First diplomatic mission to Taiwan"
-[stat_last_mission]
-other = "Latest official MOFA mission"
+[stat_colloque]
+other = "Taiwan symposium at the National Assembly with parliamentarians"
 
 [section_areas]
 other = "Our areas of action"

@@ -24,8 +24,8 @@ other = "在外交部支持下的官方任務"
 other = "權威期刊（Conflits、Taipei Times、Taiwan Insight）"
 [stat_first_mission]
 other = "首次赴台外交任務"
-[stat_last_mission]
-other = "最近一次外交部官方任務"
+[stat_colloque]
+other = "於國民議會與議員舉辦臺灣研討會"
 
 [section_areas]
 other = "我們的行動領域"

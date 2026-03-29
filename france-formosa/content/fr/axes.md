@@ -4,37 +4,39 @@ subtitle: "Quatre piliers pour une diplomatie culturelle efficace"
 layout: "single"
 ---
 
-## Production intellectuelle et academique
+## Production intellectuelle et académique
 
-France Formosa contribue au debat public par des publications dans des revues de reference telles que la **Revue Conflits**, le **Taipei Times** et **Taiwan Insight**. Nos membres interviennent regulierement dans des etablissements d'enseignement superieur et lors de conferences dediees a la geopolitique taiwanaise.
+France Formosa contribue au débat public par des publications dans des revues de référence telles que la **Revue Conflits**, le **Taipei Times** et **Taiwan Insight**. Nos membres interviennent régulièrement dans des établissements d'enseignement supérieur et lors de conférences dédiées à la géopolitique taïwanaise.
 
-Notre ambition est de nourrir une reflexion de qualite sur les enjeux franco-taiwanais et de faire rayonner l'expertise francaise sur Taiwan.
+Notre ambition est de nourrir une réflexion de qualité sur les enjeux franco-taïwanais et de faire rayonner l'expertise française sur Taïwan.
 
 ---
 
 ## Diplomatie de terrain
 
-L'association a conduit **deux missions officielles sous l'egide du MOFA taiwanais** (ministere des Affaires etrangeres) en **2019** et **2025**, temoignant de la reconnaissance institutionnelle de notre travail.
+L'association a conduit **deux missions officielles sous l'égide du MOFA taïwanais** (ministère des Affaires étrangères) en **2019** et **2025**, témoignant de la reconnaissance institutionnelle de notre travail.
 
 Nous entretenons des relations suivies avec :
-- Le **Bureau de Representation de Taipei en France**
-- Le **Bureau de Taiwan a Aix-en-Provence**
+- Le **Bureau de Représentation de Taipei en France**
+- Le **Bureau de Taïwan à Aix-en-Provence**
 - Le **MOFA Foreign Media Services**
 
-Ces liens nous permettent de jouer un role de facilitateur dans les echanges bilateraux.
+Ces liens nous permettent de jouer un rôle de facilitateur dans les échanges bilatéraux.
 
 ---
 
-## Mediation culturelle et evenementiel
+## Médiation culturelle et événementiel
 
-France Formosa developpe des projets de conferences, des partenariats evenementiels et des initiatives visant a **renforcer la visibilite de Taiwan en France** et a encourager les echanges interculturels.
+France Formosa développe des projets de conférences, des partenariats événementiels et des initiatives visant à **renforcer la visibilité de Taïwan en France** et à encourager les échanges interculturels.
 
-Nous organisons et participons a des evenements qui mettent en lumiere la richesse culturelle taiwanaise aupres du public francais.
+Nous organisons et participons à des événements qui mettent en lumière la richesse culturelle taïwanaise auprès du public français.
+
+En 2024, France Formosa a organisé un **colloque sur Taïwan à l'Assemblée nationale** réunissant des parlementaires français et des experts des relations franco-taïwanaises.
 
 ---
 
-## Prospection de cooperations institutionnelles
+## Prospection de coopérations institutionnelles
 
-Nous avons engage une demarche aupres du **ministere taiwanais de la Culture (MOC)** pour structurer des partenariats durables dans les domaines de la mediation culturelle, de l'evenementiel et des echanges entre les deux pays.
+Nous avons engagé une démarche auprès du **ministère taïwanais de la Culture (MOC)** pour structurer des partenariats durables dans les domaines de la médiation culturelle, de l'événementiel et des échanges entre les deux pays.
 
-Cette approche s'inscrit dans notre volonte de construire des ponts institutionnels solides entre la France et Taiwan.
+Cette approche s'inscrit dans notre volonté de construire des ponts institutionnels solides entre la France et Taïwan.
