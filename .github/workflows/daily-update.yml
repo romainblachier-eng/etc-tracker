@@ -30,12 +30,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 1b. Installer le thème LoveIt
-      - name: Setup LoveIt theme
-        run: |
-          rm -rf themes/PaperMod themes/LoveIt
-          git clone --depth 1 https://github.com/dillonzq/LoveIt.git themes/LoveIt
-
       # 2. Python
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
