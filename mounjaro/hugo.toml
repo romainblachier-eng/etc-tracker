@@ -1,4 +1,4 @@
-baseURL = "https://www.france-formosa.org/"
+baseURL = "https://mounjaro.info/"
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
@@ -9,93 +9,81 @@ enableRobotsTXT = true
     languageName = "Francais"
     contentDir = "content/fr"
     weight = 1
-    title = "France Formosa"
+    title = "Mounjaro Info — Actualites tirzepatide"
     [languages.fr.params]
-      description = "Association de diplomatie culturelle franco-taiwanaise"
-      author = "France Formosa"
+      description = "Actualites et informations sur le Mounjaro (tirzepatide) — suivi quotidien par IA"
+      author = "Mounjaro Info"
 
     [[languages.fr.menu.main]]
       name = "Accueil"
       url = "/"
       weight = 1
     [[languages.fr.menu.main]]
-      name = "Notre mission"
-      url = "/mission/"
+      name = "Actualites"
+      url = "/articles/"
       weight = 2
     [[languages.fr.menu.main]]
-      name = "Nos axes"
-      url = "/axes/"
+      name = "A propos"
+      url = "/a-propos/"
       weight = 3
-    [[languages.fr.menu.main]]
-      name = "Publications"
-      url = "/publications/"
-      weight = 4
     [[languages.fr.menu.main]]
       name = "Contact"
       url = "/contact/"
-      weight = 5
+      weight = 4
 
   [languages.en]
     languageCode = "en-US"
     languageName = "English"
     contentDir = "content/en"
     weight = 2
-    title = "France Formosa"
+    title = "Mounjaro Info — Tirzepatide News"
     [languages.en.params]
-      description = "Cultural diplomacy association between France and Taiwan"
-      author = "France Formosa"
+      description = "News and information about Mounjaro (tirzepatide) — daily AI-powered updates"
+      author = "Mounjaro Info"
 
     [[languages.en.menu.main]]
       name = "Home"
       url = "/"
       weight = 1
     [[languages.en.menu.main]]
-      name = "Our Mission"
-      url = "/mission/"
+      name = "News"
+      url = "/articles/"
       weight = 2
     [[languages.en.menu.main]]
-      name = "Our Focus"
-      url = "/axes/"
+      name = "About"
+      url = "/about/"
       weight = 3
-    [[languages.en.menu.main]]
-      name = "Publications"
-      url = "/publications/"
-      weight = 4
     [[languages.en.menu.main]]
       name = "Contact"
       url = "/contact/"
-      weight = 5
+      weight = 4
 
   [languages.zh]
     languageCode = "zh-TW"
     languageName = "繁體中文"
     contentDir = "content/zh"
     weight = 3
-    title = "France Formosa — 法台文化外交協會"
+    title = "Mounjaro 資訊 — 替爾泊肽最新消息"
     [languages.zh.params]
-      description = "法台文化外交協會"
-      author = "France Formosa"
+      description = "Mounjaro（替爾泊肽）最新資訊 — AI 每日更新"
+      author = "Mounjaro Info"
 
     [[languages.zh.menu.main]]
       name = "首頁"
       url = "/"
       weight = 1
     [[languages.zh.menu.main]]
-      name = "我們的使命"
-      url = "/mission/"
+      name = "最新消息"
+      url = "/articles/"
       weight = 2
     [[languages.zh.menu.main]]
-      name = "工作重點"
-      url = "/axes/"
+      name = "關於我們"
+      url = "/a-propos/"
       weight = 3
-    [[languages.zh.menu.main]]
-      name = "出版物"
-      url = "/publications/"
-      weight = 4
     [[languages.zh.menu.main]]
       name = "聯絡我們"
       url = "/contact/"
-      weight = 5
+      weight = 4
 
 [markup]
   [markup.goldmark]

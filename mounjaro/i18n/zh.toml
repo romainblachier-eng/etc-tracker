@@ -1,0 +1,101 @@
+[hero_label]
+other = "Mounjaro / 替爾泊肽追蹤"
+
+[hero_title]
+other = "關於 Mounjaro 的一切"
+[hero_subtitle]
+other = "替爾泊肽的最新資訊、臨床研究與資訊 — 每日 AI 更新。"
+
+[hero_btn_articles]
+other = "閱讀最新消息"
+[hero_btn_about]
+other = "了解更多"
+
+[stat_approval]
+other = "已獲 FDA（2022）及 EMA（2023）批准"
+[stat_molecule]
+other = "GIP/GLP-1 雙重受體促效劑"
+[stat_indications]
+other = "第二型糖尿病與體重管理"
+[stat_manufacturer]
+other = "由禮來（Eli Lilly）製造"
+
+[section_news]
+other = "最新消息"
+[section_news_subtitle]
+other = "AI 從醫學和科學來源整理的資訊"
+
+[section_about]
+other = "什麼是 Mounjaro？"
+[about_text_1]
+other = "Mounjaro（替爾泊肽）是一種用於治療第二型糖尿病和體重管理的注射型藥物。它是一種 GIP 和 GLP-1 雙重受體促效劑。"
+[about_text_2]
+other = "由禮來公司開發的替爾泊肽在 SURPASS 和 SURMOUNT 臨床試驗中顯示了顯著的效果，在減重和降低糖化血色素（HbA1c）方面均優於現有治療方案。"
+[about_more]
+other = "了解更多"
+
+[card_efficacy]
+other = "療效"
+[card_efficacy_desc]
+other = "臨床試驗結果與真實世界證據"
+[card_safety]
+other = "安全性"
+[card_safety_desc]
+other = "耐受性特徵與已知副作用"
+[card_access]
+other = "可及性"
+[card_access_desc]
+other = "供應情況、健保給付與處方管道"
+
+[cta_title]
+other = "掌握最新資訊"
+[cta_text]
+other = "追蹤 Mounjaro 和替爾泊肽的最新動態。"
+[cta_btn]
+other = "查看最新消息"
+
+[footer_tagline]
+other = "Mounjaro（替爾泊肽）的獨立資訊平台。"
+[footer_nav]
+other = "導航"
+[footer_contact]
+other = "聯絡"
+[footer_contact_link]
+other = "與我們聯繫"
+[footer_rights]
+other = "版權所有。"
+[footer_disclaimer]
+other = "本網站僅供資訊參考，不構成醫療建議。"
+
+[contact_title]
+other = "聯絡我們"
+[contact_text]
+other = "有問題、建議或需要更正？歡迎來信。"
+[contact_location]
+other = "法國巴黎"
+[form_name]
+other = "姓名"
+[form_name_placeholder]
+other = "您的姓名"
+[form_email]
+other = "電子郵件"
+[form_email_placeholder]
+other = "your@email.com"
+[form_subject]
+other = "主旨"
+[form_subject_select]
+other = "請選擇主旨"
+[form_subject_correction]
+other = "資訊更正"
+[form_subject_suggestion]
+other = "建議"
+[form_subject_press]
+other = "媒體與新聞"
+[form_subject_other]
+other = "其他"
+[form_message]
+other = "訊息"
+[form_message_placeholder]
+other = "您的訊息..."
+[form_submit]
+other = "送出"

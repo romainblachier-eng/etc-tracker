@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}France Formosa — {{ if eq .Language.Lang "fr" }}Think tank franco-taiwanais{{ else if eq .Language.Lang "zh" }}法台文化外交智庫{{ else }}Franco-Taiwanese think tank{{ end }}{{ else }}{{ .Title }} — France Formosa{{ end }}</title>
+    <title>{{ if .IsHome }}Mounjaro Info — {{ if eq .Language.Lang "fr" }}Actualites tirzepatide{{ else if eq .Language.Lang "zh" }}替爾泊肽最新資訊{{ else }}Tirzepatide News{{ end }}{{ else }}{{ .Title }} — Mounjaro Info{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     {{ if .IsTranslated }}
     {{ range .Translations }}
@@ -22,7 +22,7 @@
     <header class="site-header" id="header">
         <div class="header-inner">
             <a href="{{ .Site.Home.RelPermalink }}" class="logo">
-                France<span>Formosa</span>
+                Mounjaro<span>Info</span>
             </a>
             <div class="header-right">
                 <nav class="main-nav" id="nav">
@@ -31,7 +31,7 @@
                     {{ end }}
                 </nav>
                 <div class="lang-switcher">
-                    <a href="{{ with .GetPage "/" }}{{ .Permalink }}{{ else }}/{{ .Language.Lang }}/{{ end }}" class="lang-btn active" title="{{ .Language.LanguageName }}">
+                    <a href="#" class="lang-btn active" title="{{ .Language.LanguageName }}">
                         {{ if eq .Language.Lang "fr" }}FR{{ else if eq .Language.Lang "zh" }}中{{ else }}EN{{ end }}
                     </a>
                     {{ if .IsTranslated }}
@@ -61,7 +61,7 @@
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="footer-logo">France<span>Formosa</span></div>
+                    <div class="footer-logo">Mounjaro<span>Info</span></div>
                     <p>{{ i18n "footer_tagline" }}</p>
                 </div>
                 <nav class="footer-nav">
@@ -77,14 +77,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{ now.Year }} France Formosa. {{ i18n "footer_rights" }}</p>
+                <p>&copy; {{ now.Year }} Mounjaro Info. {{ i18n "footer_rights" }}</p>
+                <p class="footer-disclaimer">{{ i18n "footer_disclaimer" }}</p>
             </div>
         </div>
     </footer>
 
     <script>
     (function() {
-        // Mobile menu
         var toggle = document.getElementById('menu-toggle');
         var nav = document.getElementById('nav');
         toggle.addEventListener('click', function() {
@@ -93,16 +93,11 @@
             toggle.setAttribute('aria-expanded', open);
         });
 
-        // Header scroll effect
         var header = document.getElementById('header');
-        var last = 0;
         window.addEventListener('scroll', function() {
-            var y = window.scrollY;
-            header.classList.toggle('scrolled', y > 40);
-            last = y;
+            header.classList.toggle('scrolled', window.scrollY > 40);
         }, { passive: true });
 
-        // Scroll reveal
         var els = document.querySelectorAll('[data-reveal]');
         if (els.length && 'IntersectionObserver' in window) {
             var obs = new IntersectionObserver(function(entries) {
@@ -116,7 +111,6 @@
             els.forEach(function(el) { obs.observe(el); });
         }
 
-        // Language redirect
         if (!sessionStorage.getItem('lang-redirected')) {
             sessionStorage.setItem('lang-redirected', '1');
             var path = window.location.pathname;

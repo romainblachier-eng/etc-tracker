@@ -1,0 +1,130 @@
+[hero_label]
+other = "法台文化外交"
+
+[hero_title_1]
+other = "加強"
+[hero_title_france]
+other = "法國"
+[hero_title_and]
+other = "與"
+[hero_title_taiwan]
+other = "台灣"
+
+[hero_subtitle]
+other = "致力於法國與台灣之間文化準外交的協會。"
+
+[hero_btn_mission]
+other = "了解我們的使命"
+[hero_btn_contact]
+other = "聯絡我們"
+
+[stat_missions]
+other = "在外交部支持下的官方任務"
+[stat_reviews]
+other = "權威期刊（Conflits、Taipei Times、Taiwan Insight）"
+[stat_first_mission]
+other = "首次赴台外交任務"
+[stat_last_mission]
+other = "最近一次外交部官方任務"
+
+[section_areas]
+other = "我們的行動領域"
+[section_areas_subtitle]
+other = "多學科方法推動法台關係"
+
+[axe_intellectual]
+other = "學術知識生產"
+[axe_intellectual_desc]
+other = "在權威期刊發表文章，參與台灣地緣政治相關學術會議。"
+[axe_diplomacy]
+other = "實地外交"
+[axe_diplomacy_desc]
+other = "官方訪問任務，與駐法台灣代表機構保持長期聯繫。"
+[axe_cultural]
+other = "文化調解"
+[axe_cultural_desc]
+other = "學術會議、文化活動及提升台灣在法國能見度的各項倡議。"
+[axe_institutional]
+other = "制度合作"
+[axe_institutional_desc]
+other = "與台灣文化機構建立合作夥伴關係。"
+
+[about_label]
+other = "關於我們"
+[about_title]
+other = "兩個民主國家之間的橋樑"
+[about_text_1]
+other = "France Formosa 匯聚了研究者、企業家、外交官和有志公民，共同堅信：法台關係是歐洲在亞太地區未來發展的戰略槓桿。"
+[about_text_2]
+other = "我們的協會致力於分析研究、組織學術會議，並促進兩國關鍵人物之間的交流。"
+[about_more]
+other = "了解更多"
+[about_card_research]
+other = "研究"
+[about_card_research_desc]
+other = "關於法台議題的出版物和政策分析"
+[about_card_events]
+other = "活動"
+[about_card_events_desc]
+other = "與專家共同舉辦的學術會議、研討會和圓桌論壇"
+[about_card_network]
+other = "網絡"
+[about_card_network_desc]
+other = "連結兩國的關鍵人物"
+
+[cta_title]
+other = "加入 France Formosa"
+[cta_text]
+other = "參與建設強大而持久的法台對話。"
+[cta_btn]
+other = "聯絡我們"
+
+[footer_tagline]
+other = "致力於法國與台灣之間文化準外交的協會。"
+[footer_nav]
+other = "導航"
+[footer_contact]
+other = "聯絡"
+[footer_contact_link]
+other = "與我們聯繫"
+[footer_rights]
+other = "版權所有。"
+
+[contact_title]
+other = "保持聯繫"
+[contact_text]
+other = "想了解更多關於我們的活動、提出合作方案或加入我們的網絡？歡迎來信。"
+[contact_location]
+other = "法國巴黎"
+[form_name]
+other = "姓名"
+[form_name_placeholder]
+other = "您的姓名"
+[form_email]
+other = "電子郵件"
+[form_email_placeholder]
+other = "your@email.com"
+[form_org]
+other = "所屬機構"
+[form_org_placeholder]
+other = "您的機構（選填）"
+[form_subject]
+other = "主旨"
+[form_subject_select]
+other = "請選擇主旨"
+[form_subject_partnership]
+other = "合作提案"
+[form_subject_membership]
+other = "入會申請"
+[form_subject_events]
+other = "活動"
+[form_subject_press]
+other = "媒體與新聞"
+[form_subject_other]
+other = "其他"
+[form_message]
+other = "訊息"
+[form_message_placeholder]
+other = "您的訊息..."
+[form_submit]
+other = "送出訊息"

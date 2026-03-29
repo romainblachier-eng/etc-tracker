@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content" data-reveal>
+            <span class="overline">Mounjaro Info</span>
+            <h1>{{ .Title }}</h1>
+            {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
+        </div>
+    </div>
+</section>
+<section class="page-body">
+    <div class="container">
+        <div class="prose" data-reveal>
+            {{ .Content }}
+        </div>
+        {{ range .Pages }}
+        <article class="pub-item" data-reveal>
+            <time>{{ .Date.Format "2 January 2006" }}</time>
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
