@@ -1,0 +1,101 @@
+[hero_label]
+other = "Mounjaro / Tirzepatide Tracker"
+
+[hero_title]
+other = "Everything about Mounjaro"
+[hero_subtitle]
+other = "News, clinical studies and information about tirzepatide — daily AI-powered updates."
+
+[hero_btn_articles]
+other = "Read the latest news"
+[hero_btn_about]
+other = "Learn more"
+
+[stat_approval]
+other = "Approved by FDA (2022) and EMA (2023)"
+[stat_molecule]
+other = "Dual GIP/GLP-1 agonist"
+[stat_indications]
+other = "Type 2 diabetes and weight management"
+[stat_manufacturer]
+other = "Manufactured by Eli Lilly"
+
+[section_news]
+other = "Latest news"
+[section_news_subtitle]
+other = "AI-reformulated information from medical and scientific sources"
+
+[section_about]
+other = "What is Mounjaro?"
+[about_text_1]
+other = "Mounjaro (tirzepatide) is an injectable medication used for type 2 diabetes and weight management. It works as a dual GIP and GLP-1 receptor agonist."
+[about_text_2]
+other = "Developed by Eli Lilly, tirzepatide has shown significant results in the SURPASS and SURMOUNT clinical trials, with superior weight loss and HbA1c reductions compared to existing treatments."
+[about_more]
+other = "Learn more"
+
+[card_efficacy]
+other = "Efficacy"
+[card_efficacy_desc]
+other = "Clinical trial results and real-world evidence"
+[card_safety]
+other = "Safety"
+[card_safety_desc]
+other = "Tolerability profile and known side effects"
+[card_access]
+other = "Access"
+[card_access_desc]
+other = "Availability, reimbursement and prescribing pathways"
+
+[cta_title]
+other = "Stay informed"
+[cta_text]
+other = "Follow the latest news on Mounjaro and tirzepatide."
+[cta_btn]
+other = "View latest news"
+
+[footer_tagline]
+other = "Independent information on Mounjaro (tirzepatide)."
+[footer_nav]
+other = "Navigation"
+[footer_contact]
+other = "Contact"
+[footer_contact_link]
+other = "Get in touch"
+[footer_rights]
+other = "All rights reserved."
+[footer_disclaimer]
+other = "This site is for informational purposes only. It does not constitute medical advice."
+
+[contact_title]
+other = "Contact"
+[contact_text]
+other = "Have a question, suggestion or correction? Get in touch."
+[contact_location]
+other = "Paris, France"
+[form_name]
+other = "Full name"
+[form_name_placeholder]
+other = "Your name"
+[form_email]
+other = "Email address"
+[form_email_placeholder]
+other = "your@email.com"
+[form_subject]
+other = "Subject"
+[form_subject_select]
+other = "Select a subject"
+[form_subject_correction]
+other = "Information correction"
+[form_subject_suggestion]
+other = "Suggestion"
+[form_subject_press]
+other = "Press & Media"
+[form_subject_other]
+other = "Other"
+[form_message]
+other = "Message"
+[form_message_placeholder]
+other = "Your message..."
+[form_submit]
+other = "Send"
