@@ -1,0 +1,130 @@
+[hero_label]
+other = "Franco-Taiwanese Cultural Diplomacy"
+
+[hero_title_1]
+other = "Strengthening ties between"
+[hero_title_france]
+other = "France"
+[hero_title_and]
+other = "and"
+[hero_title_taiwan]
+other = "Taiwan"
+
+[hero_subtitle]
+other = "A cultural paradiplomacy association serving the bonds between France and Taiwan."
+
+[hero_btn_mission]
+other = "Discover our mission"
+[hero_btn_contact]
+other = "Contact us"
+
+[stat_missions]
+other = "Official missions under MOFA auspices"
+[stat_reviews]
+other = "Leading journals (Conflits, Taipei Times, Taiwan Insight)"
+[stat_first_mission]
+other = "First diplomatic mission to Taiwan"
+[stat_last_mission]
+other = "Latest official MOFA mission"
+
+[section_areas]
+other = "Our areas of action"
+[section_areas_subtitle]
+other = "A multidisciplinary approach to Franco-Taiwanese relations"
+
+[axe_intellectual]
+other = "Intellectual Production"
+[axe_intellectual_desc]
+other = "Publications in leading journals and conferences on Taiwanese geopolitics."
+[axe_diplomacy]
+other = "Field Diplomacy"
+[axe_diplomacy_desc]
+other = "Official missions and ongoing relations with Taiwanese representations in France."
+[axe_cultural]
+other = "Cultural Mediation"
+[axe_cultural_desc]
+other = "Conferences, events and initiatives to raise Taiwan's visibility in France."
+[axe_institutional]
+other = "Institutional Partnerships"
+[axe_institutional_desc]
+other = "Partnerships with Taiwanese cultural institutions."
+
+[about_label]
+other = "Who we are"
+[about_title]
+other = "A bridge between two democracies"
+[about_text_1]
+other = "France Formosa brings together researchers, entrepreneurs, diplomats and engaged citizens around a shared conviction: Franco-Taiwanese relations are a strategic lever for Europe's future in the Asia-Pacific."
+[about_text_2]
+other = "Our association produces analyses, organizes conferences and facilitates meetings between key players from both countries."
+[about_more]
+other = "Learn more"
+[about_card_research]
+other = "Research"
+[about_card_research_desc]
+other = "Publications and policy briefs on Franco-Taiwanese issues"
+[about_card_events]
+other = "Events"
+[about_card_events_desc]
+other = "Conferences, seminars and roundtables with experts"
+[about_card_network]
+other = "Network"
+[about_card_network_desc]
+other = "Connecting key players from both countries"
+
+[cta_title]
+other = "Join France Formosa"
+[cta_text]
+other = "Help build a strong and lasting Franco-Taiwanese dialogue."
+[cta_btn]
+other = "Contact us"
+
+[footer_tagline]
+other = "Cultural paradiplomacy serving the bonds between France and Taiwan."
+[footer_nav]
+other = "Navigation"
+[footer_contact]
+other = "Contact"
+[footer_contact_link]
+other = "Get in touch"
+[footer_rights]
+other = "All rights reserved."
+
+[contact_title]
+other = "Get in touch"
+[contact_text]
+other = "Want to learn more about our activities, propose a partnership or join our network? Don't hesitate to reach out."
+[contact_location]
+other = "Paris, France"
+[form_name]
+other = "Full name"
+[form_name_placeholder]
+other = "Your name"
+[form_email]
+other = "Email address"
+[form_email_placeholder]
+other = "your@email.com"
+[form_org]
+other = "Organization"
+[form_org_placeholder]
+other = "Your organization (optional)"
+[form_subject]
+other = "Subject"
+[form_subject_select]
+other = "Select a subject"
+[form_subject_partnership]
+other = "Partnership proposal"
+[form_subject_membership]
+other = "Membership"
+[form_subject_events]
+other = "Events"
+[form_subject_press]
+other = "Press & Media"
+[form_subject_other]
+other = "Other"
+[form_message]
+other = "Message"
+[form_message_placeholder]
+other = "Your message..."
+[form_submit]
+other = "Send message"

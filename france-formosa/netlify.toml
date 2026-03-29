@@ -1,0 +1,28 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.146.0"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+
+# Redirect root to French by default (server-side)
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  conditions = {Language = ["en"]}
+
+# Fallback: root goes to French
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
