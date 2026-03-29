@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/etc-tracker.css">
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
 </head>
 <body>
-    <header class="site-header">
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+    <header class="site-header" id="header">
         <div class="container">
-            <a href="/" class="logo">ETC Tracker</a>
+            <a href="/" class="logo">
+                <span class="logo-icon">E</span>
+                <span>ETC<span class="logo-accent"> Tracker</span></span>
+            </a>
             <nav class="main-nav">
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}">{{ .Name }}</a>
@@ -20,14 +28,44 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
         {{ block "main" . }}{{ end }}
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>Donnees <a href="https://www.coingecko.com">CoinGecko</a> — Analyse <a href="https://www.anthropic.com">Claude AI</a> — Ce site est fourni a titre informatif uniquement.</p>
+            <span class="footer-brand">ETC Tracker</span>
+            <p>Donnees <a href="https://www.coingecko.com">CoinGecko</a> — Analyse <a href="https://www.anthropic.com">Claude AI</a></p>
+            <p>Ce site est fourni a titre informatif uniquement.</p>
         </div>
     </footer>
+
+    <script>
+    /* Scroll-aware header */
+    (function(){
+      var h = document.getElementById('header');
+      var last = 0;
+      window.addEventListener('scroll', function(){
+        var y = window.scrollY;
+        h.classList.toggle('scrolled', y > 10);
+        last = y;
+      }, {passive:true});
+    })();
+
+    /* Scroll reveal */
+    (function(){
+      var els = document.querySelectorAll('[data-reveal]');
+      if (!els.length) return;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('revealed');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){ io.observe(el); });
+    })();
+    </script>
 </body>
 </html>
