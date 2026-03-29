@@ -36,6 +36,24 @@
       "env": {
         "REPLICATE_API_TOKEN": "${REPLICATE_API_TOKEN}"
       }
+    },
+    "ffmpeg-video-audio": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/user/video-audio-mcp",
+        "run",
+        "server.py"
+      ]
+    },
+    "ffmpeg-editor": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/user/ffmpeg-mcp",
+        "run",
+        "ffmpeg-mcp"
+      ]
     }
   }
 }
