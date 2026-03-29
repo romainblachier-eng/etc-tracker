@@ -7,7 +7,7 @@
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     {{ if .IsTranslated }}
     {{ range .Translations }}
@@ -17,13 +17,15 @@
     {{ end }}
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="site-header" id="header">
+        <div class="header-inner">
             <a href="{{ .Site.Home.RelPermalink }}" class="logo">
-                <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
+                France<span>Formosa</span>
             </a>
             <div class="header-right">
-                <nav class="main-nav">
+                <nav class="main-nav" id="nav">
                     {{ range .Site.Menus.main }}
                     <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
                     {{ end }}
@@ -43,35 +45,34 @@
                     {{ end }}
                     {{ end }}
                 </div>
-                <button class="menu-toggle" aria-label="Menu">
+                <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         {{ block "main" . }}{{ end }}
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
-                    </div>
-                    <p class="footer-tagline">{{ i18n "footer_tagline" }}</p>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">France<span>Formosa</span></div>
+                    <p>{{ i18n "footer_tagline" }}</p>
                 </div>
-                <div class="footer-col">
+                <nav class="footer-nav">
                     <h4>{{ i18n "footer_nav" }}</h4>
                     {{ range .Site.Menus.main }}
                     <a href="{{ .URL }}">{{ .Name }}</a>
                     {{ end }}
-                </div>
-                <div class="footer-col">
+                </nav>
+                <div class="footer-contact">
                     <h4>{{ i18n "footer_contact" }}</h4>
                     <a href="{{ "contact/" | relLangURL }}">{{ i18n "footer_contact_link" }}</a>
+                    <p class="footer-location">Paris, France</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -81,28 +82,49 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('open');
-            this.classList.toggle('active');
+    (function() {
+        // Mobile menu
+        var toggle = document.getElementById('menu-toggle');
+        var nav = document.getElementById('nav');
+        toggle.addEventListener('click', function() {
+            var open = nav.classList.toggle('open');
+            toggle.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', open);
         });
 
-        // Auto-detect browser language and redirect on first visit
-        (function() {
-            if (sessionStorage.getItem('lang-redirected')) return;
-            sessionStorage.setItem('lang-redirected', '1');
+        // Header scroll effect
+        var header = document.getElementById('header');
+        var last = 0;
+        window.addEventListener('scroll', function() {
+            var y = window.scrollY;
+            header.classList.toggle('scrolled', y > 40);
+            last = y;
+        }, { passive: true });
 
+        // Scroll reveal
+        var els = document.querySelectorAll('[data-reveal]');
+        if (els.length && 'IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('revealed');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            els.forEach(function(el) { obs.observe(el); });
+        }
+
+        // Language redirect
+        if (!sessionStorage.getItem('lang-redirected')) {
+            sessionStorage.setItem('lang-redirected', '1');
             var path = window.location.pathname;
-            // Only redirect from root or if not already on a language path
             if (path === '/' || path === '') {
                 var lang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
-                if (lang.startsWith('fr')) {
-                    window.location.replace('/fr/');
-                } else {
-                    window.location.replace('/en/');
-                }
+                window.location.replace(lang.startsWith('fr') ? '/fr/' : '/en/');
             }
-        })();
+        }
+    })();
     </script>
 </body>
 </html>
