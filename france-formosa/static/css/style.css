@@ -234,7 +234,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--vermillon), var(--gold), var(--vermillon));
+  background: linear-gradient(90deg, var(--gold), var(--blue), var(--gold));
 }
 
 .hero-inner {
@@ -313,8 +313,8 @@ body {
 }
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--vermillon-light), var(--vermillon));
-  box-shadow: 0 4px 16px rgba(180, 66, 51, 0.35);
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.2);
 }
 
 .btn-ghost {
@@ -342,6 +342,17 @@ body {
 .link-arrow:hover {
   color: var(--vermillon-light);
   gap: 10px;
+}
+
+/* ── Axe Cards ── */
+.axe-card {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transform: translateY(0);
+}
+.axe-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 8px 32px rgba(37,99,235,0.1);
+  transform: translateY(-2px);
 }
 
 /* ═══════════════════════════════════════════════
@@ -554,6 +565,17 @@ body {
    ═══════════════════════════════════════════════ */
 .cta {
   padding: 80px 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--blue), var(--gold));
 }
 
 .cta-inner {
@@ -703,6 +725,14 @@ body {
 .pub-item h3 a:hover { color: var(--vermillon); }
 .pub-item p { font-size: 0.85rem; color: var(--stone-600); }
 
+/* ── Publication Cards ── */
+.publication-card {
+  transition: background 0.2s;
+}
+.publication-card:hover {
+  background: var(--gray-50);
+}
+
 /* ═══════════════════════════════════════════════
    CONTACT
    ═══════════════════════════════════════════════ */
@@ -778,7 +808,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--vermillon), var(--gold), var(--blue));
+  background: linear-gradient(90deg, var(--gold), var(--blue), var(--gold));
 }
 
 .footer-inner {
