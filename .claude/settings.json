@@ -1,6 +1,20 @@
 {
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "type": "command",
+        "command": "bash .claude/plugins/video-maker/hooks/session-start.sh",
+        "timeout": 10000
+      }
+    ],
     "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "type": "command",
+        "command": "bash .claude/plugins/video-maker/hooks/check-api-key.sh",
+        "timeout": 10000
+      },
       {
         "matcher": "generate_tts|generate_music|generate_sfx|generate_image|generate_video|generate_subtitles|list_assets",
         "type": "command",
