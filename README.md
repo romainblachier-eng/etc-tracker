@@ -1,5 +1,7 @@
 # ETC Tracker
 
+> **Dépôt GitHub** : [romainblachier-eng/etc-tracker](https://github.com/romainblachier-eng/etc-tracker)
+
 Site de suivi automatisé du cours de l'**Ethereum Classic (ETC)**.
 
 Chaque matin à **9h00** (heure de Paris), un workflow GitHub Actions :
@@ -14,7 +16,7 @@ Chaque matin à **9h00** (heure de Paris), un workflow GitHub Actions :
 Suivre le guide fourni (`guide-etc-tracker.pdf`).
 
 **Étapes résumées :**
-1. Créer un dépôt GitHub public
+1. Forker ou cloner le dépôt [romainblachier-eng/etc-tracker](https://github.com/romainblachier-eng/etc-tracker)
 2. Pousser ce projet
 3. Ajouter le Secret `ANTHROPIC_API_KEY` dans GitHub Settings → Secrets
 4. Activer GitHub Pages (source : branche `gh-pages`)
