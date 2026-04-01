@@ -8,6 +8,80 @@
     <p class="subtitle" data-reveal>Analyse quotidienne du cours ETC, generee par intelligence artificielle.</p>
 </section>
 
+{{/* ── Graphique du cours ── */}}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $sorted := sort $posts "Date" "asc" }}
+{{ if $sorted }}
+<section class="chart-section" data-reveal>
+    <h2>Cours ETC (USD)</h2>
+    <div class="chart-container">
+        <canvas id="etcChart"></canvas>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script>
+(function(){
+    var labels = [{{ range $i, $p := $sorted }}{{ if $p.Params.price_usd }}{{ if $i }},{{ end }}"{{ $p.Date.Format "02/01" }}"{{ end }}{{ end }}];
+    var prices = [{{ range $i, $p := $sorted }}{{ if $p.Params.price_usd }}{{ if $i }},{{ end }}{{ $p.Params.price_usd }}{{ end }}{{ end }}];
+    var changes = [{{ range $i, $p := $sorted }}{{ if $p.Params.price_usd }}{{ if $i }},{{ end }}{{ with $p.Params.change_24h }}{{ . }}{{ else }}0{{ end }}{{ end }}{{ end }}];
+
+    if (!labels.length) return;
+
+    var ctx = document.getElementById('etcChart').getContext('2d');
+    var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+    gradient.addColorStop(0, 'rgba(56, 203, 137, 0.25)');
+    gradient.addColorStop(1, 'rgba(56, 203, 137, 0.02)');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Prix USD',
+                data: prices,
+                borderColor: '#38cb89',
+                backgroundColor: gradient,
+                borderWidth: 2,
+                pointRadius: 3,
+                pointBackgroundColor: prices.map(function(_, i){ return changes[i] >= 0 ? '#38cb89' : '#ef4444'; }),
+                pointBorderColor: 'transparent',
+                tension: 0.3,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { intersect: false, mode: 'index' },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#1a1a2e',
+                    titleColor: '#e0e0e0',
+                    bodyColor: '#38cb89',
+                    borderColor: '#38cb89',
+                    borderWidth: 1,
+                    callbacks: {
+                        label: function(ctx){ return ctx.parsed.y.toFixed(4) + ' $'; }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { color: '#888', maxRotation: 45 },
+                    grid: { color: 'rgba(255,255,255,0.05)' }
+                },
+                y: {
+                    ticks: { color: '#888', callback: function(v){ return v.toFixed(2) + ' $'; } },
+                    grid: { color: 'rgba(255,255,255,0.05)' }
+                }
+            }
+        }
+    });
+})();
+</script>
+{{ end }}
+
 <div class="section-header" data-reveal>
     <h2>Derniers rapports</h2>
     {{ $posts := where .Site.RegularPages "Section" "posts" }}

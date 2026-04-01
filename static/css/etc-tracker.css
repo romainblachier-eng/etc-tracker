@@ -201,6 +201,27 @@ body {
 }
 
 /* ============================================================
+   Chart
+   ============================================================ */
+.chart-section {
+  margin: var(--sp-lg) 0;
+}
+.chart-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: var(--sp-md);
+}
+.chart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--sp-md);
+  height: 320px;
+  position: relative;
+}
+
+/* ============================================================
    Hero
    ============================================================ */
 .hero {
