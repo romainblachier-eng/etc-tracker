@@ -90,18 +90,17 @@
     {{ end }}
 </div>
 
-<section class="posts-grid">
+<section class="posts-full">
     {{ $posts := where .Site.RegularPages "Section" "posts" }}
     {{ range first 10 $posts }}
-    <article class="post-card" data-reveal>
-        <a href="{{ .Permalink }}">
-            <div class="post-card-body">
-                <h3>{{ .Title }}</h3>
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
-                {{ with .Description }}<p>{{ . }}</p>{{ end }}
-            </div>
-            <span class="arrow">&rarr;</span>
-        </a>
+    <article class="post-full-entry" data-reveal>
+        <header class="post-full-header">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+        </header>
+        <div class="post-full-content">
+            {{ .Content }}
+        </div>
     </article>
     {{ else }}
     <div class="empty-state" data-reveal>

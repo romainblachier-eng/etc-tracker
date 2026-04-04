@@ -425,6 +425,112 @@ body {
 }
 
 /* ============================================================
+   Full posts on homepage
+   ============================================================ */
+.posts-full {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xl);
+  padding-bottom: var(--sp-xl);
+}
+.post-full-entry {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--sp-lg) var(--sp-xl);
+}
+.post-full-header {
+  margin-bottom: var(--sp-md);
+  padding-bottom: var(--sp-sm);
+  border-bottom: 1px solid var(--border);
+}
+.post-full-header h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin-bottom: 4px;
+}
+.post-full-header h3 a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color .2s;
+}
+.post-full-header h3 a:hover {
+  color: var(--accent);
+}
+.post-full-header time {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+.post-full-content {
+  font-size: var(--fs-base);
+  line-height: 1.8;
+}
+.post-full-content h2,
+.post-full-content h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--text);
+  margin: var(--sp-lg) 0 var(--sp-sm);
+  letter-spacing: -.01em;
+  padding-bottom: var(--sp-xs);
+  border-bottom: 1px solid var(--border);
+}
+.post-full-content h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text);
+  margin: var(--sp-md) 0 var(--sp-xs);
+}
+.post-full-content p {
+  margin: var(--sp-sm) 0;
+  color: var(--text-mid);
+}
+.post-full-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.post-full-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.post-full-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--sp-md) 0;
+  font-size: var(--fs-sm);
+}
+.post-full-content th,
+.post-full-content td {
+  padding: var(--sp-xs) var(--sp-sm);
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.post-full-content th {
+  background: var(--bg);
+  font-weight: 600;
+  color: var(--text);
+}
+.post-full-content td {
+  color: var(--text-mid);
+}
+.post-full-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--sp-lg) 0;
+}
+.post-full-content em {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ============================================================
    Single post
    ============================================================ */
 .post {
