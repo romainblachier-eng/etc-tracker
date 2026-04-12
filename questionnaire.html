@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Ethereum Classic — Testez vos connaissances</title>
+  <meta name="description" content="Questionnaire interactif sur Ethereum Classic (ETC). 10 questions avec correction instantanee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === Tokens === */
+    :root {
+      --bg: #0a0e14;
+      --bg-elevated: #111820;
+      --surface: #161d27;
+      --surface-alt: #1c2533;
+      --border: #242d3a;
+      --border-light: #2e3a4a;
+      --text: #e8edf4;
+      --text-mid: #a0aab8;
+      --text-muted: #6b7a8d;
+      --accent: #3ecf8e;
+      --accent-dim: rgba(62,207,142,.12);
+      --accent-glow: rgba(62,207,142,.25);
+      --blue: #4ea8de;
+      --red: #ef6461;
+      --red-dim: rgba(239,100,97,.12);
+      --amber: #f0b752;
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+      --fs-xs: .75rem;
+      --fs-sm: .8125rem;
+      --fs-base: 1rem;
+      --fs-md: 1.125rem;
+      --fs-lg: 1.25rem;
+      --fs-xl: 1.5rem;
+      --fs-2xl: 2rem;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 16px;
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--fs-base);
+      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* === Layout === */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* === Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,14,20,.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--fs-sm);
+      font-weight: 800;
+      color: var(--bg);
+    }
+    .logo-accent { color: var(--accent); }
+    .header-tag {
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 3px 10px;
+      border-radius: var(--r-sm);
+      letter-spacing: .04em;
+    }
+
+    /* === Hero === */
+    .quiz-hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      position: relative;
+    }
+    .quiz-hero::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: .18;
+    }
+    .overline {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1rem;
+    }
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--accent-glow); }
+      50% { opacity: .7; box-shadow: 0 0 0 6px transparent; }
+    }
+    .quiz-hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+      position: relative;
+    }
+    .gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .quiz-hero .sub {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* === Progress === */
+    .quiz-progress {
+      margin-bottom: 2rem;
+    }
+    .progress-bar {
+      height: 4px;
+      background: var(--surface-alt);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: .5rem;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--blue));
+      border-radius: 2px;
+      transition: width .5s var(--ease);
+    }
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+    }
+
+    /* === Quiz card === */
+    .quiz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      animation: slideIn .4s var(--ease);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .q-number {
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .5rem;
+    }
+    .q-text {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 1.8rem;
+      letter-spacing: -.01em;
+    }
+
+    /* === Options === */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .85rem 1.2rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      cursor: pointer;
+      transition: border-color .2s var(--ease), background .2s var(--ease), transform .15s var(--ease);
+      font-family: var(--font-body);
+      font-size: var(--fs-base);
+      color: var(--text-mid);
+      text-align: left;
+      width: 100%;
+    }
+    .option:hover:not(.disabled) {
+      border-color: var(--border-light);
+      background: var(--surface-alt);
+      transform: translateY(-1px);
+    }
+    .option .letter {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: all .3s var(--ease);
+    }
+    .option.correct {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .option.correct .letter {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+    .option.correct .label { color: var(--accent); font-weight: 500; }
+
+    .option.wrong {
+      border-color: var(--red);
+      background: var(--red-dim);
+    }
+    .option.wrong .letter {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+    .option.wrong .label { color: var(--red); }
+
+    .option.disabled { cursor: default; opacity: .55; }
+    .option.correct.disabled,
+    .option.wrong.disabled { opacity: 1; }
+
+    /* === Explanation === */
+    .explanation {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      background: var(--accent-dim);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      animation: fadeIn .4s var(--ease);
+    }
+    .explanation .exp-label {
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .3rem;
+    }
+    .explanation p {
+      font-size: var(--fs-sm);
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* === Next button === */
+    .next-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+      animation: fadeIn .4s var(--ease) .1s both;
+    }
+    .btn-next {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.4rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: var(--r-sm);
+      font-family: var(--font-display);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .btn-next:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+
+    /* === Results === */
+    .results {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      animation: slideIn .5s var(--ease);
+    }
+    .results-icon { font-size: 3.2rem; margin-bottom: 1rem; }
+    .results h2 {
+      font-family: var(--font-display);
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .results > p {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto 2rem;
+    }
+    .score-ring {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .score-ring-wrap {
+      position: relative;
+      width: 130px;
+      height: 130px;
+    }
+    .score-ring-wrap svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .ring-bg {
+      fill: none;
+      stroke: var(--surface-alt);
+      stroke-width: 8;
+    }
+    .ring-fg {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 326.73;
+      stroke-dashoffset: 326.73;
+      transition: stroke-dashoffset 1.2s var(--ease);
+    }
+    .score-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-mono);
+      font-size: var(--fs-xl);
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .btn-restart {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .7rem 1.6rem;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: var(--r-sm);
+      font-family: var(--font-display);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-restart:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* === Footer === */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .site-footer p {
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .site-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* === Focus === */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 600px) {
+      :root {
+        --fs-2xl: 1.4rem;
+        --fs-lg: 1.1rem;
+      }
+      .quiz-card { padding: 1.4rem; }
+      .option { padding: .7rem 1rem; font-size: var(--fs-sm); }
+      .option .letter { width: 28px; height: 28px; font-size: var(--fs-xs); }
+      .container { padding: 0 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="logo-icon">E</span>
+        <span>ETC<span class="logo-accent"> Quiz</span></span>
+      </a>
+      <span class="header-tag">10 QUESTIONS</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <div class="quiz-hero">
+      <div class="overline"><span class="pulse"></span> Quiz interactif</div>
+      <h1>Testez vos connaissances sur <span class="gradient">Ethereum Classic</span></h1>
+      <p class="sub">10 questions pour tout savoir sur ETC. La solution s'affiche apres chaque reponse.</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="quiz-progress" id="quizProgress">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text">
+        <span id="progressLabel">Question 1 / 10</span>
+        <span id="scoreLabel">Score : 0 / 0</span>
+      </div>
+    </div>
+
+    <!-- Quiz -->
+    <div id="quizContainer"></div>
+
+    <!-- Results -->
+    <div class="results" id="quizResults" style="display:none;">
+      <div class="results-icon" id="resIcon"></div>
+      <h2 id="resTitle"></h2>
+      <p id="resText"></p>
+      <div class="score-ring">
+        <div class="score-ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" class="ring-bg"/>
+            <circle cx="60" cy="60" r="52" class="ring-fg" id="ringFg"/>
+          </svg>
+          <span class="score-num" id="scoreNum">0</span>
+        </div>
+      </div>
+      <button class="btn-restart" onclick="restartQuiz()">Recommencer le quiz</button>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Quiz ETC &mdash; Donnees basees sur le projet <a href="https://ethereumclassic.org" target="_blank" rel="noopener">Ethereum Classic</a></p>
+      <p>Questionnaire a titre educatif uniquement.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var questions = [
+      {
+        question: "En quelle annee Ethereum Classic (ETC) a-t-il ete cree suite au fork d'Ethereum ?",
+        options: ["2014", "2015", "2016", "2017"],
+        correct: 2,
+        explanation: "Ethereum Classic est ne en juillet 2016 apres le hard fork d'Ethereum provoque par le hack du DAO. La communaute qui a refuse de modifier la blockchain a continue sur ce qui est devenu ETC."
+      },
+      {
+        question: "Quel evenement a provoque la separation entre Ethereum (ETH) et Ethereum Classic (ETC) ?",
+        options: ["Un bug critique dans le protocole", "Le hack du DAO", "Un desaccord sur le minage", "Une mise a jour ratee du reseau"],
+        correct: 1,
+        explanation: "En juin 2016, le DAO (Decentralized Autonomous Organization) a ete pirate pour environ 60 millions de dollars. La communaute s'est divisee : ceux qui voulaient annuler le hack ont cree ETH, les puristes ont maintenu la chaine originale sous le nom ETC."
+      },
+      {
+        question: "Quel est le supply maximum d'Ethereum Classic ?",
+        options: ["Illimite comme Ethereum", "100 millions d'ETC", "Environ 210,7 millions d'ETC", "21 millions comme Bitcoin"],
+        correct: 2,
+        explanation: "Contrairement a Ethereum qui n'a pas de supply maximum, ETC a adopte une politique monetaire deflationniste avec un maximum d'environ 210,7 millions d'ETC, se rapprochant de la philosophie de rarete de Bitcoin."
+      },
+      {
+        question: "Quel algorithme de consensus utilise Ethereum Classic ?",
+        options: ["Proof of Stake (PoS)", "Delegated Proof of Stake (DPoS)", "Proof of Work (PoW)", "Proof of Authority (PoA)"],
+        correct: 2,
+        explanation: "ETC continue d'utiliser le Proof of Work (minage), contrairement a Ethereum qui est passe au Proof of Stake en septembre 2022 avec The Merge. ETC est ainsi devenu l'une des principales blockchains PoW compatibles EVM."
+      },
+      {
+        question: "Quelle est la philosophie fondamentale d'Ethereum Classic ?",
+        options: ["La rapidite maximale des transactions", "\"Code is Law\" — le code fait loi", "La gouvernance centralisee par une fondation", "Les frais de transaction minimaux"],
+        correct: 1,
+        explanation: "ETC defend le principe \"Code is Law\" : une blockchain ne doit jamais etre modifiee, meme en cas de hack. C'est ce principe d'immutabilite qui a motive le refus du hard fork en 2016 et reste le pilier ideologique du projet."
+      },
+      {
+        question: "Quel algorithme de minage Ethereum Classic utilise-t-il actuellement ?",
+        options: ["SHA-256 (comme Bitcoin)", "Scrypt (comme Litecoin)", "ETCHash", "RandomX (comme Monero)"],
+        correct: 2,
+        explanation: "ETC utilise ETCHash, une version modifiee d'Ethash concue pour reduire l'avantage des mineurs ASIC et renforcer la securite du reseau contre les attaques 51%."
+      },
+      {
+        question: "Combien d'attaques 51% Ethereum Classic a-t-il subies en 2020 ?",
+        options: ["1 attaque", "2 attaques", "3 attaques", "Aucune attaque"],
+        correct: 2,
+        explanation: "En 2020, ETC a subi 3 attaques 51% (en aout et septembre), causant des reorganisations massives de la chaine. Ces attaques ont conduit a l'adoption de MESS (Modified Exponential Subjective Scoring) pour renforcer la securite."
+      },
+      {
+        question: "Quel est le temps moyen de production d'un bloc sur Ethereum Classic ?",
+        options: ["1 seconde", "Environ 13 secondes", "1 minute", "10 minutes (comme Bitcoin)"],
+        correct: 1,
+        explanation: "Le temps de bloc d'ETC est d'environ 13 secondes, herite d'Ethereum avant le fork. C'est bien plus rapide que Bitcoin (10 min) mais plus lent que les blockchains de nouvelle generation."
+      },
+      {
+        question: "Ethereum Classic supporte-t-il les smart contracts ?",
+        options: ["Oui, il est compatible avec l'EVM", "Non, c'est uniquement une cryptomonnaie", "Seulement des contrats tres simples", "Uniquement via des sidechains"],
+        correct: 0,
+        explanation: "ETC est entierement compatible avec l'EVM (Ethereum Virtual Machine) et supporte les smart contracts ecrits en Solidity. Les developpeurs peuvent deployer les memes dApps sur ETC et ETH avec peu ou pas de modifications."
+      },
+      {
+        question: "Qu'est-ce que le \"Thanos upgrade\" sur Ethereum Classic ?",
+        options: ["Le passage au Proof of Stake", "Une modification de l'algorithme de minage pour les petits mineurs", "L'ajout du support des NFT", "La suppression des smart contracts"],
+        correct: 1,
+        explanation: "Le Thanos upgrade (ECIP-1099), active en novembre 2020, a reduit la taille du DAG (fichier necessaire au minage) permettant aux GPU avec 4 Go de memoire de continuer a miner ETC, democratisant ainsi l'acces au minage."
+      }
+    ];
+
+    var current = 0;
+    var score = 0;
+    var answered = 0;
+    var container = document.getElementById('quizContainer');
+    var progressFill = document.getElementById('progressFill');
+    var progressLabel = document.getElementById('progressLabel');
+    var scoreLabel = document.getElementById('scoreLabel');
+
+    function render(idx) {
+      var q = questions[idx];
+      var L = ['A','B','C','D'];
+      var h = '<div class="quiz-card">';
+      h += '<div class="q-number">Question ' + (idx+1) + ' sur ' + questions.length + '</div>';
+      h += '<div class="q-text">' + q.question + '</div>';
+      h += '<div class="options">';
+      for (var i = 0; i < q.options.length; i++) {
+        h += '<button class="option" data-i="' + i + '">';
+        h += '<span class="letter">' + L[i] + '</span>';
+        h += '<span class="label">' + q.options[i] + '</span>';
+        h += '</button>';
+      }
+      h += '</div>';
+      h += '<div id="expSlot"></div>';
+      h += '<div id="nxtSlot"></div>';
+      h += '</div>';
+      container.innerHTML = h;
+
+      // Bind clicks
+      var btns = container.querySelectorAll('.option');
+      for (var j = 0; j < btns.length; j++) {
+        btns[j].addEventListener('click', (function(optIdx) {
+          return function() { pick(idx, optIdx); };
+        })(j));
+      }
+
+      updateProgress();
+    }
+
+    function updateProgress() {
+      progressFill.style.width = ((current / questions.length) * 100) + '%';
+      progressLabel.textContent = 'Question ' + (current+1) + ' / ' + questions.length;
+      scoreLabel.textContent = 'Score : ' + score + ' / ' + answered;
+    }
+
+    function pick(qIdx, optIdx) {
+      var q = questions[qIdx];
+      var opts = container.querySelectorAll('.option');
+      var ok = optIdx === q.correct;
+
+      for (var i = 0; i < opts.length; i++) {
+        opts[i].classList.add('disabled');
+        opts[i].style.pointerEvents = 'none';
+        if (i === q.correct) opts[i].classList.add('correct');
+      }
+      if (!ok) opts[optIdx].classList.add('wrong');
+
+      answered++;
+      if (ok) score++;
+      scoreLabel.textContent = 'Score : ' + score + ' / ' + answered;
+
+      var status = ok
+        ? '<span style="color:var(--accent);font-weight:600;">Bonne reponse !</span>'
+        : '<span style="color:var(--red);font-weight:600;">Mauvaise reponse.</span> La bonne reponse etait : <strong style="color:var(--accent);">' + q.options[q.correct] + '</strong>';
+
+      document.getElementById('expSlot').innerHTML =
+        '<div class="explanation"><div class="exp-label">' + status + '</div><p>' + q.explanation + '</p></div>';
+
+      var btnLabel = current < questions.length - 1 ? 'Question suivante &rarr;' : 'Voir les resultats &rarr;';
+      var btnAction = current < questions.length - 1 ? 'nextQ()' : 'showResults()';
+      document.getElementById('nxtSlot').innerHTML =
+        '<div class="next-wrap"><button class="btn-next" onclick="' + btnAction + '">' + btnLabel + '</button></div>';
+    }
+
+    window.nextQ = function() {
+      current++;
+      render(current);
+    };
+
+    window.showResults = function() {
+      container.style.display = 'none';
+      document.getElementById('quizProgress').style.display = 'none';
+      var res = document.getElementById('quizResults');
+      res.style.display = 'block';
+
+      var pct = Math.round((score / questions.length) * 100);
+      document.getElementById('scoreNum').textContent = score + '/' + questions.length;
+
+      var circ = 326.73;
+      setTimeout(function() {
+        document.getElementById('ringFg').style.strokeDashoffset = circ - (pct/100)*circ;
+      }, 100);
+
+      var icon = document.getElementById('resIcon');
+      var title = document.getElementById('resTitle');
+      var text = document.getElementById('resText');
+      var fg = document.getElementById('ringFg');
+      var num = document.getElementById('scoreNum');
+
+      if (pct >= 80) {
+        icon.textContent = '\uD83C\uDFC6';
+        title.textContent = 'Excellent !';
+        text.textContent = 'Vous etes un veritable expert d\'Ethereum Classic. ' + score + ' bonnes reponses sur ' + questions.length + ' !';
+        fg.style.stroke = 'var(--accent)';
+        num.style.color = 'var(--accent)';
+      } else if (pct >= 50) {
+        icon.textContent = '\uD83D\uDC4D';
+        title.textContent = 'Bien joue !';
+        text.textContent = 'Vous avez de bonnes bases sur ETC. ' + score + ' bonnes reponses sur ' + questions.length + '. Continuez a apprendre !';
+        fg.style.stroke = 'var(--amber)';
+        num.style.color = 'var(--amber)';
+      } else {
+        icon.textContent = '\uD83D\uDCDA';
+        title.textContent = 'A revoir !';
+        text.textContent = score + ' bonnes reponses sur ' + questions.length + '. N\'hesitez pas a vous documenter sur Ethereum Classic !';
+        fg.style.stroke = 'var(--red)';
+        num.style.color = 'var(--red)';
+      }
+    };
+
+    window.restartQuiz = function() {
+      current = 0;
+      score = 0;
+      answered = 0;
+      container.style.display = 'block';
+      document.getElementById('quizProgress').style.display = 'block';
+      document.getElementById('quizResults').style.display = 'none';
+      document.getElementById('ringFg').style.strokeDashoffset = 326.73;
+      render(0);
+    };
+
+    render(0);
+  })();
+  </script>
+
+</body>
+</html>
