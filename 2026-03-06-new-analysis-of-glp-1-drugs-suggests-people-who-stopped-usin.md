@@ -1,0 +1,10 @@
+---
+title: New analysis of GLP-1 drugs suggests people who stopped using medications regained 60% of weight lost - ABC News
+date: 2026-03-06 08:02:06+01:00
+draft: false
+description: Une découverte majeure sur le devenir du poids après l'arrêt des médicaments GLP-1.
+source: news.google.com
+source_url: https://news.google.com/rss/articles/CBMiogFBVV95cUxPWGN6UDhmMWQxWGxQTGljRG93eE9udXY3LUdvaTBpUExzNW9HUTRQOWJpdmpVd3dITTdGZ1NWOFNDY2tudW9VcE5OWU1wOUZXdEZYLTlxYlVCQXpaR1BMY1dfQndKU0JwRTVPWGdPZkpBcjItU0daY0FKNFNBc19DWWszdGRDWUxYSUtjRFIxUExjbWhYNnBhRlZXdUtwMDVPYkHSAacBQVVfeXFMTjA5U0hZYjVTTktKYzFOZHI1bEZSbG9hczJ6a2hwQlZDX2xDbU5wdkxLUDRGb2VhSWp0RF9Jd2xzM1dTanZKYVhzODZ4SWNMZmV4Ykxzc01YUFBVdFVFZW5RWGxleUx6TF9MaGNDa0x0MlFQdE15R3hYUkI4VjBXS3VLdFB3NkhmVklVdnBmUVNWNHdOaE1KY2FodWtOYWlxeVg1QWRhZTQ?oc=5
+---
+
+A major finding about weight regain after stopping GLP-1 medications. Recent analysis shows that patients who discontinued tirzepatide (Mounjaro) or similar drugs recovered approximately 60% of their lost weight. This discovery raises critical questions about the nature of these treatments and their long-term use. GLP-1 medications work by altering satiety signals in the brain and slowing digestion, enabling significant weight reduction. However, these effects remain dependent on consistent medication intake. Once discontinued, the body gradually returns to its previous functioning pattern, explaining this weight rebound. Researchers clarify that this pattern does not represent treatment failure but rather reflects how the medication works. For patients considering these therapies, this information highlights the importance of a comprehensive approach combining sustainable dietary changes and regular physical activity. The decision to continue or stop such treatment should result from thorough discussion with a healthcare provider, considering observed benefits and personal goals. Understanding this mechanism helps set realistic expectations and supports informed decision-making about whether this therapeutic option aligns with individual health objectives.

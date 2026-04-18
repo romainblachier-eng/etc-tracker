@@ -1,0 +1,10 @@
+---
+title: Eli Lilly’s weight loss and diabetes drug tops Keytruda as world’s best-selling medicine
+date: 2026-03-02 09:34:24+01:00
+draft: false
+description: Le Mounjaro d'Eli Lilly a détrôné le célèbre Keytruda pour devenir le médicament le plus vendu au monde.
+source: news.google.com
+source_url: https://news.google.com/rss/articles/CBMikwFBVV95cUxOQjlRZUNmWC13VGlySWtKb3Z5bG1zbTEwcXllVnlsR2NwRS1aTEtHUEx6Zm9VbXd6RmNOTF9HMm5xbmlYNFphWWU0dlVCZ2ZBb0EzclpBaEgyemZGdkZSUERsNjA1WWdhUWlrRjBFd1hjNUR4NkIwNjZLYm5NQ2VpTTVnaDREUUZIaE1SOEcxajlpdzg?oc=5
+---
+
+Eli Lilly's Mounjaro has surpassed the renowned Keytruda to become the world's best-selling pharmaceutical product. This remarkable achievement highlights surging demand for weight management and diabetes treatments. Tirzepatide, Mounjaro's active ingredient, operates through a groundbreaking mechanism: it mimics two natural hormones responsible for appetite regulation and blood sugar control. Patients typically experience reduced hunger sensations and improved weight stability. Mounjaro's commercial success stems from its dual therapeutic action. Unlike previous medications in this category, it delivers enhanced efficacy. Clinical evidence demonstrates that treated individuals achieve approximately 20 to 22 percent weight loss relative to baseline. This performance significantly exceeds outcomes from earlier generations of similar compounds. Beyond sales figures, this ranking reflects shifting pharmaceutical priorities. Obesity and type 2 diabetes represent major global health challenges. Their substantial economic burden justifies considerable research investments. Mounjaro exemplifies how medical innovation responds to current epidemiological needs. The medication's dominance also reflects manufacturing capacity expansion and growing prescription adoption worldwide. Healthcare systems increasingly recognize these treatments' value in preventing serious complications. This trend underscores the pharmaceutical industry's evolution toward addressing metabolic diseases with renewed intensity.
