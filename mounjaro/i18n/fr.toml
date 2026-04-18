@@ -1,71 +1,97 @@
-[hero_label]
-other = "Suivi Mounjaro / Tirzepatide"
+[skip_to_content]
+other = "Aller au contenu"
+[nav_primary]
+other = "Navigation principale"
+[menu]
+other = "Menu"
+[language_switcher]
+other = "Changer de langue"
+[search_placeholder]
+other = "Rechercher articles…"
 
-[hero_title]
-other = "Tout savoir sur le Mounjaro"
-[hero_subtitle]
-other = "Actualites, etudes cliniques et informations sur le tirzepatide — mises a jour quotidiennes par intelligence artificielle."
+[badge_new]
+other = "NEW"
+[hero_badge_count]
+other = "{{ .Count }} articles indexes · mise a jour il y a 2h"
 
-[hero_btn_articles]
-other = "Lire les actualites"
-[hero_btn_about]
-other = "En savoir plus"
+[hero_title_l1]
+other = "L'actualite tirzepatide,"
+[hero_title_l2]
+other = "indexee, sourcee, multilingue."
+[hero_lead]
+other = "Une veille quotidienne sur le Mounjaro et les GLP-1 : chaque article reformule, traduit et relie a sa source."
 
-[stat_approval]
-other = "Approuve par la FDA (2022) et l'EMA (2023)"
-[stat_molecule]
-other = "Double agoniste GIP/GLP-1"
-[stat_indications]
-other = "Diabete type 2 et gestion du poids"
-[stat_manufacturer]
-other = "Fabrique par Eli Lilly"
+[cta_browse]
+other = "Parcourir les articles"
+[cta_newsletter]
+other = "Newsletter"
 
-[section_news]
-other = "Dernieres actualites"
-[section_news_subtitle]
-other = "Informations reformulees par IA a partir de sources medicales et scientifiques"
+[stat_published]
+other = "articles publies"
+[stat_multilingual]
+other = "multilingue"
+[stat_updated]
+other = "mise a jour"
+[stat_sources]
+other = "sources verifiees"
 
-[section_about]
-other = "Qu'est-ce que le Mounjaro ?"
-[about_text_1]
-other = "Le Mounjaro (tirzepatide) est un medicament injectable utilise dans le traitement du diabete de type 2 et la gestion du poids. Il agit comme un double agoniste des recepteurs GIP et GLP-1."
-[about_text_2]
-other = "Developpe par Eli Lilly, le tirzepatide a montre des resultats significatifs dans les etudes cliniques SURPASS et SURMOUNT, avec des reductions de poids et d'HbA1c superieures aux traitements existants."
-[about_more]
-other = "En savoir plus"
+[sidebar_categories]
+other = "Categories"
+[cat_all]
+other = "Tous"
+[sidebar_sources_active]
+other = "Sources actives"
 
-[card_efficacy]
-other = "Efficacite"
-[card_efficacy_desc]
-other = "Resultats des etudes cliniques et donnees en vie reelle"
-[card_safety]
-other = "Securite"
-[card_safety_desc]
-other = "Profil de tolerance et effets indesirables connus"
-[card_access]
-other = "Acces"
-[card_access_desc]
-other = "Disponibilite, remboursement et circuits de prescription"
+[newsletter_title]
+other = "Recevoir par email"
+[newsletter_desc]
+other = "Resume hebdo des etudes et des actualites regulatoires."
+[newsletter_placeholder]
+other = "prenom@email.com"
+[newsletter_submit]
+other = "S'abonner"
 
-[cta_title]
-other = "Restez informe"
-[cta_text]
-other = "Suivez les dernieres actualites sur le Mounjaro et le tirzepatide."
-[cta_btn]
-other = "Voir les actualites"
+[timeline_title]
+other = "Activite sur 15 jours"
+[timeline_subtitle]
+other = "Articles publies par jour"
+
+[section_latest]
+other = "Derniers articles"
+[section_results]
+other = "{{ .Count }} resultats · tries par date"
+[btn_date]
+other = "Date"
+[btn_filter]
+other = "Filtrer"
+[load_more]
+other = "Voir les {{ .Count }} articles restants"
+[read_more]
+other = "Lire"
+
+[no_articles_title]
+other = "Les premiers articles arrivent bientot"
+[no_articles_desc]
+other = "La veille quotidienne demarre. Revenez demain pour les premieres actualites indexees."
 
 [footer_tagline]
-other = "Informations independantes sur le Mounjaro (tirzepatide)."
-[footer_nav]
-other = "Navigation"
-[footer_contact]
-other = "Contact"
+other = "Veille independante sur la tirzepatide. Articles sources et traduits chaque jour."
+[footer_explore]
+other = "Explorer"
+[footer_data]
+other = "Donnees"
+[footer_project]
+other = "Projet"
+[footer_rss]
+other = "Flux RSS"
+[footer_about]
+other = "A propos"
 [footer_contact_link]
 other = "Nous contacter"
-[footer_rights]
-other = "Tous droits reserves."
+[footer_last_deploy]
+other = "Dernier deploiement"
 [footer_disclaimer]
-other = "Ce site est a titre informatif uniquement. Il ne constitue pas un avis medical."
+other = "Ce site est informatif et ne remplace pas un avis medical."
 
 [contact_title]
 other = "Contact"
@@ -96,6 +122,6 @@ other = "Autre"
 [form_message]
 other = "Message"
 [form_message_placeholder]
-other = "Votre message..."
+other = "Votre message…"
 [form_submit]
 other = "Envoyer"

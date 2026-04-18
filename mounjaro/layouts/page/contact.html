@@ -1,54 +1,56 @@
 {{ define "main" }}
 <section class="page-hero">
-    <div class="container">
-        <div class="page-hero-content" data-reveal>
-            <span class="overline">Mounjaro Info</span>
-            <h1>{{ .Title }}</h1>
-            {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
-        </div>
+  <div class="page-hero-in">
+    <div class="page-kicker">
+      <span>{{ .Site.Title }}</span>
+      <span>/</span>
+      <span>{{ .Title }}</span>
     </div>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
+  </div>
 </section>
-<section class="page-body">
-    <div class="container">
-        <div class="contact-layout" data-reveal>
-            <div class="contact-info">
-                <h2>{{ i18n "contact_title" }}</h2>
-                <p>{{ i18n "contact_text" }}</p>
-                <div class="contact-detail">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                    <span>{{ i18n "contact_location" }}</span>
-                </div>
-            </div>
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-                <input type="hidden" name="form-name" value="contact">
-                <p style="display:none"><label>Do not fill: <input name="bot-field"></label></p>
-                <div class="form-row">
-                    <div class="field">
-                        <label for="name">{{ i18n "form_name" }}</label>
-                        <input type="text" id="name" name="name" required placeholder="{{ i18n "form_name_placeholder" }}">
-                    </div>
-                    <div class="field">
-                        <label for="email">{{ i18n "form_email" }}</label>
-                        <input type="email" id="email" name="email" required placeholder="{{ i18n "form_email_placeholder" }}">
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="subject">{{ i18n "form_subject" }}</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">{{ i18n "form_subject_select" }}</option>
-                        <option value="correction">{{ i18n "form_subject_correction" }}</option>
-                        <option value="suggestion">{{ i18n "form_subject_suggestion" }}</option>
-                        <option value="press">{{ i18n "form_subject_press" }}</option>
-                        <option value="other">{{ i18n "form_subject_other" }}</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <label for="message">{{ i18n "form_message" }}</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="{{ i18n "form_message_placeholder" }}"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">{{ i18n "form_submit" }}</button>
-            </form>
-        </div>
+
+<section class="contact-layout">
+  <div class="contact-side">
+    <h3>{{ i18n "contact_title" }}</h3>
+    <p>{{ i18n "contact_text" }}</p>
+    <p style="display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14" aria-hidden="true"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+      <span>{{ i18n "contact_location" }}</span>
+    </p>
+  </div>
+
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-grid">
+    <input type="hidden" name="form-name" value="contact"/>
+    <p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
+    <div class="form-row">
+      <div class="field">
+        <label for="name">{{ i18n "form_name" }}</label>
+        <input type="text" id="name" name="name" required placeholder="{{ i18n "form_name_placeholder" }}"/>
+      </div>
+      <div class="field">
+        <label for="email">{{ i18n "form_email" }}</label>
+        <input type="email" id="email" name="email" required placeholder="{{ i18n "form_email_placeholder" }}"/>
+      </div>
     </div>
+    <div class="field">
+      <label for="subject">{{ i18n "form_subject" }}</label>
+      <select id="subject" name="subject" required>
+        <option value="">{{ i18n "form_subject_select" }}</option>
+        <option value="correction">{{ i18n "form_subject_correction" }}</option>
+        <option value="suggestion">{{ i18n "form_subject_suggestion" }}</option>
+        <option value="press">{{ i18n "form_subject_press" }}</option>
+        <option value="other">{{ i18n "form_subject_other" }}</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="message">{{ i18n "form_message" }}</label>
+      <textarea id="message" name="message" rows="6" required placeholder="{{ i18n "form_message_placeholder" }}"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-p">{{ i18n "form_submit" }} →</button>
+    </div>
+  </form>
 </section>
 {{ end }}

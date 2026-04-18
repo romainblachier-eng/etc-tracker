@@ -1,25 +1,28 @@
 {{ define "main" }}
 <section class="page-hero">
-    <div class="container">
-        <div class="page-hero-content" data-reveal>
-            <span class="overline">Mounjaro Info</span>
-            <h1>{{ .Title }}</h1>
-            {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
-        </div>
+  <div class="page-hero-in">
+    <div class="page-kicker">
+      <span>{{ .Site.Title }}</span>
+      <span>/</span>
+      <span>{{ .Title }}</span>
     </div>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
+  </div>
 </section>
-<section class="page-body">
-    <div class="container">
-        <div class="prose" data-reveal>
-            {{ .Content }}
-        </div>
-        {{ range .Pages }}
-        <article class="pub-item" data-reveal>
-            <time>{{ .Date.Format "2 January 2006" }}</time>
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            {{ with .Description }}<p>{{ . }}</p>{{ end }}
-        </article>
-        {{ end }}
-    </div>
+
+<section class="page-wrap">
+  {{ with .Content }}<div class="prose" style="margin-bottom:32px">{{ . }}</div>{{ end }}
+  <div>
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}" class="post-item">
+      <div class="post-item-meta">
+        {{ with .Params.source }}<span>{{ . }}</span> · {{ end }}{{ .Date.Format "02/01/2006" }}
+      </div>
+      <h3 class="post-item-t">{{ .Title }}</h3>
+      {{ with (or .Description .Summary) }}<p class="post-item-d">{{ . | plainify | truncate 200 }}</p>{{ end }}
+    </a>
+    {{ end }}
+  </div>
 </section>
 {{ end }}

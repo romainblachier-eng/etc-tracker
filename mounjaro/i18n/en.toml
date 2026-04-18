@@ -1,76 +1,102 @@
-[hero_label]
-other = "Mounjaro / Tirzepatide Tracker"
+[skip_to_content]
+other = "Skip to content"
+[nav_primary]
+other = "Main navigation"
+[menu]
+other = "Menu"
+[language_switcher]
+other = "Switch language"
+[search_placeholder]
+other = "Search articles…"
 
-[hero_title]
-other = "Everything about Mounjaro"
-[hero_subtitle]
-other = "News, clinical studies and information about tirzepatide — daily AI-powered updates."
+[badge_new]
+other = "NEW"
+[hero_badge_count]
+other = "{{ .Count }} indexed articles · updated 2h ago"
 
-[hero_btn_articles]
-other = "Read the latest news"
-[hero_btn_about]
-other = "Learn more"
+[hero_title_l1]
+other = "Tirzepatide news,"
+[hero_title_l2]
+other = "indexed, sourced, multilingual."
+[hero_lead]
+other = "A daily watch on Mounjaro and GLP-1 drugs: every article reworded, translated, and linked to its source."
 
-[stat_approval]
-other = "Approved by FDA (2022) and EMA (2023)"
-[stat_molecule]
-other = "Dual GIP/GLP-1 agonist"
-[stat_indications]
-other = "Type 2 diabetes and weight management"
-[stat_manufacturer]
-other = "Manufactured by Eli Lilly"
+[cta_browse]
+other = "Browse articles"
+[cta_newsletter]
+other = "Newsletter"
 
-[section_news]
-other = "Latest news"
-[section_news_subtitle]
-other = "AI-reformulated information from medical and scientific sources"
+[stat_published]
+other = "articles published"
+[stat_multilingual]
+other = "multilingual"
+[stat_updated]
+other = "updated"
+[stat_sources]
+other = "verified sources"
 
-[section_about]
-other = "What is Mounjaro?"
-[about_text_1]
-other = "Mounjaro (tirzepatide) is an injectable medication used for type 2 diabetes and weight management. It works as a dual GIP and GLP-1 receptor agonist."
-[about_text_2]
-other = "Developed by Eli Lilly, tirzepatide has shown significant results in the SURPASS and SURMOUNT clinical trials, with superior weight loss and HbA1c reductions compared to existing treatments."
-[about_more]
-other = "Learn more"
+[sidebar_categories]
+other = "Categories"
+[cat_all]
+other = "All"
+[sidebar_sources_active]
+other = "Active sources"
 
-[card_efficacy]
-other = "Efficacy"
-[card_efficacy_desc]
-other = "Clinical trial results and real-world evidence"
-[card_safety]
-other = "Safety"
-[card_safety_desc]
-other = "Tolerability profile and known side effects"
-[card_access]
-other = "Access"
-[card_access_desc]
-other = "Availability, reimbursement and prescribing pathways"
+[newsletter_title]
+other = "Get it by email"
+[newsletter_desc]
+other = "Weekly digest of studies and regulatory news."
+[newsletter_placeholder]
+other = "you@email.com"
+[newsletter_submit]
+other = "Subscribe"
 
-[cta_title]
-other = "Stay informed"
-[cta_text]
-other = "Follow the latest news on Mounjaro and tirzepatide."
-[cta_btn]
-other = "View latest news"
+[timeline_title]
+other = "Activity over 15 days"
+[timeline_subtitle]
+other = "Articles published per day"
+
+[section_latest]
+other = "Latest articles"
+[section_results]
+other = "{{ .Count }} results · sorted by date"
+[btn_date]
+other = "Date"
+[btn_filter]
+other = "Filter"
+[load_more]
+other = "Load {{ .Count }} more articles"
+[read_more]
+other = "Read"
+
+[no_articles_title]
+other = "First articles coming soon"
+[no_articles_desc]
+other = "The daily watch is starting. Come back tomorrow for the first indexed news."
 
 [footer_tagline]
-other = "Independent information on Mounjaro (tirzepatide)."
-[footer_nav]
-other = "Navigation"
-[footer_contact]
-other = "Contact"
+other = "Independent tirzepatide watch. Articles sourced and translated every day."
+[footer_explore]
+other = "Explore"
+[footer_data]
+other = "Data"
+[footer_project]
+other = "Project"
+[footer_rss]
+other = "RSS feed"
+[footer_about]
+other = "About"
 [footer_contact_link]
-other = "Get in touch"
-[footer_rights]
-other = "All rights reserved."
+other = "Contact us"
+[footer_last_deploy]
+other = "Last deploy"
 [footer_disclaimer]
-other = "This site is for informational purposes only. It does not constitute medical advice."
+other = "This site is informational and does not replace medical advice."
 
 [contact_title]
 other = "Contact"
 [contact_text]
-other = "Have a question, suggestion or correction? Get in touch."
+other = "Have a question, suggestion or correction? Write to us."
 [contact_location]
 other = "Paris, France"
 [form_name]
@@ -80,7 +106,7 @@ other = "Your name"
 [form_email]
 other = "Email address"
 [form_email_placeholder]
-other = "your@email.com"
+other = "you@email.com"
 [form_subject]
 other = "Subject"
 [form_subject_select]
@@ -96,6 +122,6 @@ other = "Other"
 [form_message]
 other = "Message"
 [form_message_placeholder]
-other = "Your message..."
+other = "Your message…"
 [form_submit]
 other = "Send"

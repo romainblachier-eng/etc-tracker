@@ -1,84 +1,167 @@
 {{ define "main" }}
-<!-- Hero -->
+{{ $articles := where .Site.RegularPages "Section" "articles" }}
+{{ $totalArticles := len $articles }}
+{{ $latest := first 13 $articles }}
+
 <section class="hero">
-    <div class="hero-inner">
-        <div class="hero-content" data-reveal>
-            <p class="hero-overline">{{ i18n "hero_label" }}</p>
-            <h1>{{ i18n "hero_title" }}</h1>
-            <p class="hero-sub">{{ i18n "hero_subtitle" }}</p>
-            <div class="hero-actions">
-                <a href="{{ "articles/" | relLangURL }}" class="btn btn-primary">{{ i18n "hero_btn_articles" }}</a>
-                <a href="{{ "a-propos/" | relLangURL }}" class="btn btn-ghost">{{ i18n "hero_btn_about" }}</a>
-            </div>
-        </div>
-        <div class="hero-accent" aria-hidden="true"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-in">
+    <div class="hero-badge">
+      <span class="badge-new">{{ i18n "badge_new" }}</span>
+      {{ i18n "hero_badge_count" (dict "Count" $totalArticles) }}
+      <span class="badge-arr">→</span>
     </div>
+    <h1 class="hero-t">{{ i18n "hero_title_l1" | safeHTML }}<br/><span class="hero-mut">{{ i18n "hero_title_l2" }}</span></h1>
+    <p class="hero-lead">{{ i18n "hero_lead" }} <span class="hero-lead-m">// FR · EN · 中</span></p>
+    <div class="hero-ctas">
+      <a href="{{ "articles/" | relLangURL }}" class="btn btn-p">{{ i18n "cta_browse" }} →</a>
+      <a href="{{ "index.xml" | relLangURL }}" class="btn btn-o">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 11a8 8 0 1 0 8-8"/><path d="M4 4v7h7"/></svg>
+        RSS
+      </a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-l">{{ i18n "stat_published" }}</div><div class="stat-v">{{ $totalArticles }}</div></div>
+      <div class="stat"><div class="stat-l">{{ i18n "stat_multilingual" }}</div><div class="stat-v">FR/EN/中</div></div>
+      <div class="stat"><div class="stat-l">{{ i18n "stat_updated" }}</div><div class="stat-v">24h</div></div>
+      <div class="stat"><div class="stat-l">{{ i18n "stat_sources" }}</div><div class="stat-v">40+</div></div>
+    </div>
+  </div>
 </section>
 
-<!-- Key Figures -->
-<section class="figures">
-    <div class="container">
-        <div class="figures-row" data-reveal>
-            <div class="figure">
-                <span class="figure-icon">&#x2714;</span>
-                <span class="figure-label">{{ i18n "stat_approval" }}</span>
-            </div>
-            <div class="figure-divider"></div>
-            <div class="figure">
-                <span class="figure-icon">&#x2696;</span>
-                <span class="figure-label">{{ i18n "stat_molecule" }}</span>
-            </div>
-            <div class="figure-divider"></div>
-            <div class="figure">
-                <span class="figure-icon">&#x1F3E5;</span>
-                <span class="figure-label">{{ i18n "stat_indications" }}</span>
-            </div>
-            <div class="figure-divider"></div>
-            <div class="figure">
-                <span class="figure-icon">&#x1F48A;</span>
-                <span class="figure-label">{{ i18n "stat_manufacturer" }}</span>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="lay">
+  <aside class="side">
+    <div class="side-lbl">{{ i18n "sidebar_categories" }}</div>
+    <nav class="side-list">
+      <a href="{{ "articles/" | relLangURL }}" class="side-it active"><span>{{ i18n "cat_all" }}</span><span class="side-ct">{{ $totalArticles }}</span></a>
+      {{ $cats := slice }}
+      {{ range .Site.Taxonomies.tags }}
+        {{ $cats = $cats | append . }}
+      {{ end }}
+      {{ range first 7 $cats }}
+      <a href="{{ .Page.RelPermalink }}" class="side-it"><span>{{ .Page.Title }}</span><span class="side-ct">{{ len .Pages }}</span></a>
+      {{ end }}
+    </nav>
 
-<!-- About -->
-<section class="about">
-    <div class="container">
-        <div class="about-layout" data-reveal>
-            <div class="about-text">
-                <span class="overline">{{ i18n "section_about" }}</span>
-                <h2>{{ i18n "section_about" }}</h2>
-                <p>{{ i18n "about_text_1" }}</p>
-                <p>{{ i18n "about_text_2" }}</p>
-                <a href="{{ "a-propos/" | relLangURL }}" class="link-arrow">{{ i18n "about_more" }} &rarr;</a>
-            </div>
-            <aside class="about-aside">
-                <div class="aside-card">
-                    <h4>{{ i18n "card_efficacy" }}</h4>
-                    <p>{{ i18n "card_efficacy_desc" }}</p>
-                </div>
-                <div class="aside-card">
-                    <h4>{{ i18n "card_safety" }}</h4>
-                    <p>{{ i18n "card_safety_desc" }}</p>
-                </div>
-                <div class="aside-card">
-                    <h4>{{ i18n "card_access" }}</h4>
-                    <p>{{ i18n "card_access_desc" }}</p>
-                </div>
-            </aside>
-        </div>
+    <div class="side-lbl">{{ i18n "sidebar_sources_active" }}</div>
+    <div class="side-list">
+      {{ $sources := dict }}
+      {{ range $articles }}
+        {{ with .Params.source }}
+          {{ $sources = merge $sources (dict . (add (index $sources . | default 0) 1)) }}
+        {{ end }}
+      {{ end }}
+      {{ if $sources }}
+        {{ range $name, $count := $sources }}
+        <div class="side-it"><span class="src-name"><span class="src-dot"></span>{{ $name }}</span><span class="side-ct">{{ $count }}</span></div>
+        {{ end }}
+      {{ else }}
+        <div class="side-it"><span class="src-name"><span class="src-dot"></span>Reuters</span><span class="side-ct">—</span></div>
+        <div class="side-it"><span class="src-name"><span class="src-dot"></span>Cleveland Clinic</span><span class="side-ct">—</span></div>
+        <div class="side-it"><span class="src-name"><span class="src-dot"></span>NEJM</span><span class="side-ct">—</span></div>
+        <div class="side-it"><span class="src-name"><span class="src-dot"></span>Eli Lilly</span><span class="side-ct">—</span></div>
+        <div class="side-it"><span class="src-name"><span class="src-dot"></span>FDA</span><span class="side-ct">—</span></div>
+      {{ end }}
     </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" data-reveal>
-    <div class="container">
-        <div class="cta-inner">
-            <h2>{{ i18n "cta_title" }}</h2>
-            <p>{{ i18n "cta_text" }}</p>
-            <a href="{{ "articles/" | relLangURL }}" class="btn btn-primary">{{ i18n "cta_btn" }}</a>
-        </div>
+    <div class="side-card" id="newsletter">
+      <div class="side-card-t">{{ i18n "newsletter_title" }}</div>
+      <div class="side-card-d">{{ i18n "newsletter_desc" }}</div>
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter"/>
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"/></label></p>
+        <input type="email" name="email" placeholder="{{ i18n "newsletter_placeholder" }}" required/>
+        <button type="submit" class="btn btn-p btn-block">{{ i18n "newsletter_submit" }} →</button>
+      </form>
     </div>
-</section>
+  </aside>
+
+  <div class="cnt">
+    {{ if ge $totalArticles 1 }}
+    <section class="tl">
+      <div class="tl-h">
+        <div>
+          <div class="tl-t">{{ i18n "timeline_title" }}</div>
+          <div class="tl-s">{{ i18n "timeline_subtitle" }}</div>
+        </div>
+        <div class="tl-avg" id="tl-avg"></div>
+      </div>
+      <div class="tl-bars" id="tl-bars">
+        {{/* Build per-day bucket for last 15 days */}}
+        {{ $today := now }}
+        {{ $counts := slice }}
+        {{ $max := 0 }}
+        {{ range seq 14 -1 0 }}
+          {{ $d := $today.AddDate 0 0 (int (mul . -1)) }}
+          {{ $dayStr := $d.Format "2006-01-02" }}
+          {{ $c := 0 }}
+          {{ range $articles }}
+            {{ if eq (.Date.Format "2006-01-02") $dayStr }}{{ $c = add $c 1 }}{{ end }}
+          {{ end }}
+          {{ if gt $c $max }}{{ $max = $c }}{{ end }}
+          {{ $counts = $counts | append (dict "date" $d "count" $c) }}
+        {{ end }}
+        {{ range $counts }}
+          {{ $h := 6 }}
+          {{ $o := 0.25 }}
+          {{ if gt $max 0 }}
+            {{ $ratio := div (float .count) (float $max) }}
+            {{ $h = add 6 (int (mul $ratio 80)) }}
+            {{ $o = add 0.25 (mul $ratio 0.75) }}
+          {{ end }}
+          <div class="tl-col"><div class="tl-bar" style="height:{{ $h }}px;opacity:{{ $o }}"></div><div class="tl-d">{{ .date.Format "02/01" }}</div></div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <section class="gs">
+      <div class="gs-h">
+        <div>
+          <h2 class="gs-t">{{ i18n "section_latest" }}</h2>
+          <div class="gs-s">{{ i18n "section_results" (dict "Count" $totalArticles) }}</div>
+        </div>
+        <div class="gs-a">
+          <a href="{{ "articles/" | relLangURL }}" class="btn btn-o btn-sm">{{ i18n "btn_date" }} ↓</a>
+        </div>
+      </div>
+
+      <div class="grid">
+        {{ range $i, $p := $latest }}
+          {{ $featured := eq $i 0 }}
+          <a href="{{ .RelPermalink }}" class="card{{ if $featured }} card-f{{ end }}">
+            <div class="c-meta">
+              <span class="c-src">{{ with .Params.source }}{{ . }}{{ else }}{{ $.Site.Title }}{{ end }}</span>
+              <span>·</span>
+              <span>{{ .Date.Format "02/01/2006" }}</span>
+              <span class="c-sp"></span>
+              <span class="c-langs">
+                <span class="l-pill">{{ upper $.Language.Lang }}</span>
+              </span>
+            </div>
+            <h3 class="c-t">{{ .Title }}</h3>
+            {{ with (or .Description .Summary) }}<p class="c-e">{{ . | plainify | truncate 240 }}</p>{{ end }}
+            <div class="c-f">
+              {{ range first 2 .Params.tags }}<span class="tag">#{{ . }}</span>{{ end }}
+              <span class="c-sp"></span>
+              <span class="c-cta">{{ i18n "read_more" }} →</span>
+            </div>
+          </a>
+        {{ else }}
+          <div class="card card-f">
+            <div class="c-meta"><span class="c-src">{{ .Site.Title }}</span></div>
+            <h3 class="c-t">{{ i18n "no_articles_title" }}</h3>
+            <p class="c-e">{{ i18n "no_articles_desc" }}</p>
+          </div>
+        {{ end }}
+      </div>
+
+      {{ if gt $totalArticles 13 }}
+      <div class="gs-more">
+        <a href="{{ "articles/" | relLangURL }}" class="btn btn-o">{{ i18n "load_more" (dict "Count" (sub $totalArticles 13)) }}</a>
+      </div>
+      {{ end }}
+    </section>
+  </div>
+</div>
 {{ end }}
