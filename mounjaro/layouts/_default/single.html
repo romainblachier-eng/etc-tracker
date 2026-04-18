@@ -1,18 +1,18 @@
 {{ define "main" }}
 <section class="page-hero">
-    <div class="container">
-        <div class="page-hero-content" data-reveal>
-            <span class="overline">Mounjaro Info</span>
-            <h1>{{ .Title }}</h1>
-            {{ with .Params.subtitle }}<p class="page-lead">{{ . }}</p>{{ end }}
-        </div>
+  <div class="page-hero-in">
+    <div class="page-kicker">
+      {{ with .Params.source }}<span>{{ . }}</span><span>·</span>{{ end }}
+      {{ if not .Date.IsZero }}<span>{{ .Date.Format "02/01/2006" }}</span>{{ end }}
+      {{ with .Params.tags }}<span>·</span>{{ range first 3 . }}<span>#{{ . }}</span>{{ end }}{{ end }}
     </div>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with (or .Params.subtitle .Description) }}<p class="page-lead">{{ . }}</p>{{ end }}
+  </div>
 </section>
-<section class="page-body">
-    <div class="container">
-        <div class="prose" data-reveal>
-            {{ .Content }}
-        </div>
-    </div>
+<section class="page-wrap">
+  <div class="prose">
+    {{ .Content }}
+  </div>
 </section>
 {{ end }}

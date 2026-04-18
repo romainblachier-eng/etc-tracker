@@ -1,101 +1,127 @@
-[hero_label]
-other = "Mounjaro / 替爾泊肽追蹤"
+[skip_to_content]
+other = "跳至主要內容"
+[nav_primary]
+other = "主要導覽"
+[menu]
+other = "選單"
+[language_switcher]
+other = "切換語言"
+[search_placeholder]
+other = "搜尋文章…"
 
-[hero_title]
-other = "關於 Mounjaro 的一切"
-[hero_subtitle]
-other = "替爾泊肽的最新資訊、臨床研究與資訊 — 每日 AI 更新。"
+[badge_new]
+other = "NEW"
+[hero_badge_count]
+other = "已索引 {{ .Count }} 篇文章 · 2 小時前更新"
 
-[hero_btn_articles]
-other = "閱讀最新消息"
-[hero_btn_about]
-other = "了解更多"
+[hero_title_l1]
+other = "替爾泊肽每日觀察，"
+[hero_title_l2]
+other = "索引、溯源、多語並行。"
+[hero_lead]
+other = "Mounjaro 與 GLP-1 類藥物的每日觀察：每篇文章重寫、翻譯並標註來源。"
 
-[stat_approval]
-other = "已獲 FDA（2022）及 EMA（2023）批准"
-[stat_molecule]
-other = "GIP/GLP-1 雙重受體促效劑"
-[stat_indications]
-other = "第二型糖尿病與體重管理"
-[stat_manufacturer]
-other = "由禮來（Eli Lilly）製造"
+[cta_browse]
+other = "瀏覽全部文章"
+[cta_newsletter]
+other = "電子報"
 
-[section_news]
-other = "最新消息"
-[section_news_subtitle]
-other = "AI 從醫學和科學來源整理的資訊"
+[stat_published]
+other = "已發布文章"
+[stat_multilingual]
+other = "多語版本"
+[stat_updated]
+other = "更新"
+[stat_sources]
+other = "已驗證來源"
 
-[section_about]
-other = "什麼是 Mounjaro？"
-[about_text_1]
-other = "Mounjaro（替爾泊肽）是一種用於治療第二型糖尿病和體重管理的注射型藥物。它是一種 GIP 和 GLP-1 雙重受體促效劑。"
-[about_text_2]
-other = "由禮來公司開發的替爾泊肽在 SURPASS 和 SURMOUNT 臨床試驗中顯示了顯著的效果，在減重和降低糖化血色素（HbA1c）方面均優於現有治療方案。"
-[about_more]
-other = "了解更多"
+[sidebar_categories]
+other = "分類"
+[cat_all]
+other = "全部"
+[sidebar_sources_active]
+other = "活躍來源"
 
-[card_efficacy]
-other = "療效"
-[card_efficacy_desc]
-other = "臨床試驗結果與真實世界證據"
-[card_safety]
-other = "安全性"
-[card_safety_desc]
-other = "耐受性特徵與已知副作用"
-[card_access]
-other = "可及性"
-[card_access_desc]
-other = "供應情況、健保給付與處方管道"
+[newsletter_title]
+other = "電郵訂閱"
+[newsletter_desc]
+other = "每週摘要：研究動態與監管資訊。"
+[newsletter_placeholder]
+other = "you@email.com"
+[newsletter_submit]
+other = "訂閱"
 
-[cta_title]
-other = "掌握最新資訊"
-[cta_text]
-other = "追蹤 Mounjaro 和替爾泊肽的最新動態。"
-[cta_btn]
-other = "查看最新消息"
+[timeline_title]
+other = "近 15 日活動"
+[timeline_subtitle]
+other = "每日發布文章數"
+
+[section_latest]
+other = "最新文章"
+[section_results]
+other = "共 {{ .Count }} 篇 · 依日期排序"
+[btn_date]
+other = "日期"
+[btn_filter]
+other = "篩選"
+[load_more]
+other = "再載入 {{ .Count }} 篇"
+[read_more]
+other = "閱讀"
+
+[no_articles_title]
+other = "首批文章即將上線"
+[no_articles_desc]
+other = "每日觀察正在啟動中，明日請再回來查看首批索引新聞。"
 
 [footer_tagline]
-other = "Mounjaro（替爾泊肽）的獨立資訊平台。"
-[footer_nav]
-other = "導航"
-[footer_contact]
-other = "聯絡"
+other = "獨立的替爾泊肽觀察。每日標註來源、翻譯與重寫。"
+[footer_explore]
+other = "瀏覽"
+[footer_data]
+other = "資料"
+[footer_project]
+other = "專案"
+[footer_rss]
+other = "RSS 訂閱"
+[footer_about]
+other = "關於我們"
 [footer_contact_link]
-other = "與我們聯繫"
-[footer_rights]
-other = "版權所有。"
+other = "聯絡我們"
+[footer_last_deploy]
+other = "最新部署"
 [footer_disclaimer]
-other = "本網站僅供資訊參考，不構成醫療建議。"
+other = "本站僅供資訊參考，不構成醫療建議。"
 
 [contact_title]
 other = "聯絡我們"
 [contact_text]
-other = "有問題、建議或需要更正？歡迎來信。"
+other = "有任何問題、建議或更正資訊嗎？歡迎來信。"
 [contact_location]
-other = "法國巴黎"
+other = "法國 巴黎"
 [form_name]
-other = "姓名"
+other = "全名"
 [form_name_placeholder]
 other = "您的姓名"
 [form_email]
 other = "電子郵件"
 [form_email_placeholder]
-other = "your@email.com"
+other = "you@email.com"
 [form_subject]
 other = "主旨"
 [form_subject_select]
-other = "請選擇主旨"
+other = "請選擇主題"
 [form_subject_correction]
-other = "資訊更正"
+other = "更正資訊"
 [form_subject_suggestion]
 other = "建議"
 [form_subject_press]
-other = "媒體與新聞"
+other = "媒體詢問"
 [form_subject_other]
 other = "其他"
 [form_message]
 other = "訊息"
 [form_message_placeholder]
-other = "您的訊息..."
+other = "請輸入您的訊息…"
 [form_submit]
 other = "送出"

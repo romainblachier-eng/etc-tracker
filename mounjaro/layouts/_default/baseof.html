@@ -1,131 +1,122 @@
 <!DOCTYPE html>
 <html lang="{{ .Language.Lang }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}Mounjaro Info — {{ if eq .Language.Lang "fr" }}Actualites tirzepatide{{ else if eq .Language.Lang "zh" }}替爾泊肽最新資訊{{ else }}Tirzepatide News{{ end }}{{ else }}{{ .Title }} — Mounjaro Info{{ end }}</title>
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    {{ if .IsTranslated }}
-    {{ range .Translations }}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
-    {{ end }}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
-    {{ end }}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}"/>
+{{ if .IsTranslated }}{{ range .Translations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}"/>
+{{ end }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}"/>{{ end }}
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link">{{ i18n "skip_to_content" }}</a>
 
-    <header class="site-header" id="header">
-        <div class="header-inner">
-            <a href="{{ .Site.Home.RelPermalink }}" class="logo">
-                Mounjaro<span>Info</span>
-            </a>
-            <div class="header-right">
-                <nav class="main-nav" id="nav">
-                    {{ range .Site.Menus.main }}
-                    <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
-                    {{ end }}
-                </nav>
-                <div class="lang-switcher">
-                    <a href="#" class="lang-btn active" title="{{ .Language.LanguageName }}">
-                        {{ if eq .Language.Lang "fr" }}FR{{ else if eq .Language.Lang "zh" }}中{{ else }}EN{{ end }}
-                    </a>
-                    {{ if .IsTranslated }}
-                    {{ range .Translations }}
-                    <a href="{{ .Permalink }}" class="lang-btn" title="{{ .Language.LanguageName }}">
-                        {{ if eq .Language.Lang "fr" }}FR{{ else if eq .Language.Lang "zh" }}中{{ else }}EN{{ end }}
-                    </a>
-                    {{ end }}
-                    {{ else }}
-                    {{ if ne .Language.Lang "fr" }}<a href="/fr/" class="lang-btn" title="Francais">FR</a>{{ end }}
-                    {{ if ne .Language.Lang "en" }}<a href="/en/" class="lang-btn" title="English">EN</a>{{ end }}
-                    {{ if ne .Language.Lang "zh" }}<a href="/zh/" class="lang-btn" title="繁體中文">中</a>{{ end }}
-                    {{ end }}
-                </div>
-                <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+<header class="hdr" id="header">
+  <div class="hdr-in">
+    <div class="hdr-l">
+      <a href="{{ .Site.Home.RelPermalink }}" class="brand" aria-label="{{ .Site.Title }}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#09090b"/><path d="M7 16V8l5 5 5-5v8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand-name">mounjaro<span class="brand-slash">/news</span></span>
+        <span class="brand-v">v2026.4</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="{{ i18n "nav_primary" }}">
+        {{ $currentURL := .RelPermalink }}
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relLangURL }}"{{ if eq $currentURL (.URL | relLangURL) }} class="active"{{ end }}>{{ .Name }}</a>
+        {{ end }}
+      </nav>
+    </div>
+    <div class="hdr-r">
+      <div class="search" role="button" tabindex="0" aria-label="{{ i18n "search_placeholder" }}">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>{{ i18n "search_placeholder" }}</span>
+        <kbd>⌘K</kbd>
+      </div>
+      <div class="lang" aria-label="{{ i18n "language_switcher" }}">
+        {{ $cur := . }}
+        {{ range $.Site.Languages }}
+          {{ $label := "EN" }}
+          {{ if eq .Lang "fr" }}{{ $label = "FR" }}{{ else if eq .Lang "zh" }}{{ $label = "中" }}{{ end }}
+          {{ if eq $cur.Language.Lang .Lang }}
+            <a href="#" class="active" aria-current="true">{{ $label }}</a>
+          {{ else }}
+            {{ $target := "" }}
+            {{ range $cur.Translations }}{{ if eq .Language.Lang $.Lang }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+            {{ if eq $target "" }}{{ $target = printf "/%s/" .Lang }}{{ end }}
+            <a href="{{ $target }}">{{ $label }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+      <a href="#newsletter" class="btn btn-p">{{ i18n "cta_newsletter" }}</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="{{ i18n "menu" }}" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <main id="main">
-        {{ block "main" . }}{{ end }}
-    </main>
+<main id="main">
+  {{ block "main" . }}{{ end }}
+</main>
 
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="footer-logo">Mounjaro<span>Info</span></div>
-                    <p>{{ i18n "footer_tagline" }}</p>
-                </div>
-                <nav class="footer-nav">
-                    <h4>{{ i18n "footer_nav" }}</h4>
-                    {{ range .Site.Menus.main }}
-                    <a href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end }}
-                </nav>
-                <div class="footer-contact">
-                    <h4>{{ i18n "footer_contact" }}</h4>
-                    <a href="{{ "contact/" | relLangURL }}">{{ i18n "footer_contact_link" }}</a>
-                    <p class="footer-location">Paris, France</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; {{ now.Year }} Mounjaro Info. {{ i18n "footer_rights" }}</p>
-                <p class="footer-disclaimer">{{ i18n "footer_disclaimer" }}</p>
-            </div>
-        </div>
-    </footer>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-col">
+      <div class="foot-b">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#09090b"/><path d="M7 16V8l5 5 5-5v8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>mounjaro/news</span>
+      </div>
+      <div class="foot-d">{{ i18n "footer_tagline" }}</div>
+      <div class="foot-disclaimer">{{ i18n "footer_disclaimer" }}</div>
+    </div>
+    <div class="foot-col">
+      <div class="foot-lbl">{{ i18n "footer_explore" }}</div>
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+    <div class="foot-col">
+      <div class="foot-lbl">{{ i18n "footer_data" }}</div>
+      <a href="{{ "index.xml" | relLangURL }}">{{ i18n "footer_rss" }}</a>
+      <a href="{{ "sitemap.xml" | relURL }}">Sitemap</a>
+    </div>
+    <div class="foot-col">
+      <div class="foot-lbl">{{ i18n "footer_project" }}</div>
+      <a href="{{ "contact/" | relLangURL }}">{{ i18n "footer_contact_link" }}</a>
+      <a href="{{ (cond (eq .Language.Lang "fr") "a-propos/" (cond (eq .Language.Lang "zh") "a-propos/" "about/")) | relLangURL }}">{{ i18n "footer_about" }}</a>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <div>© {{ now.Year }} mounjaro/news</div>
+    <div>{{ i18n "footer_last_deploy" }} {{ now.Format "02.01.2006" }}</div>
+  </div>
+</footer>
 
-    <script>
-    (function() {
-        var toggle = document.getElementById('menu-toggle');
-        var nav = document.getElementById('nav');
-        toggle.addEventListener('click', function() {
-            var open = nav.classList.toggle('open');
-            toggle.classList.toggle('active');
-            toggle.setAttribute('aria-expanded', open);
-        });
-
-        var header = document.getElementById('header');
-        window.addEventListener('scroll', function() {
-            header.classList.toggle('scrolled', window.scrollY > 40);
-        }, { passive: true });
-
-        var els = document.querySelectorAll('[data-reveal]');
-        if (els.length && 'IntersectionObserver' in window) {
-            var obs = new IntersectionObserver(function(entries) {
-                entries.forEach(function(e) {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('revealed');
-                        obs.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            els.forEach(function(el) { obs.observe(el); });
-        }
-
-        if (!sessionStorage.getItem('lang-redirected')) {
-            sessionStorage.setItem('lang-redirected', '1');
-            var path = window.location.pathname;
-            if (path === '/' || path === '') {
-                var lang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
-                if (lang.startsWith('zh')) {
-                    window.location.replace('/zh/');
-                } else if (lang.startsWith('fr')) {
-                    window.location.replace('/fr/');
-                } else {
-                    window.location.replace('/en/');
-                }
-            }
-        }
-    })();
-    </script>
+<script>
+(function(){
+  var toggle=document.getElementById('menu-toggle');
+  var nav=document.getElementById('nav');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open);
+    });
+  }
+  if(!sessionStorage.getItem('lang-redirected')){
+    sessionStorage.setItem('lang-redirected','1');
+    var path=window.location.pathname;
+    if(path==='/'||path===''){
+      var lang=(navigator.language||navigator.userLanguage||'fr').toLowerCase();
+      if(lang.startsWith('zh')){window.location.replace('/zh/');}
+      else if(lang.startsWith('fr')){window.location.replace('/fr/');}
+      else{window.location.replace('/en/');}
+    }
+  }
+})();
+</script>
 </body>
 </html>
