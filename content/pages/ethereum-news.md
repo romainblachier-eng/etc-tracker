@@ -1,6 +1,6 @@
 ---
-title: "Actualités ETC du 2026-04-29"
-date: 2026-04-29T10:00:02+01:00
+title: "Actualités ETC du 2026-04-30"
+date: 2026-04-30T10:01:08+01:00
 draft: false
 description: "Dernières actualités Ethereum Classic reformulées par IA"
 ---
@@ -11,9 +11,9 @@ description: "Dernières actualités Ethereum Classic reformulées par IA"
 
 **Source :** Bitcoinfoundation.org (2026-03-31)
 
-# Ethereum Classic : La communauté divisée sur la redistribution des frais
+# Ethereum Classic : Divisions au sein de la communauté sur la gestion des frais
 
-La communauté d'Ethereum Classic est profondément divisée concernant l'attribution des frais de base dans un nouveau système de marché des frais. Cette divergence de opinions menace de fragmenter le consensus au sein du projet sur un sujet crucial pour son modèle économique.
+La communauté d'Ethereum Classic est divisée concernant l'allocation des frais de base dans un nouveau système de marché de frais. Cette controverse soulève des questions importantes sur la gouvernance et la distribution des revenus au sein du réseau.
 
 [Lire l'article complet →](https://bitcoinfoundation.org/news/altcoins/ethereum-classic-community-splits-on-fee-plan/)
 
