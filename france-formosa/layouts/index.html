@@ -1,6 +1,7 @@
 {{ define "main" }}
-<!-- Hero -->
-<section class="hero">
+<!-- Hero with WebGL background -->
+<section class="hero hero--webgl">
+    {{ partial "webgl-hero.html" . }}
     <div class="hero-inner">
         <div class="hero-content" data-reveal>
             <p class="hero-overline">{{ i18n "hero_label" }}</p>
@@ -11,7 +12,6 @@
                 <a href="{{ "contact/" | relLangURL }}" class="btn btn-ghost">{{ i18n "hero_btn_contact" }}</a>
             </div>
         </div>
-        <div class="hero-accent" aria-hidden="true"></div>
     </div>
 </section>
 

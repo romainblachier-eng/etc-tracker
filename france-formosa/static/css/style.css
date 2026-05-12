@@ -100,8 +100,21 @@ body {
   background: rgba(255,255,255,0.88);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  transition: box-shadow 0.4s ease, background 0.4s ease;
+  transition: box-shadow 0.4s ease, background 0.4s ease, color 0.4s ease;
 }
+
+.hero--webgl ~ .site-header,
+body:has(.hero--webgl) .site-header:not(.scrolled) {
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+body:has(.hero--webgl) .site-header:not(.scrolled) .logo { color: var(--white); }
+body:has(.hero--webgl) .site-header:not(.scrolled) .nav-link { color: rgba(255,255,255,0.75); }
+body:has(.hero--webgl) .site-header:not(.scrolled) .nav-link:hover { color: var(--white); }
+body:has(.hero--webgl) .site-header:not(.scrolled) .lang-btn { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); }
+body:has(.hero--webgl) .site-header:not(.scrolled) .lang-btn.active { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--white); }
+body:has(.hero--webgl) .site-header:not(.scrolled) .menu-toggle span { background: var(--white); }
 .site-header.scrolled {
   box-shadow: 0 1px 0 var(--stone-100), var(--shadow-sm);
   background: rgba(255,255,255,0.95);
@@ -210,22 +223,92 @@ body {
   overflow: hidden;
 }
 
-/* Subtle Taiwan cloud motif — decorative background */
-.hero-accent {
-  position: absolute;
-  right: -60px; top: 50%;
-  transform: translateY(-50%);
-  width: 520px; height: 520px;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='80' r='50' fill='none' stroke='white' stroke-width='0.8'/%3E%3Ccircle cx='65' cy='110' r='40' fill='none' stroke='white' stroke-width='0.8'/%3E%3Ccircle cx='135' cy='110' r='40' fill='none' stroke='white' stroke-width='0.8'/%3E%3Ccircle cx='80' cy='140' r='30' fill='none' stroke='white' stroke-width='0.8'/%3E%3Ccircle cx='120' cy='140' r='30' fill='none' stroke='white' stroke-width='0.8'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: float 20s ease-in-out infinite;
+/* WebGL variant */
+.hero--webgl {
+  background: none;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 60px;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  50% { transform: translateY(-52%) rotate(2deg); }
+.hero--webgl .hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero--webgl .hero-overline::before {
+  background: var(--white);
+}
+.hero--webgl .hero-overline {
+  color: rgba(255,255,255,0.8);
+}
+
+.hero--webgl .hero-overline {
+  color: var(--vermillon-light);
+}
+.hero--webgl .hero-overline::before {
+  background: var(--vermillon-light);
+}
+
+.hero--webgl .hero-sub {
+  color: rgba(255,255,255,0.95);
+  font-size: 1.1rem;
+  max-width: 520px;
+}
+
+.hero--webgl h1 {
+  color: var(--white);
+  font-size: 3.2rem;
+}
+
+.hero--webgl h1 em {
+  -webkit-text-fill-color: unset;
+  background: none;
+  color: var(--gold-light);
+  font-style: normal;
+}
+
+.hero--webgl::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to bottom,
+      transparent 0%,
+      rgba(0,0,0,0.15) 25%,
+      rgba(0,0,0,0.5) 50%,
+      rgba(0,0,0,0.8) 70%,
+      rgba(0,0,0,0.92) 100%
+    ),
+    linear-gradient(to right,
+      rgba(0,0,0,0.35) 0%,
+      rgba(0,0,0,0.15) 35%,
+      transparent 65%
+    );
+  pointer-events: none;
+}
+
+.hero--webgl .btn-primary {
+  background: var(--vermillon);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(180, 66, 51, 0.5);
+  font-weight: 600;
+}
+.hero--webgl .btn-primary:hover {
+  background: var(--vermillon-light);
+  box-shadow: 0 6px 24px rgba(180, 66, 51, 0.6);
+}
+.hero--webgl .btn-ghost {
+  border: 1.5px solid rgba(255,255,255,0.5);
+  color: var(--white);
+  font-weight: 600;
+}
+.hero--webgl .btn-ghost:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.1);
 }
 
 /* Vermillon accent line at top of hero */
@@ -235,6 +318,7 @@ body {
   top: 0; left: 0; right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--vermillon), var(--gold), var(--vermillon));
+  z-index: 3;
 }
 
 .hero-inner {
@@ -901,8 +985,8 @@ body {
   .main-nav.open { transform: translateY(0); }
 
   .hero { padding: 120px 0 64px; }
+  .hero--webgl { min-height: 80vh; padding: 0 0 40px; }
   .hero h1 { font-size: 2rem; }
-  .hero-accent { display: none; }
 
   .figures-row { flex-wrap: wrap; }
   .figure { flex: 1 1 45%; padding: 16px 12px; }
