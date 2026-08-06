@@ -173,6 +173,16 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .quiz-hero .catchphrase {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: 500;
+      color: var(--text-mid);
+      max-width: 520px;
+      margin: .8rem auto 1rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
     .quiz-hero .sub {
       font-size: var(--fs-sm);
       color: var(--text-muted);
@@ -502,6 +512,7 @@
     <div class="quiz-hero">
       <div class="overline"><span class="pulse"></span> Quiz interactif</div>
       <h1>Testez vos connaissances sur <span class="gradient">Ethereum Classic</span></h1>
+      <p class="catchphrase">La blockchain originale, celle qui n'a jamais change. Mais vous, la connaissez-vous vraiment ?</p>
       <p class="sub">10 questions pour tout savoir sur ETC. La solution s'affiche apres chaque reponse.</p>
     </div>
 
@@ -638,7 +649,6 @@
       h += '</div>';
       container.innerHTML = h;
 
-      // Bind clicks
       var btns = container.querySelectorAll('.option');
       for (var j = 0; j < btns.length; j++) {
         btns[j].addEventListener('click', (function(optIdx) {
@@ -710,19 +720,19 @@
       var num = document.getElementById('scoreNum');
 
       if (pct >= 80) {
-        icon.textContent = '\uD83C\uDFC6';
+        icon.textContent = '🏆';
         title.textContent = 'Excellent !';
         text.textContent = 'Vous etes un veritable expert d\'Ethereum Classic. ' + score + ' bonnes reponses sur ' + questions.length + ' !';
         fg.style.stroke = 'var(--accent)';
         num.style.color = 'var(--accent)';
       } else if (pct >= 50) {
-        icon.textContent = '\uD83D\uDC4D';
+        icon.textContent = '👍';
         title.textContent = 'Bien joue !';
         text.textContent = 'Vous avez de bonnes bases sur ETC. ' + score + ' bonnes reponses sur ' + questions.length + '. Continuez a apprendre !';
         fg.style.stroke = 'var(--amber)';
         num.style.color = 'var(--amber)';
       } else {
-        icon.textContent = '\uD83D\uDCDA';
+        icon.textContent = '📚';
         title.textContent = 'A revoir !';
         text.textContent = score + ' bonnes reponses sur ' + questions.length + '. N\'hesitez pas a vous documenter sur Ethereum Classic !';
         fg.style.stroke = 'var(--red)';
