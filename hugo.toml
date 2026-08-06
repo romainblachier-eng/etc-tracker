@@ -20,6 +20,11 @@ paginate = 15
     name = "Cours ETC"
     url = "/posts/"
     weight = 2
+  [[menu.main]]
+    identifier = "quiz"
+    name = "Quiz"
+    url = "/questionnaire.html"
+    weight = 3
 
 [markup]
   [markup.goldmark]
